@@ -19,7 +19,7 @@ public class VigileUpgrade : MonoBehaviour
 
     private void ApplyUpgrade()
     {
-        for (int i = 0; i < MaxDamage; i++)
+        for (int i = 0; i < MaxDamage; i+= 5)
         {
             AttackValue.Add(i);
         }
