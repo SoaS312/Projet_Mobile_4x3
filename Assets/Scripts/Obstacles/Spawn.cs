@@ -12,7 +12,7 @@ using UnityEngine;
         public float minTime;
         public float maxTime;
         public GameObject associateRoad;
-    public int offsetX;
+        public int offsetX;
 
         [Header("===Obstacles===")]
         public GameObject gameObjectSelected;
@@ -23,17 +23,15 @@ using UnityEngine;
 
         void Start()
         {
-            position = gameObject.transform.position;
-
             timer = Random.Range(minTime, maxTime);
             transform.position = new Vector3(associateRoad.transform.position.x + offsetX, transform.position.y, transform.position.z);
-        }
+            position = gameObject.transform.position;
+    }
 
         void Update()
         {
             Timing();
             Spawning();
-        //transform.position = new Vector3();
         }
        
         void Spawning()
@@ -45,7 +43,7 @@ using UnityEngine;
                 Vector3 Pos = position;
                 index = Random.Range(0, Obstacles.Count);
                 gameObjectSelected = Obstacles[index];
-                Instantiate(gameObjectSelected, Pos, transform.rotation);
+                Instantiate(gameObjectSelected, new Vector3(Pos.x, gameObjectSelected.transform.position.y ,Pos.z), transform.rotation);
             }
         }
 

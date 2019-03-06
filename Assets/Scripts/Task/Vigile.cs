@@ -5,8 +5,13 @@ using UnityEngine;
 public class Vigile : MonoBehaviour
 {
     public GameObject FoodTruck;
+    public int attackValue;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        attackValue = VigileUpgrade.staticVigileUpgrade.actualUpgradeValue;
+    }
+
     void Update()
     {
         Kicking();
@@ -25,8 +30,8 @@ public class Vigile : MonoBehaviour
                 {
                     if (hit.transform.gameObject.tag == "Followers")
                     {
-                        Destroy(hit.transform.gameObject);
-
+                        //Destroy(hit.transform.gameObject);
+                        hit.transform.GetComponent<FanManager>().life -= attackValue;
                     }
 
                 }

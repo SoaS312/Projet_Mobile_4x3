@@ -13,24 +13,23 @@ public class FollowersManager : MonoBehaviour
     public int maxFollowersBeforeAngry;
     public int maxFollowersOnScreen;
 
+    public float OffsetY;
+
     void Start()
     {
+        Instantiate(Follower[Random.Range(0, Follower.Count)], this.transform);
         staticFollowersManager = this;
         maxFollowPoints = Random.Range(50, 101);
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-
-
         SpawnFollowers();
 
-        if (actualFollowers.Count >= maxFollowersBeforeAngry)
+        /*if (actualFollowers.Count >= maxFollowersBeforeAngry)
         {
             //do test for smash
-        }
+        }*/
 
     }
 
@@ -38,7 +37,6 @@ public class FollowersManager : MonoBehaviour
     {
         if (actualFollowers.Count < maxFollowersOnScreen)
         {
-            Debug.Log(actualFollowers.Count);
             if (actualFollowPoints >= maxFollowPoints)
             {
                 maxFollowPoints = Random.Range(50, 101);

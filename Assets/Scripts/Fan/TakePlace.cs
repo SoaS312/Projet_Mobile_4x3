@@ -6,27 +6,29 @@ public class TakePlace : MonoBehaviour
 {
     public List<GameObject> Places;
     public int chosenPlace;
-    public int speed = 10;
     public Vector3 originalPos;
     public GameObject RangementPlaces;
+    public float OffsetY;
 
     private void Awake()
     {
+        RangementPlaces = RangementFanScript.staticRangementFanScript.gameObject;
         originalPos = transform.position;
     }
 
     private void Start()
     {
-        chosenPlace = Random.Range(0, Places.Count);
 
         for(int i = 0; i < RangementPlaces.transform.childCount; i++)
         {
             Places.Add(RangementPlaces.transform.GetChild(i).gameObject);
         }
+        chosenPlace = Random.Range(0, Places.Count);
     }
 
     private void Update()
     {
-        transform.position = new Vector3(originalPos.x, originalPos.y, Places[chosenPlace].transform.position.z);
+        this.enabled = true;
+        transform.position = new Vector3(Places[chosenPlace].transform.position.x, OffsetY, Places[chosenPlace].transform.position.z);
     }
 }

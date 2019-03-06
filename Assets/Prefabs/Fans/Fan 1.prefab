@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5216904762351378747}
   - component: {fileID: 5216904762351378748}
   - component: {fileID: 5216904762351378749}
+  - component: {fileID: 3012196623962296471}
+  - component: {fileID: 5647907740183400669}
   m_Layer: 0
   m_Name: Fan 1
   m_TagString: Followers
@@ -92,3 +94,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3012196623962296471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216904762351378750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c9279b7a76fa4e8acfd10d13c6f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Places: []
+  chosenPlace: 0
+  originalPos: {x: 0, y: 0, z: 0}
+  RangementPlaces: {fileID: 0}
+  OffsetY: 0.3
+--- !u!114 &5647907740183400669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216904762351378750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bf6c42775b4ab4495e75844928d342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 100
