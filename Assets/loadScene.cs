@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class loadScene : MonoBehaviour
 {
-    public Object SceneToLoad;
+    public int index;
+    public Material Color;
 
     void Update()
     {
@@ -17,7 +18,8 @@ public class loadScene : MonoBehaviour
             {
                 if (hit.transform.name == gameObject.transform.name)
                 {
-                    SceneManager.LoadScene(SceneToLoad.name);
+                    gameObject.GetComponent<MeshRenderer>().material = Color; 
+                    SceneManager.LoadScene(index);
                 }
             }
         }

@@ -286,7 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e105830b56a3d524d8cf5721a52f1293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: {fileID: 102900000, guid: 075971237fedab7499972ac5ca4e35fb, type: 3}
+  index: 1
+  Color: {fileID: 2100000, guid: fa6fac2982d0a7844a37081ac6d8768e, type: 2}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +400,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &539176333
 ParticleSystemRenderer:
@@ -5561,7 +5562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e105830b56a3d524d8cf5721a52f1293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: {fileID: 102900000, guid: 96a73b74a8737f444a920b3a07267143, type: 3}
+  index: 2
+  Color: {fileID: 0}
 --- !u!1001 &2050607712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5612,7 +5614,7 @@ PrefabInstance:
     - target: {fileID: 3491641576442014815, guid: 6ccc84138a678834db6455780b00fc3e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3491641576442014815, guid: 6ccc84138a678834db6455780b00fc3e,
         type: 3}
@@ -5678,7 +5680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e105830b56a3d524d8cf5721a52f1293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: {fileID: 102900000, guid: 40adf6e90dc7b444e8af75fc9c8e4cc1, type: 3}
+  index: 3
+  Color: {fileID: 0}
 --- !u!135 &2051288534
 SphereCollider:
   m_ObjectHideFlags: 0
