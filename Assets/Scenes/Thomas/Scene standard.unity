@@ -1566,6 +1566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodTruck: {fileID: 1823329267}
+  attackValue: 0
 --- !u!114 &414765676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2696,85 +2697,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b96161bc776f51c43bd16a51d0ad4aba, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a21bcb9fc6764484f871509c42ad218d, type: 3}
---- !u!1001 &1010629146
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5216904762351378750, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_Name
-      value: Fan
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378750, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5216904762351378746, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4804469186474292860, guid: 425bc947318ebd44fa9fe3c410175df3,
-        type: 3}
-      propertyPath: RangementPlaces
-      value: 
-      objectReference: {fileID: 1355628269}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 425bc947318ebd44fa9fe3c410175df3, type: 3}
 --- !u!1 &1052554595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,6 +3292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1355628270}
+  - component: {fileID: 1355628271}
   m_Layer: 0
   m_Name: Rangement Fan
   m_TagString: Untagged
@@ -3393,8 +3316,20 @@ Transform:
   - {fileID: 1068881334}
   - {fileID: 624983211}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355628271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355628269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b7686de0ced9c47b3746e3ed24e5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1423032883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,6 +3381,7 @@ MonoBehaviour:
   maxFuel: 100
   isDry: 1
   stockFuel: {fileID: 343682124}
+  decayTime: 0
 --- !u!4 &1423032886
 Transform:
   m_ObjectHideFlags: 0
@@ -3818,11 +3754,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8c9279b7a76fa4e8acfd10d13c6f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Places: []
+  Places:
+  - {fileID: 1652609465}
+  - {fileID: 1086497705}
+  - {fileID: 1068881333}
+  - {fileID: 624983210}
   chosenPlace: 0
-  speed: 10
   originalPos: {x: 0, y: 0, z: 0}
   RangementPlaces: {fileID: 1355628269}
+  OffsetY: 0
 --- !u!136 &1605735040
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3967,6 +3907,7 @@ MonoBehaviour:
   actualFollowers: []
   maxFollowersBeforeAngry: 10
   maxFollowersOnScreen: 20
+  OffsetY: 0
 --- !u!4 &1716799499
 Transform:
   m_ObjectHideFlags: 0
