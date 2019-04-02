@@ -11,6 +11,7 @@ public class Cook : MonoBehaviour
     public int readyFood;
     public int maxReadyFood;
     public FoodStock foodStockManager;
+    public int usedFoodByClick;
 
     public Image foodProgress;
 
@@ -22,8 +23,6 @@ public class Cook : MonoBehaviour
 
     void Update()
     {
-        Cooking();
-
         if (cookingProgress == maxCookingProgress)
         {
             cookingProgress = 0;
@@ -34,27 +33,10 @@ public class Cook : MonoBehaviour
 
     }
 
-    private void Cooking()
+    public void Cooking()
     {
-        if( readyFood < maxReadyFood && foodStockManager.food > 0) { 
-        if (FoodTruckState.staticFoodTruckState.isCookActive)
-        {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit hit;
-
-                    if (Physics.Raycast(ray, out hit))
-                    {
-                        if (hit.transform.gameObject == FoodTruck)
-                        {
+        if( readyFood < maxReadyFood && foodStockManager.food > 0)
                             cookingProgress += 1;
-                            foodStockManager.food -= 1;
-                        }
-
-                    }
-                }
-            }
-        }
+                            foodStockManager.food -= usedFoodByClick;
     }
 }
