@@ -8,7 +8,7 @@ public class RouteManager : MonoBehaviour
     public List<GameObject> VoiesRoutes;
     public int Index;
     public GameObject FoodTruck;
-    public float OffsetY;
+    public float OffsetY = 0.6f;
     public static RouteManager staticRouteManager;
 
     public void Awake()
