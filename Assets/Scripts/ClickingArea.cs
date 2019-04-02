@@ -13,11 +13,6 @@ public class ClickingArea : MonoBehaviour
     public UnityEvent ClickEvent;
     public GameObject NuageEffect;
 
-    private void Awake()
-    {
-       // cam = this.GetComponent<Camera>();
-    }
-
     public void Update()
     {
         ZoomToRegion();

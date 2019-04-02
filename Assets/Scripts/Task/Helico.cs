@@ -22,6 +22,9 @@ public class Helico : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+
+                    FuelManager.fuel += fuelAmount;
+                    ScoreManager.money -= MoneyCost;
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
 
