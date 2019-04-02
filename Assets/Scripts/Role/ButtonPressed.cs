@@ -9,7 +9,7 @@ public class ButtonPressed : MonoBehaviour
     public Color32 iniColor;
     public bool isStartingTask;
     public Color32 SelectedColor = new Color32(255, 255, 255, 100);
-    public bool NeedToBeHold = false;
+    public GameObject holdButton;
 
     public void Awake()
     {
@@ -19,23 +19,13 @@ public class ButtonPressed : MonoBehaviour
             iniColor = image.color;
         else
             image.color = SelectedColor;
+
+        holdButton = this.gameObject;
     }
 
     public void Update()
     {
         image = this.gameObject.GetComponent<Image>();
-
-        if (NeedToBeHold)
-        {
-            bool isHold = false;
-
-            if((Input.GetMouseButtonDown(0) || Input.touchCount > 0)){
-                isHold = true;
-            }else
-            {
-                isHold = false;
-            }
-        }
     }
 
     public void isSelected()
@@ -44,6 +34,16 @@ public class ButtonPressed : MonoBehaviour
     }
 
     public void RevertColor()
+    {
+        image.color = iniColor;
+    }
+
+    public void onPress()
+    {
+        image.color = SelectedColor;
+    }
+
+    public void onRelease()
     {
         image.color = iniColor;
     }
