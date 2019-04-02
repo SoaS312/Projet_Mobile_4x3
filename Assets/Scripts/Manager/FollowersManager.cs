@@ -37,6 +37,7 @@ public class FollowersManager : MonoBehaviour
     {
         if (actualFollowers.Count < maxFollowersOnScreen)
         {
+            actualFollowPoints ++ ;
             if (actualFollowPoints >= maxFollowPoints)
             {
                 maxFollowPoints = Random.Range(50, 101);
