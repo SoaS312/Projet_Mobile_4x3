@@ -10,7 +10,7 @@ public class FuelStock : MonoBehaviour
     public float maxFuel;
     public bool isDry;
     public Image stockFuel;
-    [Range(0.5f, 10f)]
+    [Range(0, 10f)]
     public float decayTime;
 
     // Start is called before the first frame update

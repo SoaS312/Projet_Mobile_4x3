@@ -9,6 +9,7 @@ public class ButtonPressed : MonoBehaviour
     public Color32 iniColor;
     public bool isStartingTask;
     public Color32 SelectedColor = new Color32(255, 255, 255, 100);
+    public GameObject holdButton;
 
     public void Awake()
     {
@@ -18,6 +19,8 @@ public class ButtonPressed : MonoBehaviour
             iniColor = image.color;
         else
             image.color = SelectedColor;
+
+        holdButton = this.gameObject;
     }
 
     public void Update()
@@ -31,6 +34,16 @@ public class ButtonPressed : MonoBehaviour
     }
 
     public void RevertColor()
+    {
+        image.color = iniColor;
+    }
+
+    public void onPress()
+    {
+        image.color = SelectedColor;
+    }
+
+    public void onRelease()
     {
         image.color = iniColor;
     }

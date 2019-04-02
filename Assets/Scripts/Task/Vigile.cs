@@ -9,7 +9,7 @@ public class Vigile : MonoBehaviour
 
     private void Start()
     {
-        attackValue = VigileUpgrade.staticVigileUpgrade.actualUpgradeValue;
+        //attackValue = VigileUpgrade.staticVigileUpgrade.actualUpgradeValue;
     }
 
     void Update()
