@@ -8,37 +8,36 @@ public class Helico : MonoBehaviour
     public FuelStock FuelManager;
     public int fuelAmount = 10;
     public int MoneyCost;
+    public bool isHold = false;
+    public float Timer;
+    public float maxTimer = 0.05f;
 
-    void Update()
+
+    public void Update()
     {
         Buying();
+
+        if (Timer > 0)
+            Timer -= 1 * Time.deltaTime;
     }
 
-    private void Buying()
+    public void Holding()
     {
-        if (FuelManager.fuel < FuelManager.maxFuel && ScoreManager.money >= MoneyCost)
+        isHold = true;
+    }
+
+    public void Release()
+    {
+        isHold = false;
+    }
+
+    public void Buying()
+    {
+        if (FuelManager.fuel < FuelManager.maxFuel && ScoreManager.money >= MoneyCost && isHold && Timer <= 0)
         {
-            if (FoodTruckState.staticFoodTruckState.isHelicoActive)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-
-                    FuelManager.fuel += fuelAmount;
-                    ScoreManager.money -= MoneyCost;
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit hit;
-
-                    if (Physics.Raycast(ray, out hit))
-                    {
-                        if (hit.transform.gameObject == FoodTruck)
-                        {
-                            FuelManager.fuel += fuelAmount;
-                            ScoreManager.money -= MoneyCost;
-                        }
-
-                    }
-                }
-            }
+            FuelManager.fuel += fuelAmount;
+            ScoreManager.money -= MoneyCost;
+            Timer = maxTimer;
         }
     }
 }
