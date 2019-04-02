@@ -30,7 +30,6 @@ public class Vigile : MonoBehaviour
                 {
                     if (hit.transform.gameObject.tag == "Followers")
                     {
-                        //Destroy(hit.transform.gameObject);
                         hit.transform.GetComponent<FanManager>().life -= attackValue;
                     }
 

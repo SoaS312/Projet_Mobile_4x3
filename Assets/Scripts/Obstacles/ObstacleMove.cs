@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ObstacleMove : MonoBehaviour
 {
-    [Range(5,50)] // 5 = super fast 50 = super slow
-    public int speed;
-
-    // Update is called once per frame
+    [Range(0,100)]
+    public int speed = 5;
+    
     void Update()
     {
         transform.Translate(Vector3.left*speed/100);
