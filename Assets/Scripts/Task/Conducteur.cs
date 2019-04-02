@@ -16,7 +16,7 @@ public class Conducteur : MonoBehaviour
     {
         if (FoodTruckState.staticFoodTruckState.isDriverActive)
         {
-            if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+            /*if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
@@ -32,6 +32,14 @@ public class Conducteur : MonoBehaviour
                     }
 
                 }
+            }*/
+            if (SwipeLogger.staticSwipeLogger.stockedDirection == "up" && RouteManager.staticRouteManager.Index < RouteManager.staticRouteManager.VoiesRoutes.Count)
+            {
+                RouteManager.staticRouteManager.Index += 1;
+            }
+            if (SwipeLogger.staticSwipeLogger.stockedDirection == "down" && RouteManager.staticRouteManager.Index > 0)
+            {
+                RouteManager.staticRouteManager.Index -= 1;
             }
         }
     }

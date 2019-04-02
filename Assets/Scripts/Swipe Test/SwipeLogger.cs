@@ -2,13 +2,18 @@
 
 public class SwipeLogger : MonoBehaviour
 {
-    private void Awake()
+    public static SwipeLogger staticSwipeLogger;
+    public string stockedDirection;
+
+    public void Awake()
     {
+        staticSwipeLogger = this;
         SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
     }
 
-    private void SwipeDetector_OnSwipe(SwipeData data)
+    public void SwipeDetector_OnSwipe(SwipeData data)
     {
         Debug.Log("Swipe in Direction: " + data.Direction);
+        stockedDirection = data.Direction.ToString();
     }
 }
