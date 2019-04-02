@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class ClickingArea : MonoBehaviour
@@ -9,13 +10,15 @@ public class ClickingArea : MonoBehaviour
     public int ZoomFOV;
     public int speed;
     public Camera cam;
+    public UnityEvent ClickEvent;
+    public GameObject NuageEffect;
 
     private void Awake()
     {
-        cam = this.GetComponent<Camera>();
+       // cam = this.GetComponent<Camera>();
     }
 
-    void Update()
+    public void Update()
     {
         ZoomToRegion();
 
@@ -23,31 +26,40 @@ public class ClickingArea : MonoBehaviour
         {
             if (cam.fieldOfView > ZoomFOV)
             {
-               cam.fieldOfView -= speed * Time.deltaTime;
+                cam.fieldOfView -= speed * Time.deltaTime;
             }
 
-            if(cam.fieldOfView <= ZoomFOV)
+            if (cam.fieldOfView <= ZoomFOV)
             {
-                GetComponentInChildren<ParticleSystem>().Stop();
+                NuageEffect.GetComponent<ParticleSystem>().Play();
             }
         }
     }
 
-    private void ZoomToRegion()
+    public void ZoomToRegion()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        if (Input.GetMouseButtonDown(0) || Input.touchCount > (0))
+            {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name == "America")
+                if (hit.transform.name == gameObject.transform.name)
+                zoomIn = true;
+                NuageEffect.GetComponent<ParticleSystem>().Play();
+                DesactiveObj();
+
+                foreach (Transform child in hit.transform)
                 {
-                    zoomIn = true;
-                    GetComponentInChildren<ParticleSystem>().Play();
+                    child.gameObject.SetActive(true);
                 }
+
             }
         }
+    }
+
+    public void DesactiveObj()
+    {
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
 }
