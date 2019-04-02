@@ -9,17 +9,14 @@ public class TakePlace : MonoBehaviour
     public Vector3 originalPos;
     public GameObject RangementPlaces;
     public float OffsetY;
+    public GameObject followerManager;
+    private Vector3 derriere;
 
-    private void Awake()
-    {
-        RangementPlaces = RangementFanScript.staticRangementFanScript.gameObject;
-        originalPos = transform.position;
-    }
 
     private void Start()
     {
-
-        for(int i = 0; i < RangementPlaces.transform.childCount; i++)
+        originalPos = transform.position;
+        for (int i = 0; i < RangementPlaces.transform.childCount; i++)
         {
             Places.Add(RangementPlaces.transform.GetChild(i).gameObject);
         }
@@ -28,7 +25,8 @@ public class TakePlace : MonoBehaviour
 
     private void Update()
     {
-        this.enabled = true;
-        transform.position = new Vector3(Places[chosenPlace].transform.position.x, OffsetY, Places[chosenPlace].transform.position.z);
+        //this.enabled = true;
+        //derriere = new Vector3(Places[chosenPlace].transform.position.x, OffsetY, Places[chosenPlace].transform.position.z);
+        transform.position = Vector3.Lerp(this.transform.position, Places[chosenPlace].transform.position, 0.01f);
     }
 }
