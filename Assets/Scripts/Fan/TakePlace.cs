@@ -18,11 +18,6 @@ public class TakePlace : MonoBehaviour
     {
         originalPos = transform.position;
 
-        ChoosePlace();
-    }
-
-    private void ChoosePlace()
-    {
         for (int i = 0; i < RangementPlaces.transform.childCount; i++)
         {
             Places.Add(RangementPlaces.transform.GetChild(i).gameObject);
