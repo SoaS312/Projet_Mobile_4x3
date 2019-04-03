@@ -32,5 +32,10 @@ public class FuelStock : MonoBehaviour
             fuel = 0;
             isDry = true;
         }
+
+        if (fuel > maxFuel)
+        {
+            fuel = maxFuel;
+        }
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5506341466506020451}
   - component: {fileID: 4159481820659088508}
   - component: {fileID: 108177171}
+  - component: {fileID: 1321934404548645427}
   m_Layer: 0
   m_Name: "D\xE9chets"
   m_TagString: Obstacle
@@ -76,6 +77,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1321934404548645427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506341466506020450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f553aa03f4a6a440a50b62a96ecc4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBonus: 0
+  isObstacle: 1
+  camTransform: {fileID: 0}
+  shakeTime: 10
+  shakeAmount: 10
+  decreaseFactor: 1
+  isFuelBonus: 0
+  isFoodBonus: 0
+  isMoneyBonus: 0
+  isInvicibleBonus: 0
+  isAutoCookBonus: 0
+  FuelValue: 10
 --- !u!1001 &7837809109801543606
 PrefabInstance:
   m_ObjectHideFlags: 0
