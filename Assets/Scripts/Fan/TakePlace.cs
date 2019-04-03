@@ -16,6 +16,7 @@ public class TakePlace : MonoBehaviour
     private void Start()
     {
         originalPos = transform.position;
+
         for (int i = 0; i < RangementPlaces.transform.childCount; i++)
         {
             Places.Add(RangementPlaces.transform.GetChild(i).gameObject);
