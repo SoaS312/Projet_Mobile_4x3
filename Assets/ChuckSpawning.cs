@@ -44,11 +44,11 @@ public class ChuckSpawning : MonoBehaviour
             gameObjectSelected = prefabs[index];
             if (isLeft)
             {
-                Instantiate(gameObjectSelected, Pos, Quaternion.Euler(-360, 90, -90));
+                Instantiate(gameObjectSelected, Pos, transform.rotation);
             }
             else if (isRight)
             {
-                Instantiate(gameObjectSelected, Pos, Quaternion.Euler(-180, 90, -90));
+                Instantiate(gameObjectSelected, Pos, transform.rotation);
             }
             timer = Random.Range(minTime, maxTime);
         }

@@ -12310,6 +12310,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9208518560801895231, guid: 0776d581d83111e4f930b25e05c22710,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439636523338995593, guid: 0776d581d83111e4f930b25e05c22710,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439636523338995593, guid: 0776d581d83111e4f930b25e05c22710,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439636523338995593, guid: 0776d581d83111e4f930b25e05c22710,
+        type: 3}
+      propertyPath: m_MotionVectors
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439636523338995593, guid: 0776d581d83111e4f930b25e05c22710,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0776d581d83111e4f930b25e05c22710, type: 3}
 --- !u!1 &945580821
@@ -18663,7 +18688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReadyFoodStock: {fileID: 414765674}
-  text: {fileID: 2140018787}
+  text: {fileID: 0}
 --- !u!114 &1423032889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18726,10 +18751,10 @@ MonoBehaviour:
   timer: 0
   minTime: 1
   maxTime: 10
+  Roads: []
   associateRoad: {fileID: 491991252}
   offsetX: 10
   gameObjectSelected: {fileID: 0}
-  index: 0
   Obstacles:
   - {fileID: 5506341466506020450, guid: 8c0b9a57af7364447850f91d14fccfd8, type: 3}
 --- !u!1 &1444941588
@@ -19882,12 +19907,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f553aa03f4a6a440a50b62a96ecc4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 1423032883}
-  FuelEnMoins: 10
-  camTransform: {fileID: 1977028860}
-  shakeTime: 0.3
-  shakeAmount: 0.2
-  decreaseFactor: 1.5
+  isBonus: 0
+  isObstacle: 0
+  isFuelBonus: 0
+  isFoodBonus: 0
+  isMoneyBonus: 0
+  isInvicibleBonus: 0
+  isAutoCookBonus: 0
+  FuelValue: 0
+  FoodValue: 0
 --- !u!54 &1823329270
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19912,7 +19940,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823329267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.53, y: 0.6, z: -4.36}
+  m_LocalPosition: {x: 0.02, y: 0.6, z: -4.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 282909646}
@@ -21468,7 +21496,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -21493,13 +21521,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977028857}
-  m_LocalRotation: {x: 0.20768872, y: 0.6759182, z: -0.20768873, w: 0.6759182}
-  m_LocalPosition: {x: -6.8, y: 5.82, z: -3.4}
+  m_LocalRotation: {x: 0.1163211, y: 0.6974736, z: -0.11632111, w: 0.6974736}
+  m_LocalPosition: {x: -7.72, y: 4.58, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 34.161003, y: 90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 18.937, y: 90.00001, z: 0}
 --- !u!1 &1982302844
 GameObject:
   m_ObjectHideFlags: 0
