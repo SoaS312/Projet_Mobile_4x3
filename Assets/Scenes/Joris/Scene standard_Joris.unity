@@ -709,6 +709,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123816664}
   m_CullTransparentMesh: 0
+--- !u!1 &167648426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 167648427}
+  m_Layer: 0
+  m_Name: CamionMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &167648427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167648426}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.274, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 618124254}
+  m_Father: {fileID: 1823329271}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170832341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,12 +1035,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1874998466}
+      - m_Target: {fileID: 1833311922}
         m_MethodName: RevertColor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1363,6 +1405,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343682122}
   m_CullTransparentMesh: 0
+--- !u!1 &352865422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 682b14522ca04c547a6904cda93b3e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 618124253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &391245250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8588237634795753893, guid: 0776d581d83111e4f930b25e05c22710,
@@ -1617,6 +1665,7 @@ GameObject:
   - component: {fileID: 414765678}
   - component: {fileID: 414765680}
   - component: {fileID: 414765679}
+  - component: {fileID: 414765681}
   m_Layer: 0
   m_Name: ControllManager
   m_TagString: Untagged
@@ -1636,7 +1685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf7452182d59f644ac95eed89f49770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDriverActive: 1
+  isDriverActive: 0
   isVigileActive: 0
   isSellerActive: 0
   isCookActive: 0
@@ -1789,6 +1838,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectSwipeOnlyAfterRelease: 0
   minDistanceForSwipe: 20
+--- !u!114 &414765681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414765670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc554c62c4ff9e4e8a7348deb2e62df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DriverPart: {fileID: 831280338}
+  CookPart: {fileID: 1274308741}
+  SellerPart: {fileID: 352865422}
+  VigilePart: {fileID: 1134380630}
 --- !u!1 &448760711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,7 +1920,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &491991254
 MeshRenderer:
@@ -2023,6 +2088,121 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615194281}
   m_CullTransparentMesh: 0
+--- !u!1001 &618124253
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 167648427}
+    m_Modifications:
+    - target: {fileID: 100002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Name
+      value: Camion_UV_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Name
+      value: CookPart
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 400571f1806b9a64d8fd2798ab553824, type: 2}
+    - target: {fileID: 2300002, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 400571f1806b9a64d8fd2798ab553824, type: 2}
+    - target: {fileID: 2300004, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 400571f1806b9a64d8fd2798ab553824, type: 2}
+    - target: {fileID: 2300006, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d21d802b5bfb77c4694062384c05e838, type: 2}
+    - target: {fileID: 2300008, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d21d802b5bfb77c4694062384c05e838, type: 2}
+    - target: {fileID: 2300010, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d21d802b5bfb77c4694062384c05e838, type: 2}
+    - target: {fileID: 2300012, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d21d802b5bfb77c4694062384c05e838, type: 2}
+    - target: {fileID: 2300014, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 400571f1806b9a64d8fd2798ab553824, type: 2}
+    - target: {fileID: 2300016, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 400571f1806b9a64d8fd2798ab553824, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 682b14522ca04c547a6904cda93b3e2b, type: 3}
+--- !u!4 &618124254 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 682b14522ca04c547a6904cda93b3e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 618124253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &626216759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 219153597750220673, guid: 80da19074b3f11842bdeb4c670506c40,
@@ -2410,6 +2590,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &831280338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100018, guid: 682b14522ca04c547a6904cda93b3e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 618124253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &835068176
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,6 +3265,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945580821}
   m_CullTransparentMesh: 0
+--- !u!1 &987303940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 987303941}
+  - component: {fileID: 987303943}
+  - component: {fileID: 987303942}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &987303941
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987303940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_Children: []
+  m_Father: {fileID: 1680543865}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -209.8, y: 1331}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &987303942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987303940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 7964e3c05631c854e8fd0122c1b4b001, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &987303943
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987303940}
+  m_CullTransparentMesh: 0
 --- !u!1 &989878946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3447,6 +3707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: camion
       objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: a21bcb9fc6764484f871509c42ad218d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: a21bcb9fc6764484f871509c42ad218d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.40592
@@ -3686,6 +3950,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115794667}
   m_CullTransparentMesh: 0
+--- !u!1 &1134380630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100016, guid: 682b14522ca04c547a6904cda93b3e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 618124253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1138966738
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,7 +4060,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1194947872
 MeshRenderer:
@@ -4160,6 +4430,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257498168}
   m_CullTransparentMesh: 0
+--- !u!1 &1274308741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: 682b14522ca04c547a6904cda93b3e2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 618124253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1311736894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4721,7 +4997,7 @@ GameObject:
   - component: {fileID: 1423440294}
   - component: {fileID: 1423440295}
   m_Layer: 0
-  m_Name: SpawnerManager
+  m_Name: ObstaclesSpawnerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4735,7 +5011,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423440293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4500002, y: -6.14, z: 8.530001}
+  m_LocalPosition: {x: 1.4500002, y: -6.14, z: 10}
   m_LocalScale: {x: 1.5, y: 1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 672319692}
@@ -4756,16 +5032,14 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   size: {x: 0, y: 0, z: 0}
   timer: 0
-  minTime: 1
-  maxTime: 5
+  minTime: 0.5
+  maxTime: 3
   Roads:
   - {fileID: 491991252}
   - {fileID: 1194947870}
-  roadsIndex: 0
   associateRoad: {fileID: 491991252}
   offsetX: 70
   gameObjectSelected: {fileID: 0}
-  obstaclesIndex: 0
   Obstacles:
   - {fileID: 5506341466506020450, guid: 57270d169bba90a488fd3b9509c3b0c1, type: 3}
   - {fileID: 5506341466506020450, guid: 8c0b9a57af7364447850f91d14fccfd8, type: 3}
@@ -5187,6 +5461,7 @@ RectTransform:
   - {fileID: 123816665}
   - {fileID: 697065363}
   - {fileID: 86428074}
+  - {fileID: 987303941}
   m_Father: {fileID: 505215886}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5585,7 +5860,7 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 4293125091
-  isStartingTask: 1
+  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4278778111
@@ -5855,6 +6130,7 @@ GameObject:
   - component: {fileID: 1823329271}
   - component: {fileID: 1823329268}
   - component: {fileID: 1823329270}
+  - component: {fileID: 1823329269}
   m_Layer: 0
   m_Name: FoodTruck01
   m_TagString: FoodTruck
@@ -5875,6 +6151,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7516828, y: 1.6773176, z: 1}
   m_Center: {x: 0.058389664, y: 0.3386588, z: 0}
+--- !u!114 &1823329269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823329267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e2e2bc585edda4583769213e9873f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 0}
+  shakeTime: 0.3
+  shakeAmount: 0.5
+  decreaseFactor: 1
 --- !u!54 &1823329270
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5904,6 +6196,7 @@ Transform:
   m_Children:
   - {fileID: 282909646}
   - {fileID: 1922967073}
+  - {fileID: 167648427}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6432,7 +6725,6 @@ GameObject:
   - component: {fileID: 1874998468}
   - component: {fileID: 1874998467}
   - component: {fileID: 1874998466}
-  - component: {fileID: 1874998465}
   m_Layer: 5
   m_Name: FoodLogo
   m_TagString: Untagged
@@ -6459,142 +6751,6 @@ RectTransform:
   m_AnchoredPosition: {x: -3, y: -6}
   m_SizeDelta: {x: 120, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1874998465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874998463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1874998466}
-          m_MethodName: onPress
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 414765676}
-          m_MethodName: Holding
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 414765671}
-          m_MethodName: ActivateHelico
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1775598771}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1833311922}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2063119814}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 188485464}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1874998466}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 414765676}
-          m_MethodName: Release
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1874998466}
-          m_MethodName: onRelease
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &1874998466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6655,7 +6811,84 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1874998468}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 414765671}
+        m_MethodName: ActivateScooter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1775598771}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2063119814}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 188485464}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1833311922}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1874998466}
+        m_MethodName: isSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1888067522}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1874998468
@@ -6708,7 +6941,6 @@ GameObject:
   - component: {fileID: 1888067525}
   - component: {fileID: 1888067524}
   - component: {fileID: 1888067522}
-  - component: {fileID: 1888067523}
   m_Layer: 5
   m_Name: FuelLogo
   m_TagString: Untagged
@@ -6737,142 +6969,6 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4278778111
   holdButton: {fileID: 0}
---- !u!114 &1888067523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888067521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1888067522}
-          m_MethodName: onPress
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 414765678}
-          m_MethodName: Holding
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 414765671}
-          m_MethodName: ActivateHelico
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1775598771}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1833311922}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2063119814}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 188485464}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1874998466}
-          m_MethodName: RevertColor
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 414765678}
-          m_MethodName: Release
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1888067522}
-          m_MethodName: onRelease
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &1888067524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6912,7 +7008,84 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1888067525}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 414765671}
+        m_MethodName: ActivateHelico
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1775598771}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2063119814}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 188485464}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1833311922}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1874998466}
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1888067522}
+        m_MethodName: isSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1888067525

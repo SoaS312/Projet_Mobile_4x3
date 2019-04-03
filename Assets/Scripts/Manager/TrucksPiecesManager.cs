@@ -38,14 +38,7 @@ public class TrucksPiecesManager : MonoBehaviour
             DriverPart.SetActive(true);
 
         }
-        if (this.GetComponent<FoodTruckState>().isSellerActive)
-        {
-            CookPart.SetActive(true);
-            SellerPart.SetActive(true);
-            VigilePart.SetActive(true);
-            DriverPart.SetActive(true);
-        }
-        if (this.GetComponent<FoodTruckState>().isVigileActive)
+        if (this.GetComponent<FoodTruckState>().isVigileActive || this.GetComponent<FoodTruckState>().isHelicoActive || this.GetComponent<FoodTruckState>().isScooterActive || this.GetComponent<FoodTruckState>().isSellerActive)
         {
             CookPart.SetActive(true);
             SellerPart.SetActive(true);
