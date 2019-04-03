@@ -12,29 +12,29 @@ using UnityEngine;
         public float minTime;
         public float maxTime;
         public List<GameObject> Roads;
-        public int roadsIndex;
+        private int roadsIndex;
         public GameObject associateRoad;
         public int offsetX;
 
         [Header("===Obstacles===")]
         public GameObject gameObjectSelected;
-        public int obstaclesIndex;
+        private int obstaclesIndex;
 
         [Header("===OnGoing===")]
         public List<GameObject> Obstacles;
 
         void Start()
     {
-        timer = Random.Range(minTime, maxTime);
-        position = gameObject.transform.position;
         ChooseRoad();
+        timer = Random.Range(minTime, maxTime);
+        //position = gameObject.transform.position;
     }
 
     private void ChooseRoad()
     {
         roadsIndex = Random.Range(0, Roads.Count);
         associateRoad = Roads[roadsIndex];
-        transform.position = new Vector3(associateRoad.transform.position.x + offsetX, transform.position.y, transform.position.z);
+        transform.position = new Vector3(associateRoad.transform.position.x + offsetX, transform.position.y, associateRoad.transform.position.z);
     }
 
     void Update()
