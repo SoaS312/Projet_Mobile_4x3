@@ -11,9 +11,10 @@ public class FoodStock : MonoBehaviour
     public float maxFood;
     public Image stockFood;
 
-    // Start is called before the first frame update
+
     void Awake()
     {
+        staticFoodStock = this;
         food = maxFood; 
     }
 
