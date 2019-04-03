@@ -9,6 +9,6 @@ public class ObstacleMove : MonoBehaviour
     
     void Update()
     {
-        transform.Translate(Vector3.left*speed/100);
+        transform.Translate(Vector3.left*speed*Time.deltaTime);
     }
 }

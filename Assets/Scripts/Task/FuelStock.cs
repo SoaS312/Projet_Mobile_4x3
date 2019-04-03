@@ -13,14 +13,13 @@ public class FuelStock : MonoBehaviour
     [Range(0, 10f)]
     public float decayTime;
 
-    // Start is called before the first frame update
     void Start()
     {
+        staticFuelStock = this;
         fuel = maxFuel;
         isDry = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         stockFuel.fillAmount = fuel / maxFuel;
