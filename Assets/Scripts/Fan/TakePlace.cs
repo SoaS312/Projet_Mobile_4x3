@@ -17,6 +17,11 @@ public class TakePlace : MonoBehaviour
     {
         originalPos = transform.position;
 
+        ChoosePlace();
+    }
+
+    private void ChoosePlace()
+    {
         for (int i = 0; i < RangementPlaces.transform.childCount; i++)
         {
             Places.Add(RangementPlaces.transform.GetChild(i).gameObject);
@@ -28,6 +33,6 @@ public class TakePlace : MonoBehaviour
     {
         //this.enabled = true;
         //derriere = new Vector3(Places[chosenPlace].transform.position.x, OffsetY, Places[chosenPlace].transform.position.z);
-        transform.position = Vector3.Lerp(this.transform.position, Places[chosenPlace].transform.position, 0.01f);
+        transform.position = Vector3.Lerp(transform.position, Places[chosenPlace].transform.position, 0.01f);
     }
 }
