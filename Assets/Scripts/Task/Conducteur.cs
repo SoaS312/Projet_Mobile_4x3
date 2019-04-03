@@ -7,6 +7,12 @@ public class Conducteur : MonoBehaviour
     public GameObject FoodTruck;
     public float actualTimer;
     public float MaxTimer = 0.5f;
+    public static Conducteur staticConducteur;
+
+    private void Awake()
+    {
+        staticConducteur = this;
+    }
 
     // Update is called once per frame
     void Update()

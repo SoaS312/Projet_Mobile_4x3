@@ -13,6 +13,7 @@ public class SwipeLogger : MonoBehaviour
 
     public void SwipeDetector_OnSwipe(SwipeData data)
     {
+        if (FoodTruckState.staticFoodTruckState.isDriverActive || FoodTruckState.staticFoodTruckState.isCookActive)
         Debug.Log("Swipe in Direction: " + data.Direction);
         stockedDirection = data.Direction.ToString();
     }
