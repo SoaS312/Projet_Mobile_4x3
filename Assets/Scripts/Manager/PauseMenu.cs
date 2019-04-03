@@ -10,8 +10,11 @@ public class PauseMenu : MonoBehaviour
 
     private Scene scene;
 
+    public static PauseMenu staticPauseMenu;
+
     void Start()
     {
+        staticPauseMenu = this;
         isPaused = false;
         Time.timeScale = 1f;
         PausedMenu.SetActive(false);
