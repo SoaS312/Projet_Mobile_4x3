@@ -6,9 +6,12 @@ public class ObstacleMove : MonoBehaviour
 {
     [Range(0,100)]
     public int speed = 5;
-    
+
     void Update()
     {
-        transform.Translate(Vector3.left*speed*Time.deltaTime);
+
+        if (!PauseMenu.staticPauseMenu.isPaused)
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        else transform.Translate(Vector3.zero);
     }
 }
