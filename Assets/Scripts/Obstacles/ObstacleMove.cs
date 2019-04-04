@@ -9,8 +9,9 @@ public class ObstacleMove : MonoBehaviour
 
     void Update()
     {
-        if (!PauseMenu.staticPauseMenu.isPaused)
-            transform.Translate(Vector3.left * speed / 100);
+
+        if (!PauseMenu.staticPauseMenu.isPaused)
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
         else transform.Translate(Vector3.zero);
     }
 }

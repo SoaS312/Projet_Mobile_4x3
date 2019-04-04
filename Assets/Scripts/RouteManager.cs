@@ -6,6 +6,7 @@ public class RouteManager : MonoBehaviour
 {
 
     public List<GameObject> VoiesRoutes;
+    [HideInInspector]
     public int Index;
     public GameObject FoodTruck;
     public float OffsetY = 0.6f;

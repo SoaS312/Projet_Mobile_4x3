@@ -1,53 +1,50 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class ObstacleTrigger : MonoBehaviour
 {
-    public GameObject GameManager;
-    public int FuelEnMoins;
+    [HideIf("isObstacle")]
+    public bool isBonus = false;
+    [HideIf("isBonus")]
+    public bool isObstacle = false;
 
-    public Transform camTransform;
-    public float shakeTime = 0.5f;
-    private float shakeDuration = 0f;
-    public float shakeAmount = 0.7f;
-    public float decreaseFactor = 1.0f;
-    Vector3 originalPos;
+    [ShowIf("isBonus")]
+    public bool isFuelBonus;
+    [ShowIf("isBonus")]
+    public bool isFoodBonus;
+    [ShowIf("isBonus")]
+    public bool isMoneyBonus;
+    [ShowIf("isBonus")]
+    public bool isInvicibleBonus;
+    [ShowIf("isBonus")]
+    public bool isAutoCookBonus;
 
-    void Awake()
-    {
-        if (camTransform == null)
-        {
-            camTransform = GetComponent(typeof(Transform)) as Transform;
-        }
-    }
+    [ShowIf(ConditionOperator.Or, "isObstacle", "isFuelBonus")]
+    public int FuelValue;
 
-    void OnEnable()
-    {
-        originalPos = camTransform.localPosition;
-    }
-
-    void Update()
-    {
-        if (shakeDuration > 0)
-        {
-            camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
-
-            shakeDuration -= Time.deltaTime * decreaseFactor;
-        }
-        else
-        {
-            shakeDuration = 0f;
-            camTransform.localPosition = originalPos;
-        }
-    }
+    [ShowIf("isFoodBonus")]
+    public int FoodValue;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Obstacle")
+        if(other.tag == "FoodTruck" && isObstacle)
         {
-            GameManager.GetComponent<FuelStock>().fuel -= FuelEnMoins;
-            shakeDuration = shakeTime;
+            FuelStock.staticFuelStock.fuel -= FuelValue;
+            Destroy(gameObject);
+        }
+        else
+        if (other.tag == "FoodTruck" && isBonus && isFuelBonus)
+        {
+            FuelStock.staticFuelStock.fuel += FuelValue;
+            Destroy(gameObject);
+        }
+        else
+        if (other.tag == "FoodTruck" && isBonus && isFoodBonus)
+        {
+            FoodStock.staticFoodStock.food += FoodValue;
+            Destroy(gameObject);
         }
     }
 }

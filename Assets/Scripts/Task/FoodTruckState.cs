@@ -16,7 +16,7 @@ public class FoodTruckState : MonoBehaviour
     private void Awake()
     {
         staticFoodTruckState = this;
-        isDriverActive = true;
+        isDriverActive = false;
         isVigileActive = false; isSellerActive = false; isCookActive = false; isHelicoActive = false; isScooterActive = false;
     }
 

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class FoodStockManager : MonoBehaviour
 {
     public Cook ReadyFoodStock;
-    public Text text;                      // Reference to the Text component.
+    public TextMeshProUGUI text;
 
     void Update()
     {
-        // Set the displayed text to be the word "Score" followed by the score value.
-        text.text = ReadyFoodStock.readyFood +"/" + ReadyFoodStock.maxReadyFood ;
+        text.text = "" + ReadyFoodStock.readyFood.ToString();
     }
 }
