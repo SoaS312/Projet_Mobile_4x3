@@ -11,6 +11,7 @@ public class FoodStockManager : MonoBehaviour
 
     void Update()
     {
-        text.text = "" + ReadyFoodStock.readyFood.ToString();
+        if (text)
+            text.text = "" + ReadyFoodStock.readyFood.ToString();
     }
 }
