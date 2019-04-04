@@ -6294,7 +6294,7 @@ MonoBehaviour:
   FoodTruck: {fileID: 1823329267}
   MoneyEarn: 250
   cook: {fileID: 414765674}
-  CookSelected: 0
+  SellerSelected: 0
 --- !u!114 &414765678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6489,7 +6489,7 @@ Transform:
   m_Children:
   - {fileID: 1423440294}
   m_Father: {fileID: 1682490681}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &505215885
 GameObject:
@@ -12106,7 +12106,7 @@ GameObject:
   - component: {fileID: 918092597}
   m_Layer: 0
   m_Name: Origin
-  m_TagString: Untagged
+  m_TagString: Seller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12251,7 +12251,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918092596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18099,7 +18099,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 0.12}
   m_Children: []
   m_Father: {fileID: 1682490681}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197351480
 GameObject:
@@ -18823,6 +18823,7 @@ GameObject:
   - component: {fileID: 1423032887}
   - component: {fileID: 1423032888}
   - component: {fileID: 1423032889}
+  - component: {fileID: 1423032890}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -18917,6 +18918,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PausedMenu: {fileID: 1761135478}
   isPaused: 0
+--- !u!114 &1423032890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423032883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9893e0dc87abcd04cb3655277e56aab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndLine: {fileID: 2064576403}
 --- !u!1 &1423440293
 GameObject:
   m_ObjectHideFlags: 0
@@ -19408,8 +19422,8 @@ Transform:
   m_LocalPosition: {x: -0.19999981, y: 0, z: -6.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 491991256}
   - {fileID: 1194947874}
+  - {fileID: 491991256}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22477,7 +22491,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064576403}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

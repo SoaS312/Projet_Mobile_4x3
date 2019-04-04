@@ -22,12 +22,13 @@ using UnityEngine;
 
         [Header("===OnGoing===")]
         public List<GameObject> Obstacles;
+         public static Spawn staticSpawn;
 
         void Start()
     {
+        staticSpawn = this;
         ChooseRoad();
         timer = Random.Range(minTime, maxTime);
-        //position = gameObject.transform.position;
     }
 
     private void ChooseRoad()
@@ -54,6 +55,7 @@ using UnityEngine;
                 obstaclesIndex = Random.Range(0, Obstacles.Count);
                 gameObjectSelected = Obstacles[obstaclesIndex];
                 Instantiate(gameObjectSelected, new Vector3(transform.position.x, gameObjectSelected.transform.position.y , transform.position.z), transform.rotation);
+                Obstacles.Remove(gameObjectSelected);
             }
         }
 
