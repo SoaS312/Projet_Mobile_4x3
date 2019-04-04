@@ -27,24 +27,32 @@ public class ObstacleTrigger : MonoBehaviour
     [ShowIf("isFoodBonus")]
     public int FoodValue;
 
+    public GameObject Dump;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "FoodTruck" && isObstacle)
         {
             FuelStock.staticFuelStock.fuel -= FuelValue;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Spawn.staticSpawn.Obstacles.Add(gameObject);
+            gameObject.transform.position = Dump.transform.position;
         }
         else
         if (other.tag == "FoodTruck" && isBonus && isFuelBonus)
         {
             FuelStock.staticFuelStock.fuel += FuelValue;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Spawn.staticSpawn.Obstacles.Add(gameObject);
+            gameObject.transform.position = Dump.transform.position;
         }
         else
         if (other.tag == "FoodTruck" && isBonus && isFoodBonus)
         {
             FoodStock.staticFoodStock.food += FoodValue;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Spawn.staticSpawn.Obstacles.Add(gameObject);
+            gameObject.transform.position = Dump.transform.position;
         }
     }
 }
