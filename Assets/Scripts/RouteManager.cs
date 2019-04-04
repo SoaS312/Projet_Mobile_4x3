@@ -6,7 +6,6 @@ public class RouteManager : MonoBehaviour
 {
 
     public List<GameObject> VoiesRoutes;
-    [HideInInspector]
     public int Index;
     public GameObject FoodTruck;
     public float OffsetY = 0.6f;
@@ -19,6 +18,11 @@ public class RouteManager : MonoBehaviour
 
     public void Update()
     {
+        if(Index > 1)
+        {
+            Index = 1;
+        }
+
         FoodTruck.transform.position = new Vector3(VoiesRoutes[Index].transform.position.x, OffsetY, VoiesRoutes[Index].transform.position.z);
     }
 

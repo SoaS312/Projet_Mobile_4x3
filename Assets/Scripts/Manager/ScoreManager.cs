@@ -18,6 +18,6 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        text.text = "Money " +money;
+        text.text = "" +money;
     }
 }

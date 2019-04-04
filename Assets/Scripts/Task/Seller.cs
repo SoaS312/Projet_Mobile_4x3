@@ -31,17 +31,17 @@ public class Seller : MonoBehaviour
 
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if (hit.transform.gameObject.tag == "Seller")
+                        if (hit.transform.gameObject.tag == "Followers")
                         {
-                            /*cook.readyFood -= 1;
+                            cook.readyFood -= 1;
                             ScoreManager.money += MoneyEarn;
-                            FollowersManager.staticFollowersManager.actualFollowPoints += Random.Range(25, 51);*/
+                            //FollowersManager.staticFollowersManager.actualFollowPoints += Random.Range(25, 51);
                             SellerSelected = true;
                         }                        
                     }
                 }
 
-                if (Input.GetMouseButtonUp(0) && SellerSelected)
+                /*if (Input.GetMouseButtonUp(0) && SellerSelected)
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
@@ -55,7 +55,7 @@ public class Seller : MonoBehaviour
                         }
                     }                
                     SellerSelected = false;
-                }
+                }*/
             }
         }
     }

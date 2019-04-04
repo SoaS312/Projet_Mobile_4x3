@@ -8,15 +8,16 @@ public class TrucksPiecesManager : MonoBehaviour
     public GameObject CookPart;
     public GameObject SellerPart;
     public GameObject VigilePart;
+    public GameObject VigilePerso;
 
 
     void Start()
     {
-
+/*
         DriverPart.SetActive(true);
         CookPart.SetActive(true);
         SellerPart.SetActive(true);
-        VigilePart.SetActive(true);
+        VigilePart.SetActive(true);*/
     }
 
 
@@ -28,6 +29,7 @@ public class TrucksPiecesManager : MonoBehaviour
             CookPart.SetActive(false);
             SellerPart.SetActive(false);
             VigilePart.SetActive(false);
+            VigilePerso.SetActive(false);
             DriverPart.SetActive(true);
         }
         if (this.GetComponent<FoodTruckState>().isCookActive)
@@ -36,6 +38,7 @@ public class TrucksPiecesManager : MonoBehaviour
             SellerPart.SetActive(false);
             VigilePart.SetActive(false);
             DriverPart.SetActive(true);
+            VigilePerso.SetActive(false);
 
         }
         if (this.GetComponent<FoodTruckState>().isVigileActive || this.GetComponent<FoodTruckState>().isHelicoActive || this.GetComponent<FoodTruckState>().isScooterActive || this.GetComponent<FoodTruckState>().isSellerActive)
@@ -44,6 +47,7 @@ public class TrucksPiecesManager : MonoBehaviour
             SellerPart.SetActive(true);
             VigilePart.SetActive(true);
             DriverPart.SetActive(true);
+            VigilePerso.SetActive(true);
         }
 
     }
