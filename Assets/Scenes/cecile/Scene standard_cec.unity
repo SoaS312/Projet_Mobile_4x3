@@ -162,7 +162,7 @@ MonoBehaviour:
   timer: 0
   minTime: 2
   maxTime: 2
-  prefabs: []
+  Chuncks: []
   gameObjectSelected: {fileID: 0}
 --- !u!1 &83757836
 GameObject:
@@ -2580,7 +2580,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21802541d114b949abb699fe7c077dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FoodTruck: {fileID: 1823329267}
   attackValue: 35
 --- !u!114 &414765676
 MonoBehaviour:
@@ -2616,6 +2615,7 @@ MonoBehaviour:
   FoodTruck: {fileID: 1823329267}
   MoneyEarn: 250
   cook: {fileID: 414765674}
+  SellerSelected: 0
 --- !u!114 &414765678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4155,6 +4155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a0aeda64da83246a5735eba93c38ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dump: {fileID: 0}
 --- !u!65 &891429965
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6234,7 +6235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97098c7050d01e64a9c256909a3aa8e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReadyFoodStock: {fileID: 414765674}
   text: {fileID: 86428075}
 --- !u!114 &1423032889
 MonoBehaviour:
@@ -9973,8 +9973,7 @@ MonoBehaviour:
   timer: 0
   minTime: 1.05
   maxTime: 1.05
-  prefabs:
-  - {fileID: 5673836591872997377, guid: a6f0a95bdc5817649b8f2b83895f1b55, type: 3}
+  Chuncks: []
   gameObjectSelected: {fileID: 0}
 --- !u!1 &2063119812
 GameObject:
