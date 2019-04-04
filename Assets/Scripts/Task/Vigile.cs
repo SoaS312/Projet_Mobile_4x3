@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Vigile : MonoBehaviour
-{
-    public GameObject FoodTruck;
+{    
     public int attackValue;
 
     private void Start()

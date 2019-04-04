@@ -6,7 +6,7 @@ public class RangementFanScript : MonoBehaviour
 {
     public static RangementFanScript staticRangementFanScript;
 
-    public void Awake()
+    public void Awake()     
     {
         staticRangementFanScript = this;
     }
