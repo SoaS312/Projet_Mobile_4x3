@@ -37,7 +37,7 @@ public class animVigile : MonoBehaviour
     {
         if (FoodTruckState.staticFoodTruckState.isVigileActive)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
