@@ -19,14 +19,12 @@ public class ChuckSpawning : MonoBehaviour
     public List<GameObject> prefabs;
     public GameObject gameObjectSelected;
 
-    // Use this for initialization
     void Start()
     {
         position = gameObject.transform.position;
         timer = Random.Range(minTime, maxTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
         Timing();
@@ -44,11 +42,9 @@ public class ChuckSpawning : MonoBehaviour
             gameObjectSelected = prefabs[index];
             if (isLeft)
             {
-                Instantiate(gameObjectSelected, Pos, transform.rotation);
-            }
-            else if (isRight)
-            {
-                Instantiate(gameObjectSelected, Pos, transform.rotation);
+                gameObjectSelected.transform.position = Pos;
+                gameObjectSelected.transform.rotation = transform.rotation;
+                //Instantiate(gameObjectSelected, Pos, transform.rotation);
             }
             timer = Random.Range(minTime, maxTime);
         }

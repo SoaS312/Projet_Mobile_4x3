@@ -112,58 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &17966785
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 17966786}
-  - component: {fileID: 17966787}
-  m_Layer: 0
-  m_Name: ChunckManagerDroite
-  m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &17966786
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17966785}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.65, y: -4.59, z: 6.56}
-  m_LocalScale: {x: 1.5, y: 1, z: 0.1}
-  m_Children: []
-  m_Father: {fileID: 672319692}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &17966787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17966785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff25092bcae29f489ab236ebddf159f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLeft: 0
-  isRight: 0
-  position: {x: 1.65, y: 1.55, z: -6.49}
-  size: {x: 1, y: 1, z: 1}
-  timer: 0
-  minTime: 2
-  maxTime: 2
-  prefabs: []
-  gameObjectSelected: {fileID: 0}
 --- !u!1 &83757836
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -663, y: 1011}
+  m_AnchoredPosition: {x: -636, y: 964.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &86428075
@@ -1774,6 +1722,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306910691}
   m_CullTransparentMesh: 0
+--- !u!1 &321023999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321024000}
+  m_Layer: 0
+  m_Name: ChunkPooling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &321024000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321023999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.354394, y: 4.64324, z: -3.2829657}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &343682122
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,7 +3081,6 @@ Transform:
   - {fileID: 626216759}
   - {fileID: 1423440294}
   - {fileID: 2000265627}
-  - {fileID: 17966786}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5289,6 +5266,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211052461}
   m_CullTransparentMesh: 0
+--- !u!1 &1215903829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5673836591872997377, guid: a6f0a95bdc5817649b8f2b83895f1b55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1005466597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1257498168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5772,6 +5755,7 @@ GameObject:
   - component: {fileID: 1423032887}
   - component: {fileID: 1423032888}
   - component: {fileID: 1423032889}
+  - component: {fileID: 1423032890}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5866,6 +5850,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PausedMenu: {fileID: 1761135478}
   isPaused: 0
+--- !u!114 &1423032890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423032883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b1eb59e04e6d54c808949ec6cf9c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1423440293
 GameObject:
   m_ObjectHideFlags: 0
@@ -6430,6 +6426,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556521811}
   m_CullTransparentMesh: 0
+--- !u!1 &1569020544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1569020546}
+  - component: {fileID: 1569020545}
+  m_Layer: 0
+  m_Name: FPS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1569020545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569020544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd27390246efcb94c9d573f4d24175e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1569020546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569020544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -52.91531, y: 1.4649999, z: -2.1599998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1580818772
 GameObject:
   m_ObjectHideFlags: 0
@@ -9590,7 +9629,7 @@ MonoBehaviour:
   minTime: 1.05
   maxTime: 1.05
   prefabs:
-  - {fileID: 5673836591872997377, guid: a6f0a95bdc5817649b8f2b83895f1b55, type: 3}
+  - {fileID: 1215903829}
   gameObjectSelected: {fileID: 0}
 --- !u!1 &2063119812
 GameObject:
