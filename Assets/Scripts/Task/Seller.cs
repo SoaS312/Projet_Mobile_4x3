@@ -7,7 +7,7 @@ public class Seller : MonoBehaviour
     public GameObject FoodTruck;
     public int MoneyEarn;
     public Cook cook;
-    public bool CookSelected;
+    public bool SellerSelected;
 
     void Update()
     {
@@ -29,12 +29,12 @@ public class Seller : MonoBehaviour
 
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if (hit.transform.gameObject.tag == "Cook")
+                        if (hit.transform.gameObject.tag == "Seller")
                         {
                             /*cook.readyFood -= 1;
                             ScoreManager.money += MoneyEarn;
                             FollowersManager.staticFollowersManager.actualFollowPoints += Random.Range(25, 51);*/
-                            CookSelected = true;
+                            SellerSelected = true;
                         }
 
                         if (hit.transform.gameObject.tag == "Cook")
@@ -45,7 +45,7 @@ public class Seller : MonoBehaviour
                     }
                 }
 
-                if (Input.GetMouseButtonUp(0) && CookSelected)
+                if (Input.GetMouseButtonUp(0) && SellerSelected)
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
@@ -57,10 +57,8 @@ public class Seller : MonoBehaviour
                             ScoreManager.money += MoneyEarn;
                             FollowersManager.staticFollowersManager.actualFollowPoints += Random.Range(25, 51);
                         }
-                    }                 
-
-
-                    CookSelected = false;
+                    }                
+                    SellerSelected = false;
                 }
             }
         }
