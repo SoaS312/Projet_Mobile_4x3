@@ -8,15 +8,17 @@ public class Seller : MonoBehaviour
     public int MoneyEarn;
     public Cook cook;
     public bool SellerSelected;
+    public static Seller staticSeller;
 
     void Update()
     {
         Selling();
+        staticSeller = this;
         cook = this.gameObject.GetComponent<Cook>();
 
     }
 
-    private void Selling()
+    public void Selling()
     {
         if (cook.readyFood > 0)
         {
@@ -35,13 +37,7 @@ public class Seller : MonoBehaviour
                             ScoreManager.money += MoneyEarn;
                             FollowersManager.staticFollowersManager.actualFollowPoints += Random.Range(25, 51);*/
                             SellerSelected = true;
-                        }
-
-                        if (hit.transform.gameObject.tag == "Cook")
-                        {
-                            
-                        }
-
+                        }                        
                     }
                 }
 
