@@ -24,6 +24,9 @@ public class ObstacleTrigger : MonoBehaviour
     [ShowIf(ConditionOperator.Or, "isObstacle", "isFuelBonus")]
     public int FuelValue;
 
+    [ShowIf("isFoodBonus")]
+    public int FoodValue;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "FoodTruck" && isObstacle)
@@ -31,10 +34,16 @@ public class ObstacleTrigger : MonoBehaviour
             FuelStock.staticFuelStock.fuel -= FuelValue;
             Destroy(gameObject);
         }
-
+        else
         if (other.tag == "FoodTruck" && isBonus && isFuelBonus)
         {
             FuelStock.staticFuelStock.fuel += FuelValue;
+            Destroy(gameObject);
+        }
+        else
+        if (other.tag == "FoodTruck" && isBonus && isFoodBonus)
+        {
+            FoodStock.staticFoodStock.food += FoodValue;
             Destroy(gameObject);
         }
     }
