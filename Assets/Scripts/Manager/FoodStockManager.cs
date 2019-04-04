@@ -6,7 +6,6 @@ using TMPro;
 
 public class FoodStockManager : MonoBehaviour
 {
-    public Cook ReadyFoodStock;
     public TextMeshProUGUI text;
 
     void Update()

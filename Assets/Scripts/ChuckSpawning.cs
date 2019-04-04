@@ -16,13 +16,16 @@ public class ChuckSpawning : MonoBehaviour
     public float maxTime;
 
     [Header("===Fans===")]
-    public List<GameObject> prefabs;
+    public List<GameObject> Chuncks;
     public GameObject gameObjectSelected;
+
+    public static ChuckSpawning staticChuckSpawning;
 
     void Start()
     {
+        staticChuckSpawning = this;
         position = gameObject.transform.position;
-        timer = Random.Range(minTime, maxTime);
+        //timer = Random.Range(minTime, maxTime);
     }
 
     void Update()
@@ -38,13 +41,14 @@ public class ChuckSpawning : MonoBehaviour
         if (Input.GetKeyDown("l") || timer <= 0)
         {
             Vector3 Pos = position + new Vector3(Random.Range(-size.x / 2, size.x / 2), 0, 0);
-            int index = Random.Range(0, prefabs.Count);
-            gameObjectSelected = prefabs[index];
+            int index = Random.Range(0, Chuncks.Count);
+            gameObjectSelected = Chuncks[index];
             if (isLeft)
             {
-                //gameObjectSelected.transform.position = Pos;
-                //gameObjectSelected.transform.rotation = transform.rotation;
-                Instantiate(gameObjectSelected, Pos, transform.rotation);
+                gameObjectSelected.transform.position = Pos;
+                gameObjectSelected.SetActive(true);
+                Chuncks.Remove(gameObjectSelected);
+                //Instantiate(gameObjectSelected, Pos, transform.rotation);
             }
             timer = Random.Range(minTime, maxTime);
         }

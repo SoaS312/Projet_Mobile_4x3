@@ -10,7 +10,6 @@ public class Cook : MonoBehaviour
     public int cookingProgress;
     public int maxCookingProgress;
     public int readyFood;
-    public int maxReadyFood;
     public FoodStock foodStockManager;
     public int usedFoodByClick;
     public float actualTimer;
@@ -52,7 +51,7 @@ public class Cook : MonoBehaviour
 
         if (FoodTruckState.staticFoodTruckState.isCookActive)
         {
-            if (SwipeLogger.staticSwipeLogger.stockedDirection == "Left" && readyFood < maxReadyFood && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToLeft)
+            if (SwipeLogger.staticSwipeLogger.stockedDirection == "Left" && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToLeft)
             {
                 hasSwipeToLeft = true;
                 hasSwipeToRight = false;
@@ -60,7 +59,7 @@ public class Cook : MonoBehaviour
                 foodStockManager.food -= usedFoodByClick;
                 actualTimer = MaxTimer;
             }
-            if (SwipeLogger.staticSwipeLogger.stockedDirection == "Right" && readyFood < maxReadyFood && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToRight)
+            if (SwipeLogger.staticSwipeLogger.stockedDirection == "Right" && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToRight)
             {
                 hasSwipeToRight = true;
                 hasSwipeToLeft = false;
