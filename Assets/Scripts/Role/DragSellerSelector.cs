@@ -16,10 +16,10 @@ public class DragSellerSelector : MonoBehaviour
     {
         Touch touch = Input.GetTouch(0);
 
-        if (GetComponent<FoodTruckState>().isCookActive && Input.touchCount > 0)
+        if (GetComponent<FoodTruckState>().isCookActive && Input.GetMouseButtonUp(0))
         {
             EndLine.SetActive(true);
-            EndLine.transform.position = touch.position;
+            EndLine.transform.position = Input.mousePosition;
         }
     }
 }
