@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Approximate the rope with a bezier curve
-public static class BezierCurve
+public class BezierCurve : MonoBehaviour
 {
     //Update the positions of the rope section
     public static void GetBezierCurve(Vector3 A, Vector3 B, Vector3 C, Vector3 D, List<Vector3> allRopeSections)
