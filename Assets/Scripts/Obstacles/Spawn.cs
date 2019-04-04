@@ -29,7 +29,6 @@ public class Spawn : MonoBehaviour
         staticSpawn = this;
         ChooseRoad();
         timer = Random.Range(minTime, maxTime);
-        position = transform.position;
     }
 
     private void ChooseRoad()
@@ -52,10 +51,11 @@ public class Spawn : MonoBehaviour
         {
             ChooseRoad();
             timer = Random.Range(minTime, maxTime);
-            Vector3 Pos = position;
+
             obstaclesIndex = Random.Range(0, Obstacles.Count);
             gameObjectSelected = Obstacles[obstaclesIndex];
-            gameObjectSelected.transform.position = Pos;
+            gameObjectSelected.transform.position = transform.position;
+
             gameObjectSelected.SetActive(true);
             Obstacles.Remove(gameObjectSelected);
         }

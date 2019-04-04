@@ -7,18 +7,14 @@ public class ButtonPressed : MonoBehaviour
 {
     public Image image;
     public Color32 iniColor;
-    public bool isStartingTask;
     public Color32 SelectedColor = new Color32(255, 255, 255, 100);
     public GameObject holdButton;
 
-    public void Awake()
+    public void OnEnable()
     {
         image = this.gameObject.GetComponent<Image>();
 
-        if (!isStartingTask)
             iniColor = image.color;
-        else
-            image.color = SelectedColor;
 
         holdButton = this.gameObject;
     }
