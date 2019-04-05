@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject PausedMenu;
     public bool isPaused;
+    public bool needPause;
 
     private Scene scene;
 
@@ -16,8 +17,9 @@ public class PauseMenu : MonoBehaviour
     {
         staticPauseMenu = this;
         isPaused = true;
+        needPause = false;
         Time.timeScale = 0f;
-        PausedMenu.SetActive(true);
+        //PausedMenu.SetActive(true);
         scene = SceneManager.GetActiveScene();
     }
 
@@ -26,16 +28,23 @@ public class PauseMenu : MonoBehaviour
     {
         isPaused = !isPaused;
 
-        if (isPaused)
+        if (isPaused && needPause)
         {
             Time.timeScale = 0f;
             PausedMenu.SetActive(true);
         }
-        if (!isPaused)
+        if (!isPaused && needPause)
         {
             Time.timeScale = 1f;
             PausedMenu.SetActive(false);
         }
+    }
+
+    public void NeedPauseFunction()
+    {
+        Time.timeScale = 1f;
+        if (needPause == false)
+        needPause = true;
     }
 
     public void ResetLevel()
