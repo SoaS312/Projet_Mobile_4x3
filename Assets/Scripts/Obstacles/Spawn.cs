@@ -9,8 +9,8 @@ public class Spawn : MonoBehaviour
     public Vector3 position;
     public Vector3 size;
     public float timer;
-    public float minTime;
-    public float maxTime;
+    public float minTime = 3;
+    public float maxTime = 6;
     public List<GameObject> Roads;
     private int roadsIndex;
     public GameObject associateRoad;
@@ -23,6 +23,15 @@ public class Spawn : MonoBehaviour
     [Header("===OnGoing===")]
     public List<GameObject> Obstacles;
     public static Spawn staticSpawn;
+
+    public GameObject ValuesHolder;
+
+    private void Awake()
+    {
+        ValuesHolder = LevelValues_HolderStatic.LevelValuesHolder;
+        minTime = LevelValues_HolderStatic.minTime_Holded;
+        maxTime = LevelValues_HolderStatic.maxTime_Holded;
+    }
 
     void Start()
     {

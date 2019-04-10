@@ -10,8 +10,17 @@ public class FuelStock : MonoBehaviour
     public float maxFuel;
     public bool isDry;
     public Image stockFuel;
+
     [Range(0, 10f)]
     public float decayTime;
+
+
+
+    public GameObject ValuesHolder;
+    private void Awake()
+    {
+        ValuesHolder = LevelValues_HolderStatic.LevelValuesHolder;
+    }
 
     void Start()
     {
