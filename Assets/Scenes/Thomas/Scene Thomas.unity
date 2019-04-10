@@ -1675,7 +1675,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 4293125091
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4278253823
@@ -3099,6 +3098,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384085728}
   m_Mesh: {fileID: 4300000, guid: 1ed86b4107f1af748889df385b8fb121, type: 3}
+--- !u!1 &387047472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 907048360, guid: 5648352ea5010a34f81e98c186950380,
+    type: 3}
+  m_PrefabInstance: {fileID: 1069003375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &387047478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387047472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e6de1add322ee44b5defa17e986c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 387047472}
 --- !u!1 &388552456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,7 +3599,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 0
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4282626742
@@ -3661,6 +3678,9 @@ MonoBehaviour:
   isCookActive: 0
   isHelicoActive: 0
   isScooterActive: 0
+  DriverTuto: {fileID: 0}
+  CookTuto: {fileID: 0}
+  VigileTuto: {fileID: 0}
 --- !u!114 &414765672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6928,7 +6948,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 0
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4282626742
@@ -7918,7 +7937,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 0
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4282626742
@@ -8224,6 +8242,14 @@ PrefabInstance:
     - target: {fileID: 1704675869, guid: 5648352ea5010a34f81e98c186950380, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 907048360, guid: 5648352ea5010a34f81e98c186950380, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 907048355, guid: 5648352ea5010a34f81e98c186950380, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5648352ea5010a34f81e98c186950380, type: 3}
@@ -10040,6 +10066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PausedMenu: {fileID: 1761135478}
   isPaused: 0
+  needPause: 0
 --- !u!1 &1423440293
 GameObject:
   m_ObjectHideFlags: 0
@@ -11791,7 +11818,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 4293125091
-  isStartingTask: 1
   SelectedColor:
     serializedVersion: 2
     rgba: 4278778111
@@ -12339,7 +12365,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 0
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4282626742
@@ -12380,7 +12405,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 14935011
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4278778111
@@ -13083,7 +13107,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 14935011
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4278778111
@@ -13361,7 +13384,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 14935011
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4278778111
@@ -13886,7 +13908,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 0
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4282626742
@@ -14652,7 +14673,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 4294967295
-  isStartingTask: 1
   SelectedColor:
     serializedVersion: 2
     rgba: 4282626742
@@ -16043,7 +16063,6 @@ MonoBehaviour:
   iniColor:
     serializedVersion: 2
     rgba: 4293125091
-  isStartingTask: 0
   SelectedColor:
     serializedVersion: 2
     rgba: 4278253823
@@ -16720,6 +16739,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 967852865218144319, guid: 105037ba8abaf334da642ea7880aad81,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.99
+      objectReference: {fileID: 0}
     - target: {fileID: 4670328754844354087, guid: 105037ba8abaf334da642ea7880aad81,
         type: 3}
       propertyPath: m_Name
@@ -16779,11 +16803,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 967852865218144319, guid: 105037ba8abaf334da642ea7880aad81,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 105037ba8abaf334da642ea7880aad81, type: 3}
