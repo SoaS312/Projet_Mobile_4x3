@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ChuckSpawning : MonoBehaviour
 {
-
-    public bool isLeft;
-    public bool isRight;
+    public bool spawnOnce = false;
 
     [Header("===Settings===")]
     public Vector3 position;
@@ -25,7 +23,6 @@ public class ChuckSpawning : MonoBehaviour
     {
         staticChuckSpawning = this;
         position = gameObject.transform.position;
-        //timer = Random.Range(minTime, maxTime);
     }
 
     void Update()
@@ -43,22 +40,20 @@ public class ChuckSpawning : MonoBehaviour
             Vector3 Pos = position + new Vector3(Random.Range(-size.x / 2, size.x / 2), 0, 0);
             int index = Random.Range(0, Chuncks.Count);
             gameObjectSelected = Chuncks[index];
-            if (isLeft)
-            {
                 gameObjectSelected.transform.position = Pos;
                 gameObjectSelected.SetActive(true);
                 Chuncks.Remove(gameObjectSelected);
-                //Instantiate(gameObjectSelected, Pos, transform.rotation);
-            }
             timer = Random.Range(minTime, maxTime);
         }
     }
 
     void Timing()
     {
-
-        if (timer > 0)
-            timer -= Time.deltaTime;
+        if (!spawnOnce)
+        {
+            if (timer > 0)
+                timer -= Time.deltaTime;
+        }
 
     }
 

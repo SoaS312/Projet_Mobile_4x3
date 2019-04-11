@@ -7,18 +7,12 @@ public class UpgradeSystemValues : MonoBehaviour
     public static GameObject UpgradeSystemValuesHolder;
 
     [Header("Cook")]
-    public List<int> CookLevels;
     public List<int> MaxCookingProgressList;
     public List<int> UsedFoodByClickList;
 
     public void Awake()
     {
         DontDelete();
-
-        for (int i = 0; i < CookLevels.Count; i++)
-        {
-            CookLevels.Add(i);
-        }
     }
 
     private void DontDelete()

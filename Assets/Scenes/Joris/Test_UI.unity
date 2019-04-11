@@ -1093,6 +1093,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 478148067}
+  - {fileID: 918998293}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1140,9 +1141,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: 0
+  SceneToLoad: {fileID: 102900000, guid: 913c9553db69a354e9010245b8115953, type: 3}
   minTime_Obstacle: 3
   maxTime_Obstacle: 6
   decayTime_Fuel: 2
+  StarOne: 0
+  StarTwo: 0
+  StarThree: 0
+  ObjectiveIsSelledBurger: 1
+  SelledBurgerList: 050000000f00000023000000
+  SelledBurger: 0
+  ObjectiveIsMoneyEarned: 0
+  MoneyEarnedList: 
+  earnedMoney: 0
 --- !u!1 &486952249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,8 +1630,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90312061}
-        m_MethodName: RelaunchAnim
+      - m_Target: {fileID: 918998294}
+        m_MethodName: SendValues
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2114,6 +2125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe908a7b66d3cbd4c9e228a4350eff7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxCookingProgressList: 
+  UsedFoodByClickList: 
 --- !u!1 &805636656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,6 +2404,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915206378}
   m_CullTransparentMesh: 0
+--- !u!1 &918998292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918998293}
+  - component: {fileID: 918998294}
+  m_Layer: 0
+  m_Name: US Level 02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &918998293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918998292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 416309528}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &918998294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918998292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde2d354fff6bd84c8ed911abc00ac48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 0
+  SceneToLoad: {fileID: 102900000, guid: 913c9553db69a354e9010245b8115953, type: 3}
+  minTime_Obstacle: 2
+  maxTime_Obstacle: 4
+  decayTime_Fuel: 2
+  StarOne: 0
+  StarTwo: 0
+  StarThree: 0
+  ObjectiveIsSelledBurger: 0
+  SelledBurgerList: 140000002800000078000000
+  SelledBurger: 0
+  ObjectiveIsMoneyEarned: 1
+  MoneyEarnedList: f4010000e2040000ac0d0000
+  earnedMoney: 0
 --- !u!1 &965110289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,8 +2770,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90312061}
-        m_MethodName: RelaunchAnim
+      - m_Target: {fileID: 478148068}
+        m_MethodName: SendValues
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
