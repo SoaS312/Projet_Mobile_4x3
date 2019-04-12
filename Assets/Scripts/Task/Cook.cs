@@ -21,6 +21,8 @@ public class Cook : MonoBehaviour
 
     private void Start()
     {
+        readyFood = 0;
+        LevelValues_HolderStatic.SelledBurger_Holded = 0;
         staticCook = this;
         cookingProgress = 0;
     }
@@ -31,6 +33,7 @@ public class Cook : MonoBehaviour
         {
             cookingProgress = 0;
             readyFood += 1;
+            LevelValues_HolderStatic.SelledBurger_Holded += 1;
         }
 
         foodProgress.fillAmount = (float)cookingProgress / (float)maxCookingProgress;
