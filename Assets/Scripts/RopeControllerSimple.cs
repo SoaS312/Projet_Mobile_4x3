@@ -17,11 +17,11 @@ public class RopeControllerSimple : MonoBehaviour
     public List<Vector3> allRopeSections = new List<Vector3>();
 
     //Rope data
-    private float ropeLength = 0.5f;
-    private float minRopeLength = 1f;
-    private float maxRopeLength = 10f;
+    public float ropeLength = 0.5f;
+    public float minRopeLength = 1f;
+    public float maxRopeLength = 10f;
     //Mass of what the rope is carrying
-    private float loadMass = 10f;
+    public float loadMass = 10f;
     //How fast we can add more/less rope
     float winchSpeed = 1f;
 
