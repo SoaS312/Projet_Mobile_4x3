@@ -5,13 +5,20 @@ using UnityEngine;
 public class ObstacleMove : MonoBehaviour
 {
     [Range(0,100)]
-    public int speed = 5;
+    public float speed = 5;
 
     void Update()
     {
+        LooseIsReal();
+    }
 
-        if (!PauseMenu.staticPauseMenu.isPaused)
+    private void LooseIsReal()
+    {
+        if (!PauseMenu.staticPauseMenu.isPaused)
+        {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
-        else transform.Translate(Vector3.zero);
+        }
+        else if (PauseMenu.staticPauseMenu.isPaused)
+            transform.Translate(Vector3.zero);
     }
 }

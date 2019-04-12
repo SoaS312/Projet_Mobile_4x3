@@ -36,6 +36,7 @@ public class Spawn : MonoBehaviour
     void Start()
     {
         staticSpawn = this;
+
         ChooseRoad();
         timer = Random.Range(minTime, maxTime);
     }

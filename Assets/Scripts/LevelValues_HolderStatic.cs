@@ -5,7 +5,6 @@ using UnityEngine;
 public class LevelValues_HolderStatic : MonoBehaviour
 {
     public static GameObject LevelValuesHolder;
-
     public static string LevelName_Holder;
 
     [Header("Obstacles Settings")]
@@ -15,11 +14,21 @@ public class LevelValues_HolderStatic : MonoBehaviour
     [Header("Fuel Settings")]
     public static float decayTime_Holded = 2;
 
+    [Header("Ojectives")]
+    public static bool Win;
+    public static string WhichObjective;
+    public static List<int> ObjectiveKeys;
+
     [Header("BugerSell")]
     public static int SelledBurger_Holded;
 
     [Header("MoneyEarned")]
     public static int earnedMoney_Holded;
+
+    [Header("Stars")]
+    public static bool StarOne;
+    public static bool StarTwo;
+    public static bool StarThree;
 
     public void Awake()
     {

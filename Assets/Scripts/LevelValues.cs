@@ -10,6 +10,8 @@ public class LevelValues : MonoBehaviour
 
     public Object SceneToLoad;
 
+    public bool LastWin;
+
     [Header("Obstacles Settings")]
     public float minTime_Obstacle;
     public float maxTime_Obstacle;
@@ -38,6 +40,8 @@ public class LevelValues : MonoBehaviour
     [Button]
     public void SendValues()
     {
+        DetermineObjective();
+
         LevelValues_HolderStatic.minTime_Holded = minTime_Obstacle;
         LevelValues_HolderStatic.maxTime_Holded = maxTime_Obstacle;
         LevelValues_HolderStatic.decayTime_Holded = decayTime_Fuel;
@@ -45,54 +49,32 @@ public class LevelValues : MonoBehaviour
         SceneManager.LoadScene(SceneToLoad.name, LoadSceneMode.Single);
     }
 
+    private void DetermineObjective()
+    {
+        if (ObjectiveIsSelledBurger)
+        {
+            LevelValues_HolderStatic.WhichObjective = "Burger";
+            LevelValues_HolderStatic.ObjectiveKeys = SelledBurgerList;
+        }
+        if (ObjectiveIsMoneyEarned)
+        {
+            LevelValues_HolderStatic.WhichObjective = "Money";
+            LevelValues_HolderStatic.ObjectiveKeys = MoneyEarnedList;
+        }
+    }
+
     public void Awake()
     {
         if (LevelValues_HolderStatic.LevelName_Holder == this.gameObject.name)
         {
-            if (ObjectiveIsSelledBurger) { 
-            SelledBurger = LevelValues_HolderStatic.SelledBurger_Holded;
-            BurgerObjective();
-        }
-            if (ObjectiveIsMoneyEarned)
+            LastWin = LevelValues_HolderStatic.Win;
+            if (LastWin)
             {
-                earnedMoney = LevelValues_HolderStatic.earnedMoney_Holded;
-                MoneyObjective();
+                StarOne = LevelValues_HolderStatic.StarOne;
+                StarTwo = LevelValues_HolderStatic.StarTwo;
+                StarThree = LevelValues_HolderStatic.StarThree;
             }
-
-
         }
-    }
-
-    private void MoneyObjective()
-    {
-        if (earnedMoney >= MoneyEarnedList[0])
-        {
-            StarOne = true;
-        }
-        if (earnedMoney >= MoneyEarnedList[1])
-        {
-            StarTwo = true;
-        }
-        if (earnedMoney >= MoneyEarnedList[2])
-        {
-            StarThree = true;
-        }
-    }
-
-    private void BurgerObjective()
-    {
-            if (SelledBurger >= SelledBurgerList[0])
-            {
-                StarOne = true;
-            }
-            if (SelledBurger >= SelledBurgerList[1])
-            {
-                StarTwo = true;
-            }
-            if (SelledBurger >= SelledBurgerList[2])
-            {
-                StarThree = true;
-            }
     }
 }
 
