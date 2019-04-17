@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelValues : MonoBehaviour
 {
-    public int Timer;
+    public int maxMissionTime;
 
     public Object SceneToLoad;
 
@@ -42,6 +42,7 @@ public class LevelValues : MonoBehaviour
     {
         DetermineObjective();
 
+        LevelValues_HolderStatic.maxMissionTime_holder = maxMissionTime;
         LevelValues_HolderStatic.minTime_Holded = minTime_Obstacle;
         LevelValues_HolderStatic.maxTime_Holded = maxTime_Obstacle;
         LevelValues_HolderStatic.decayTime_Holded = decayTime_Fuel;

@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine;
 
 public class ObjectivesManager : MonoBehaviour
 {
@@ -17,6 +15,11 @@ public class ObjectivesManager : MonoBehaviour
     private bool speedDown = false;
     private float minTimeScale = 0.0f;
     private float decreaseSpeed = 0.075f;
+
+
+    [Header("Timer")]
+    public float maxTime;
+    public float currentTime;
 
     [Header("UI")]
     public TextMeshProUGUI LevelNameText;
@@ -41,8 +44,9 @@ public class ObjectivesManager : MonoBehaviour
         myDeltaTime = Time.deltaTime;
         LevelNameText.text = "" + LevelValues_HolderStatic.LevelName_Holder;
         Objective_number = LevelValues_HolderStatic.ObjectiveKeys;
+        maxTime = LevelValues_HolderStatic.maxMissionTime_holder;
+        currentTime = maxTime;
         Win = false;
-
         SetObjectivesNumber();
     }
 
@@ -70,6 +74,20 @@ public class ObjectivesManager : MonoBehaviour
         LevelValues_HolderStatic.Win = Win;
 
         CheckStarsStatus();
+
+        TimeDecrease();
+    }
+
+    private void TimeDecrease()
+    {
+        if (currentTime > 0)
+        {
+            currentTime -= 1 * Time.deltaTime;
+        }
+        if (currentTime < 0)
+        {
+            currentTime = 0;
+        }
     }
 
     private void CheckStarsStatus()
@@ -117,7 +135,23 @@ public class ObjectivesManager : MonoBehaviour
         }
     }
 
-    private void LooseState()
+    private void WinState()
+    {
+        if (currentTime <= 0)
+        {
+            Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, myDeltaTime * decreaseSpeed);
+            if (Time.timeScale <= 0)
+            {
+                Win = true;
+                //WinScreen.SetActive(true);
+                LoseScreen.SetActive(false);
+                UIGame.SetActive(false);
+                SpawnManager.SetActive(false);
+            }
+        }
+    }
+
+private void LooseState()
     {
         if (GameManager.GetComponent<FuelStock>().fuel <= 0)
         {
