@@ -17,6 +17,7 @@ public class FuelStock : MonoBehaviour
 
 
     public GameObject ValuesHolder;
+
     private void Awake()
     {
         ValuesHolder = LevelValues_HolderStatic.LevelValuesHolder;

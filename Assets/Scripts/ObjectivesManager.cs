@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class ObjectivesManager : MonoBehaviour
 {
+
+    public Transform Routes;
+    public float FarAwaySpeed;
+
+
     public GameObject GameManager;
     public GameObject LoseScreen;
     public GameObject UIGame;
     public GameObject SpawnManager;
+    public GameObject WinScreen;
     public bool Win = false;
     public bool Loose = false;
 
@@ -22,10 +28,13 @@ public class ObjectivesManager : MonoBehaviour
     public float currentTime;
 
     [Header("UI")]
+    public TextMeshProUGUI TitleNameText;
     public TextMeshProUGUI LevelNameText;
     public TextMeshProUGUI FirstStarText;
     public TextMeshProUGUI SecondStarText;
     public TextMeshProUGUI ThirdStarText;
+    public GameObject HomeButtonToActive;
+    public GameObject[] ButtonsToDesactive;
 
     [Header("Stars")]
     public bool StarOne;
@@ -70,6 +79,7 @@ public class ObjectivesManager : MonoBehaviour
     public void Update()
     {
         LooseState();
+        WinState();
 
         LevelValues_HolderStatic.Win = Win;
 
@@ -139,12 +149,18 @@ public class ObjectivesManager : MonoBehaviour
     {
         if (currentTime <= 0)
         {
+            Win = true;
             Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, myDeltaTime * decreaseSpeed);
-            if (Time.timeScale <= 0)
+            Routes.position += new Vector3(FarAwaySpeed, 0, 0);
+            if (Time.timeScale <= 0 && Win)
             {
-                Win = true;
-                //WinScreen.SetActive(true);
-                LoseScreen.SetActive(false);
+                TitleNameText.text = "You made it";
+                HomeButtonToActive.SetActive(true);
+                foreach (GameObject obj in ButtonsToDesactive)
+                {
+                    obj.SetActive(false);
+                }
+                WinScreen.SetActive(true);
                 UIGame.SetActive(false);
                 SpawnManager.SetActive(false);
             }
