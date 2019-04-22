@@ -29,15 +29,15 @@ public class Conducteur : MonoBehaviour
     {
         if (FoodTruckState.staticFoodTruckState.isDriverActive)
         {
-           if (SwipeLogger.staticSwipeLogger.stockedDirection == "Left" && RouteManager.staticRouteManager.Index < RouteManager.staticRouteManager.VoiesRoutes.Count && actualTimer <= 0)
+           if (SwipeLogger.staticSwipeLogger.stockedDirection == "Left" && RouteManager.Index < RouteManager.staticRouteManager.VoiesRoutes.Count && actualTimer <= 0)
             {
-                RouteManager.staticRouteManager.Index += 1;
+                RouteManager.Index += 1;
                 actualTimer = MaxTimer;
                 SwipeLogger.staticSwipeLogger.stockedDirection = "clean";
             }
-            if (SwipeLogger.staticSwipeLogger.stockedDirection == "Right" && RouteManager.staticRouteManager.Index > 0 && actualTimer <= 0)
+            if (SwipeLogger.staticSwipeLogger.stockedDirection == "Right" && RouteManager.Index > 0 && actualTimer <= 0)
             {
-                RouteManager.staticRouteManager.Index -= 1;
+                RouteManager.Index -= 1;
                 actualTimer = MaxTimer;
                 SwipeLogger.staticSwipeLogger.stockedDirection = "clean";
             }

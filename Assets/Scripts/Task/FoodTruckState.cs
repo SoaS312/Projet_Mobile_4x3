@@ -14,9 +14,16 @@ public class FoodTruckState : MonoBehaviour
     public bool isScooterActive;
     public static FoodTruckState staticFoodTruckState;
 
-    public GameObject DriverTuto;
-    public GameObject CookTuto;
-    public GameObject VigileTuto;
+
+    [Header("Tuto Gauche")]
+    public GameObject DriverTutoGauche;
+    public GameObject CookTutoGauche;
+    public GameObject VigileTutoGauche;
+
+    [Header("Tuto Droite")]
+    public GameObject DriverTutoDroite;
+    public GameObject CookTutoDroite;
+    public GameObject VigileTutoDroite;
 
     private void Awake()
     {
@@ -28,31 +35,72 @@ public class FoodTruckState : MonoBehaviour
     public void ActivateDriver()
     {
         isDriverActive = true; isVigileActive = false; isSellerActive = false; isCookActive = false; isHelicoActive = false; isScooterActive = false;
-        DriverTuto.SetActive(true); CookTuto.SetActive(false); VigileTuto.SetActive(false);
+
+        if (RouteManager.Index == 0) {
+            DriverTutoGauche.SetActive(true); CookTutoGauche.SetActive(false); VigileTutoGauche.SetActive(false); }
+        else
+        {
+            DriverTutoDroite.SetActive(true); CookTutoDroite.SetActive(false); VigileTutoDroite.SetActive(false);
+        }
     }
     public void ActivateVigile()
     {
         isVigileActive = true; isDriverActive = false; isSellerActive = false; isCookActive = false; isHelicoActive = false; isScooterActive = false;
-        DriverTuto.SetActive(false); CookTuto.SetActive(false); VigileTuto.SetActive(true);
+        if (RouteManager.Index == 0)
+        {
+            DriverTutoGauche.SetActive(false); CookTutoGauche.SetActive(false); VigileTutoGauche.SetActive(true);
+        }
+        else
+        {
+            DriverTutoDroite.SetActive(false); CookTutoDroite.SetActive(false); VigileTutoDroite.SetActive(true);
+        }
     }
     public void ActivateSeller()
     {
         isSellerActive = true; isVigileActive = false; isDriverActive = false; isCookActive = false; isHelicoActive = false; isScooterActive = false;
-        DriverTuto.SetActive(false); CookTuto.SetActive(false); VigileTuto.SetActive(false);
+        if (RouteManager.Index == 0)
+        {
+            DriverTutoGauche.SetActive(false); CookTutoGauche.SetActive(false); VigileTutoGauche.SetActive(false);
+        }
+        else
+        {
+            DriverTutoDroite.SetActive(false); CookTutoDroite.SetActive(false); VigileTutoDroite.SetActive(false);
+        }
     }
     public void ActivateCook()
     {
         isCookActive = true; isVigileActive = false; isSellerActive = false; isDriverActive = false; isHelicoActive = false; isScooterActive = false;
-        DriverTuto.SetActive(false); CookTuto.SetActive(true); VigileTuto.SetActive(false);
+        if (RouteManager.Index == 0)
+        {
+            DriverTutoGauche.SetActive(false); CookTutoGauche.SetActive(true); VigileTutoGauche.SetActive(false);
+        }
+        else
+        {
+            DriverTutoDroite.SetActive(false); CookTutoDroite.SetActive(true); VigileTutoDroite.SetActive(false);
+        }
     }
     public void ActivateHelico()
     {
         isHelicoActive = true; isVigileActive = false; isSellerActive = false; isCookActive = false; isDriverActive = false; isScooterActive = false;
-        DriverTuto.SetActive(false); CookTuto.SetActive(false); VigileTuto.SetActive(false);
+        if (RouteManager.Index == 0)
+        {
+            DriverTutoGauche.SetActive(false); CookTutoGauche.SetActive(false); VigileTutoGauche.SetActive(false);
+        }
+        else
+        {
+            DriverTutoDroite.SetActive(false); CookTutoDroite.SetActive(false); VigileTutoDroite.SetActive(false);
+        }
     }
     public void ActivateScooter()
     {
         isScooterActive = true; isVigileActive = false; isSellerActive = false; isCookActive = false; isHelicoActive = false; isDriverActive = false;
-        DriverTuto.SetActive(false); CookTuto.SetActive(false); VigileTuto.SetActive(false);
+        if (RouteManager.Index == 0)
+        {
+            DriverTutoGauche.SetActive(false); CookTutoGauche.SetActive(false); VigileTutoGauche.SetActive(false);
+        }
+        else
+        {
+            DriverTutoDroite.SetActive(false); CookTutoDroite.SetActive(false); VigileTutoDroite.SetActive(false);
+        }
     }
 }
