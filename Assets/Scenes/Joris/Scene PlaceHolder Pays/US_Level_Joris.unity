@@ -2188,7 +2188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &226362395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9129,7 +9129,7 @@ GameObject:
   - component: {fileID: 1139951037}
   - component: {fileID: 1139951036}
   m_Layer: 5
-  m_Name: me_UI_Win
+  m_Name: InGame_UI_Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18070,6 +18070,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoodTruck
       objectReference: {fileID: 0}
+    - target: {fileID: 1379008984844291131, guid: 105037ba8abaf334da642ea7880aad81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379008984844291113, guid: 105037ba8abaf334da642ea7880aad81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 967852865218144319, guid: 105037ba8abaf334da642ea7880aad81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18140,6 +18150,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1379008984844291129, guid: 105037ba8abaf334da642ea7880aad81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379008984844291117, guid: 105037ba8abaf334da642ea7880aad81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 967852866032907148, guid: 105037ba8abaf334da642ea7880aad81,
         type: 3}
       propertyPath: m_IsActive
@@ -18155,27 +18175,7 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1379008984844291113, guid: 105037ba8abaf334da642ea7880aad81,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379008984844291117, guid: 105037ba8abaf334da642ea7880aad81,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1379008984844291119, guid: 105037ba8abaf334da642ea7880aad81,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379008984844291129, guid: 105037ba8abaf334da642ea7880aad81,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1379008984844291131, guid: 105037ba8abaf334da642ea7880aad81,
         type: 3}
       propertyPath: m_IsActive
       value: 1
