@@ -9,6 +9,8 @@ public class ObjectivesManager : MonoBehaviour
     public float FarAwaySpeed;
 
 
+    public GameObject Foodtruck;
+
     public GameObject GameManager;
     public GameObject LoseScreen;
     public GameObject UIGame;
@@ -20,7 +22,7 @@ public class ObjectivesManager : MonoBehaviour
     private float myDeltaTime;
     private bool speedDown = false;
     private float minTimeScale = 0.0f;
-    private float decreaseSpeed = 0.075f;
+    public float decreaseSpeed = 0.00275f;
 
 
     [Header("Timer")]
@@ -50,6 +52,8 @@ public class ObjectivesManager : MonoBehaviour
 
     void Awake()
     {
+        Foodtruck = GameObject.FindGameObjectWithTag("FoodTruck");
+
         myDeltaTime = Time.deltaTime;
         LevelNameText.text = "" + LevelValues_HolderStatic.LevelName_Holder;
         Objective_number = LevelValues_HolderStatic.ObjectiveKeys;
@@ -57,6 +61,14 @@ public class ObjectivesManager : MonoBehaviour
         currentTime = maxTime;
         Win = false;
         SetObjectivesNumber();
+
+        LevelValues_HolderStatic.StarOne = false;
+        LevelValues_HolderStatic.StarTwo = false;
+        LevelValues_HolderStatic.StarThree = false;
+        LevelValues_HolderStatic.SelledBurger_Holded = 0;
+        LevelValues_HolderStatic.earnedMoney_Holded = 0;
+        Time.timeScale = 1;
+
     }
 
     private void SetObjectivesNumber()
@@ -114,15 +126,15 @@ public class ObjectivesManager : MonoBehaviour
 
         if (LevelValues_HolderStatic.WhichObjective == "Burger")
         {
-            if (LevelValues_HolderStatic.SelledBurger_Holded > LevelValues_HolderStatic.ObjectiveKeys[0])
+            if (LevelValues_HolderStatic.SelledBurger_Holded >= LevelValues_HolderStatic.ObjectiveKeys[0])
             {
                 StarOne = true;
             }
-            if (LevelValues_HolderStatic.SelledBurger_Holded > LevelValues_HolderStatic.ObjectiveKeys[1])
+            if (LevelValues_HolderStatic.SelledBurger_Holded >= LevelValues_HolderStatic.ObjectiveKeys[1])
             {
                 StarTwo = true;
             }
-            if (LevelValues_HolderStatic.SelledBurger_Holded > LevelValues_HolderStatic.ObjectiveKeys[2])
+            if (LevelValues_HolderStatic.SelledBurger_Holded >= LevelValues_HolderStatic.ObjectiveKeys[2])
             {
                 StarThree = true;
             }
@@ -130,15 +142,15 @@ public class ObjectivesManager : MonoBehaviour
 
         if (LevelValues_HolderStatic.WhichObjective == "Money")
         {
-            if (LevelValues_HolderStatic.earnedMoney_Holded > LevelValues_HolderStatic.ObjectiveKeys[0])
+            if (LevelValues_HolderStatic.earnedMoney_Holded >= LevelValues_HolderStatic.ObjectiveKeys[0])
             {
                 StarOne = true;
             }
-            if (LevelValues_HolderStatic.earnedMoney_Holded > LevelValues_HolderStatic.ObjectiveKeys[1])
+            if (LevelValues_HolderStatic.earnedMoney_Holded >= LevelValues_HolderStatic.ObjectiveKeys[1])
             {
                 StarTwo = true;
             }
-            if (LevelValues_HolderStatic.earnedMoney_Holded > LevelValues_HolderStatic.ObjectiveKeys[2])
+            if (LevelValues_HolderStatic.earnedMoney_Holded >= LevelValues_HolderStatic.ObjectiveKeys[2])
             {
                 StarThree = true;
             }
@@ -150,8 +162,9 @@ public class ObjectivesManager : MonoBehaviour
         if (currentTime <= 0)
         {
             Win = true;
-            Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, myDeltaTime * decreaseSpeed);
+            Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, /*myDeltaTime **/ decreaseSpeed);
             Routes.position += new Vector3(FarAwaySpeed, 0, 0);
+            Foodtruck.GetComponent<BoxCollider>().enabled = false;
             if (Time.timeScale <= 0 && Win)
             {
                 TitleNameText.text = "You made it";
@@ -171,7 +184,7 @@ private void LooseState()
     {
         if (GameManager.GetComponent<FuelStock>().fuel <= 0)
         {
-            Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, myDeltaTime * decreaseSpeed);
+            Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, /*myDeltaTime **/ decreaseSpeed);
             if (Time.timeScale <= 0)
             {
                 Loose = true;

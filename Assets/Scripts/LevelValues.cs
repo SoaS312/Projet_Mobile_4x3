@@ -47,7 +47,8 @@ public class LevelValues : MonoBehaviour
         LevelValues_HolderStatic.maxTime_Holded = maxTime_Obstacle;
         LevelValues_HolderStatic.decayTime_Holded = decayTime_Fuel;
         LevelValues_HolderStatic.LevelName_Holder = this.gameObject.name;
-        SceneManager.LoadScene(SceneToLoad.name, LoadSceneMode.Single);
+        LevelValues_HolderStatic.Scene = SceneToLoad;
+        //SceneManager.LoadScene(SceneToLoad.name, LoadSceneMode.Single);
     }
 
     private void DetermineObjective()
@@ -66,14 +67,15 @@ public class LevelValues : MonoBehaviour
 
     public void Awake()
     {
+
         if (LevelValues_HolderStatic.LevelName_Holder == this.gameObject.name)
         {
             LastWin = LevelValues_HolderStatic.Win;
             if (LastWin)
             {
                 StarOne = LevelValues_HolderStatic.StarOne;
-                StarTwo = LevelValues_HolderStatic.StarTwo;
-                StarThree = LevelValues_HolderStatic.StarThree;
+                    StarTwo = LevelValues_HolderStatic.StarTwo;
+                    StarThree = LevelValues_HolderStatic.StarThree;
             }
         }
     }

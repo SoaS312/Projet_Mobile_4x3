@@ -269,7 +269,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Level 01
+  m_text: 'Level X
 
 '
   m_isRightToLeft: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 34465058}
-    characterCount: 9
+    characterCount: 8
     spriteCount: 0
     spaceCount: 2
     wordCount: 2
@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 90312059}
   - component: {fileID: 90312060}
   - component: {fileID: 90312061}
+  - component: {fileID: 90312062}
   m_Layer: 0
   m_Name: LevelPanel
   m_TagString: Untagged
@@ -474,7 +475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90312058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 307.5, y: -94.70294, z: 16.53125}
+  m_LocalPosition: {x: -429, y: -94.70294, z: 16.53125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 719564528}
@@ -502,7 +503,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ec51697efd4e79642be5a6a01bc91530, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -521,6 +522,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e12a1b70b455ca4381758aa7ff1e2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &90312062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90312058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89eeb989e571a94db06285a6eeccb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: {fileID: 34465058}
+  GetSceneToLoad: {fileID: 0}
+  StarOne: 0
+  StarOneUI: {fileID: 2094468613}
+  StarTwo: 0
+  StarTwoUI: {fileID: 84217093}
+  StarThree: 0
+  StarThreeUI: {fileID: 486952249}
+  FirstStarText: {fileID: 513867571}
+  SecondStarText: {fileID: 678451522}
+  ThirdStarText: {fileID: 1261197038}
 --- !u!1 &206741185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1204,28 @@ MonoBehaviour:
           m_StringArgument: LevelPanelAnimation
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 90312061}
+        m_MethodName: RelaunchAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 90312062}
+        m_MethodName: Doit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &604048247
@@ -1669,7 +1715,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 805636659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 90312062}
+        m_MethodName: LaunchGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &805636659
@@ -1752,7 +1809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde2d354fff6bd84c8ed911abc00ac48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMissionTime: 0
+  maxMissionTime: 90
   SceneToLoad: {fileID: 102900000, guid: 913c9553db69a354e9010245b8115953, type: 3}
   LastWin: 0
   minTime_Obstacle: 2
@@ -1924,6 +1981,28 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: LevelPanelAnimation
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 90312061}
+        m_MethodName: RelaunchAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 90312062}
+        m_MethodName: Doit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2445,6 +2524,28 @@ MonoBehaviour:
           m_StringArgument: LevelPanelAnimation
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 90312061}
+        m_MethodName: RelaunchAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 90312062}
+        m_MethodName: Doit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1641723242
@@ -2604,7 +2705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde2d354fff6bd84c8ed911abc00ac48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMissionTime: 0
+  maxMissionTime: 90
   SceneToLoad: {fileID: 102900000, guid: 913c9553db69a354e9010245b8115953, type: 3}
   LastWin: 0
   minTime_Obstacle: 2

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LevelValues_HolderStatic : MonoBehaviour
 {
+
+    public static Object Scene;
+
     public static GameObject LevelValuesHolder;
     public static string LevelName_Holder;
 
