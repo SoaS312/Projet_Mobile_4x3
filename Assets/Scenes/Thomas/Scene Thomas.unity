@@ -2244,8 +2244,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f789be4dc69e24d908ce66668fce2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Routes: {fileID: 0}
+  FarAwaySpeed: 0
+  Foodtruck: {fileID: 0}
   GameManager: {fileID: 1423032883}
+  LoseScreen: {fileID: 0}
+  UIGame: {fileID: 0}
+  SpawnManager: {fileID: 0}
+  WinScreen: {fileID: 0}
+  Win: 0
   Loose: 0
+  decreaseSpeed: 0.00275
+  maxTime: 0
+  currentTime: 0
+  TitleNameText: {fileID: 0}
+  LevelNameText: {fileID: 0}
+  FirstStarText: {fileID: 0}
+  SecondStarText: {fileID: 0}
+  ThirdStarText: {fileID: 0}
+  HomeButtonToActive: {fileID: 0}
+  ButtonsToDesactive: []
+  StarOne: 0
+  StarOneUI: {fileID: 0}
+  StarTwo: 0
+  StarTwoUI: {fileID: 0}
+  StarThree: 0
+  StarThreeUI: {fileID: 0}
+  Objective_number: 
 --- !u!1 &273139778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3659,9 +3684,6 @@ MonoBehaviour:
   isCookActive: 0
   isHelicoActive: 0
   isScooterActive: 0
-  DriverTuto: {fileID: 0}
-  CookTuto: {fileID: 0}
-  VigileTuto: {fileID: 0}
 --- !u!114 &414765672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10134,7 +10156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59cdfe716f0ba1f44bf09256618376e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuel: 100
+  fuel: 50
   maxFuel: 100
   isDry: 1
   stockFuel: {fileID: 615194283}
@@ -14255,9 +14277,14 @@ MonoBehaviour:
   VoiesRoutes:
   - {fileID: 491991252}
   - {fileID: 1194947870}
-  Index: 0
   FoodTruck: {fileID: 0}
   OffsetY: 0.6
+  DriverTutoGauche: {fileID: 0}
+  CookTutoGauche: {fileID: 0}
+  VigileTutoGauche: {fileID: 0}
+  DriverTutoDroite: {fileID: 0}
+  CookTutoDroite: {fileID: 0}
+  VigileTutoDroite: {fileID: 0}
 --- !u!1 &1906101260
 GameObject:
   m_ObjectHideFlags: 0

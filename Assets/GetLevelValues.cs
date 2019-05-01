@@ -10,7 +10,7 @@ public class GetLevelValues : MonoBehaviour
 {
     public TextMeshProUGUI LevelName;
 
-    public Object GetSceneToLoad;
+    public string GetSceneToLoad;
 
     public bool StarOne;
     public GameObject StarOneUI;
@@ -44,7 +44,7 @@ public class GetLevelValues : MonoBehaviour
 
     public void LaunchGame()
     {
-        SceneManager.LoadScene(GetSceneToLoad.name, LoadSceneMode.Single);
+        SceneManager.LoadScene("LoadingScene", LoadSceneMode.Single);
     }
 
 

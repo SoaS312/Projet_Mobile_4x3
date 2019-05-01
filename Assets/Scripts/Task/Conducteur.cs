@@ -31,15 +31,19 @@ public class Conducteur : MonoBehaviour
         {
            if (SwipeLogger.staticSwipeLogger.stockedDirection == "Left" && RouteManager.Index < RouteManager.staticRouteManager.VoiesRoutes.Count && actualTimer <= 0)
             {
-                RouteManager.Index += 1;
+                if (RouteManager.Index < 1)
+                    RouteManager.Index += 1;
+
+                RouteManager.staticRouteManager.Move();
                 actualTimer = MaxTimer;
-                SwipeLogger.staticSwipeLogger.stockedDirection = "clean";
             }
             if (SwipeLogger.staticSwipeLogger.stockedDirection == "Right" && RouteManager.Index > 0 && actualTimer <= 0)
             {
+                if (RouteManager.Index>0)
                 RouteManager.Index -= 1;
+
+                RouteManager.staticRouteManager.Move();
                 actualTimer = MaxTimer;
-                SwipeLogger.staticSwipeLogger.stockedDirection = "clean";
             }
         }
     }

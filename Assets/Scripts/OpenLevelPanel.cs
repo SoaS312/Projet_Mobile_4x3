@@ -6,8 +6,15 @@ using UnityEngine.Animations;
 public class OpenLevelPanel : MonoBehaviour
 {
 
-    public void RelaunchAnim()
+    public void Show()
     {
-        this.gameObject.GetComponent<Animator>().Play("LevelPanelAnimation", -1, 0f);
+        this.gameObject.GetComponent<Animator>().SetBool("Show", true);
+        this.gameObject.GetComponent<Animator>().SetBool("Hide", false);
+    }
+
+    public void Hide()
+    {
+        this.gameObject.GetComponent<Animator>().SetBool("Show", false);
+        this.gameObject.GetComponent<Animator>().SetBool("Hide", true);
     }
 }

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelValues : MonoBehaviour
 {
     public int maxMissionTime;
 
-    public Object SceneToLoad;
+    //public Object SceneToLoad;
+    public string SceneName;
+    public Text textlol;
 
     public bool LastWin;
 
@@ -36,19 +39,16 @@ public class LevelValues : MonoBehaviour
     public List<int> MoneyEarnedList;
     public int earnedMoney;
 
-
-    [Button]
     public void SendValues()
     {
         DetermineObjective();
-
+        //LevelValues_HolderStatic.Scene = SceneName;
+        LevelValues_HolderStatic.Scene = SceneName;
         LevelValues_HolderStatic.maxMissionTime_holder = maxMissionTime;
         LevelValues_HolderStatic.minTime_Holded = minTime_Obstacle;
         LevelValues_HolderStatic.maxTime_Holded = maxTime_Obstacle;
         LevelValues_HolderStatic.decayTime_Holded = decayTime_Fuel;
         LevelValues_HolderStatic.LevelName_Holder = this.gameObject.name;
-        LevelValues_HolderStatic.Scene = SceneToLoad;
-        //SceneManager.LoadScene(SceneToLoad.name, LoadSceneMode.Single);
     }
 
     private void DetermineObjective()
@@ -67,7 +67,6 @@ public class LevelValues : MonoBehaviour
 
     public void Awake()
     {
-
         if (LevelValues_HolderStatic.LevelName_Holder == this.gameObject.name)
         {
             LastWin = LevelValues_HolderStatic.Win;
