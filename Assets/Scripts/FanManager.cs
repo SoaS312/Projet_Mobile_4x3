@@ -21,14 +21,29 @@ public class FanManager : MonoBehaviour
 
     public int life = 100;
 
+    public void OnEnable()
+    {
+        // Sera a déterminé au hasard
+        willLeave = false;
+        isAngry = false;
+        isPunk = false;
+        secondsBeingWaiting = 0;
+        wrathTime = 100;
+        wrathIndex = 0;
+        wrathLimit = 0;
+        burgerEated = 0;
+        burgerLimit = 10;
+    }
+
     void Update()
     {
-        Die();
+        LifeCheck();
 
         if (willLeave)
         {
             if(burgerEated >= burgerLimit)
             {
+                gameObject.GetComponent<TakePlace>().needToLeave = true;
                 //Il part et reviens dans le pool.
             }
         }
@@ -46,11 +61,11 @@ public class FanManager : MonoBehaviour
 
     }
 
-    private void Die()
+    private void LifeCheck()
     {
         if (life <= 0)
         {
-            Destroy(gameObject); // A changer pour qu'il "meurt", reparte dans le pool et puisse revenir plus tard avec différent settings.
+            gameObject.GetComponent<TakePlace>().Die(); // A changer pour qu'il "meurt", reparte dans le pool et puisse revenir plus tard avec différent settings.
         }
     }
 }

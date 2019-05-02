@@ -12,8 +12,9 @@ public class FollowersManager : MonoBehaviour
     public GameObject chosenFan;
 
     public List<GameObject> Places;
-    public GameObject RangementPlaces;
+    public GameObject RangementPlaces; // don't use for target
     public int chosenPlace;
+    public GameObject chosenPlaceGO;
 
 
     public int maxFollowPoints;
@@ -37,7 +38,6 @@ public class FollowersManager : MonoBehaviour
         {
             Places.Add(RangementPlaces.transform.GetChild(i).gameObject);
         }
-        chosenPlace = Random.Range(0, 15);
     }
 
     void Update()
@@ -67,7 +67,8 @@ public class FollowersManager : MonoBehaviour
     public void TakePlaceFan()
     {
         chosenPlace = Random.Range(0, Places.Count);
-        RangementPlaces = Places[chosenPlace];
-        Places.Remove(RangementPlaces);
+        chosenPlaceGO = Places[chosenPlace];
+        Places.Remove(chosenPlaceGO);
     }
+
 }

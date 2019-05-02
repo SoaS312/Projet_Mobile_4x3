@@ -12,6 +12,10 @@ public class RouteManager : MonoBehaviour
     public static RouteManager staticRouteManager;
 
 
+    public float lerpTime = 1.5f; // Time it takes to reach
+    public float currentLerpTime = 0;
+
+
     [Header("Tuto Gauche")]
     public GameObject DriverTutoGauche;
     public GameObject CookTutoGauche;
@@ -30,7 +34,15 @@ public class RouteManager : MonoBehaviour
 
     public void Move()
     {
-        FoodTruck.transform.position = new Vector3(VoiesRoutes[Index].transform.position.x, OffsetY, VoiesRoutes[Index].transform.position.z);
+
+        currentLerpTime += Time.deltaTime;
+        if (currentLerpTime >= lerpTime)
+        {
+            currentLerpTime = lerpTime;
+        }
+        transform.position = Vector3.Lerp(transform.position, new Vector3(VoiesRoutes[Index].transform.position.x, OffsetY, VoiesRoutes[Index].transform.position.z), currentLerpTime / lerpTime);
+
+        //FoodTruck.transform.position = new Vector3(VoiesRoutes[Index].transform.position.x, OffsetY, VoiesRoutes[Index].transform.position.z);
         //FoodTruck.transform.position = Vector3.MoveTowards(transform.position, new Vector3(VoiesRoutes[Index].transform.position.x, OffsetY, VoiesRoutes[Index].transform.position.z), 1 * Time.deltaTime);
     }
 
