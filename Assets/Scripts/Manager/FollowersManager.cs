@@ -5,8 +5,19 @@ using UnityEngine;
 public class FollowersManager : MonoBehaviour
 {
     public static FollowersManager staticFollowersManager;
+
+
+    public List<GameObject> FanPooling;
+    public int FanIndex;
+    public GameObject chosenFan;
+
+    public List<GameObject> Places;
+    public GameObject RangementPlaces;
+    public int chosenPlace;
+
+
     public int maxFollowPoints;
-    public int actualFollowPoints;
+    public float actualFollowPoints;
     public List<GameObject> Follower;
 
     public List<GameObject> actualFollowers;
@@ -15,21 +26,23 @@ public class FollowersManager : MonoBehaviour
 
     public float OffsetY;
 
+
     void Start()
     {
-        Instantiate(Follower[Random.Range(0, Follower.Count)], this.transform);
+        RangementPlaces = RangementFanScript.staticRangementFanScript.gameObject;
         staticFollowersManager = this;
         maxFollowPoints = Random.Range(50, 101);
+
+        for (int i = 0; i < RangementPlaces.transform.childCount; i++)
+        {
+            Places.Add(RangementPlaces.transform.GetChild(i).gameObject);
+        }
+        chosenPlace = Random.Range(0, 15);
     }
 
     void Update()
     {
         SpawnFollowers();
-
-        /*if (actualFollowers.Count >= maxFollowersBeforeAngry)
-        {
-            //do test for smash
-        }*/
 
     }
 
@@ -37,14 +50,24 @@ public class FollowersManager : MonoBehaviour
     {
         if (actualFollowers.Count < maxFollowersOnScreen)
         {
-            actualFollowPoints ++ ;
-            if (actualFollowPoints >= maxFollowPoints)
+               actualFollowPoints += 10 * Time.deltaTime; ;
+            if (actualFollowPoints >= maxFollowPoints && FanPooling.Count > 0)
             {
                 maxFollowPoints = Random.Range(50, 101);
                 actualFollowPoints = 0;
-                GameObject followi = Instantiate(Follower[Random.Range(0, Follower.Count)], this.transform);
-                actualFollowers.Add(followi);
+                FanIndex = Random.Range(0, FanPooling.Count);
+                chosenFan = FanPooling[FanIndex];
+                chosenFan.SetActive(true);
+                FanPooling.Remove(chosenFan);
+                actualFollowers.Add(chosenFan); //On ajoute le followers à l'actual list
             }
         }
+    }
+
+    public void TakePlaceFan()
+    {
+        chosenPlace = Random.Range(0, Places.Count);
+        RangementPlaces = Places[chosenPlace];
+        Places.Remove(RangementPlaces);
     }
 }

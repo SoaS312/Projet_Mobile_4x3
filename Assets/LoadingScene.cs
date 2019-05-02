@@ -10,20 +10,15 @@ public class LoadingScene : MonoBehaviour
     public GameObject LoadingScreenObj;
     public Image filling;
     AsyncOperation async;
-    public Text DebugTextSceneName;
-    public Text DebugTextothervalue;
 
     public void Start()
     {
-        DebugTextothervalue.text = "Valeur random" + LevelValues_HolderStatic.maxMissionTime_holder;
         StartCoroutine(LoadingScreen());
-        DebugTextSceneName.text = "Nom de scene " + LevelValues_HolderStatic.Scene;
     }
 
     IEnumerator LoadingScreen()
     {
        yield return new WaitForSeconds(1f);
-        //async = SceneManager.LoadSceneAsync("US_Level_Joris");
         async = SceneManager.LoadSceneAsync(LevelValues_HolderStatic.Scene);
         async.allowSceneActivation = false;
         filling.fillAmount += 0.05f;

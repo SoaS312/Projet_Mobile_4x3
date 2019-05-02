@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5216904762351378747}
   - component: {fileID: 5216904762351378748}
   - component: {fileID: 5216904762351378749}
-  - component: {fileID: 3012196623962296471}
-  - component: {fileID: 5647907740183400669}
+  - component: {fileID: 4804469186474292860}
+  - component: {fileID: 4548117371598114644}
   m_Layer: 0
-  m_Name: Fan 1
+  m_Name: Fan
   m_TagString: Followers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5216904762351378750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.011, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c87f1f3d269c1c48a563878a11ef8ad, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +94,7 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3012196623962296471
+--- !u!114 &4804469186474292860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
     type: 3}
   OffsetY: 0.3
   followerManager: {fileID: 0}
---- !u!114 &5647907740183400669
+--- !u!114 &4548117371598114644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -4,31 +4,28 @@ using UnityEngine;
 
 public class TakePlace : MonoBehaviour
 {
-    public List<GameObject> Places;
-    public int chosenPlace;
-    public Vector3 originalPos;
-    public GameObject RangementPlaces;
-    public float OffsetY;
-    public GameObject followerManager;
-    private Vector3 derriere;
-    public GameObject spawn;
+    public bool Moving =false;
 
+    public Transform SpawnPos;
+    public Transform RangementPos;
+    public float speed;
 
-    private void Start()
+    public void OnEnable()
     {
-        //originalPos = transform.position;
+        Moving = true;
+        SpawnPos = FollowersManager.staticFollowersManager.transform;
+        RangementPos = FollowersManager.staticFollowersManager.RangementPlaces.transform;
 
-        for (int i = 0; i < RangementPlaces.transform.childCount; i++)
-        {
-            Places.Add(RangementPlaces.transform.GetChild(i).gameObject);
-        }
-        chosenPlace = Random.Range(0, 15);
+        FollowersManager.staticFollowersManager.TakePlaceFan();
+
+
     }
 
-    private void Update()
+    public void Update()
     {
-        //this.enabled = true;
-        //derriere = new Vector3(Places[chosenPlace].transform.position.x, OffsetY, Places[chosenPlace].transform.position.z);
-        //transform.position = Places[chosenPlace].transform.position; // Vector3.Lerp(spawn.transform.position, Places[chosenPlace].transform.position, 0.01f);
+        if (Moving)
+        {
+                transform.position = Vector3.MoveTowards(SpawnPos.position, RangementPos.position, speed * Time.deltaTime);
+        }
     }
 }
