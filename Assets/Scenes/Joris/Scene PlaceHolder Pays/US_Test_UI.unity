@@ -751,7 +751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 478148067}
-  - component: {fileID: 478148068}
+  - component: {fileID: 478148069}
   m_Layer: 0
   m_Name: Level 01
   m_TagString: Untagged
@@ -773,7 +773,7 @@ Transform:
   m_Father: {fileID: 416309528}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &478148068
+--- !u!114 &478148069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -782,25 +782,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 478148066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde2d354fff6bd84c8ed911abc00ac48, type: 3}
+  m_Script: {fileID: 11500000, guid: 22d58465fd1f1654a8893100c5388af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMissionTime: 90
-  SceneName: US_Level_Joris
-  textlol: {fileID: 0}
-  LastWin: 0
-  minTime_Obstacle: 3
-  maxTime_Obstacle: 6
-  decayTime_Fuel: 2
-  StarOne: 0
-  StarTwo: 0
-  StarThree: 0
-  ObjectiveIsSelledBurger: 1
-  SelledBurgerList: 050000000f00000023000000
-  SelledBurger: 0
-  ObjectiveIsMoneyEarned: 0
-  MoneyEarnedList: 
-  earnedMoney: 0
+  Level: {fileID: 11400000, guid: bb66718198200ee4d9d29c3169d873ac, type: 2}
 --- !u!1 &486952249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,8 +1775,9 @@ GameObject:
   - component: {fileID: 797712110}
   - component: {fileID: 797712109}
   - component: {fileID: 797712111}
+  - component: {fileID: 797712112}
   m_Layer: 0
-  m_Name: LevelValuesHolder
+  m_Name: DataController
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1847,6 +1833,20 @@ MonoBehaviour:
   HelicoUpgradeList: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   ScooterLevelIndexLOOK: 0
   ScooterUpgradeList: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &797712112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797712108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1053fb47b33dca46a1e9bdea395347b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level:
+  - {fileID: 11400000, guid: bb66718198200ee4d9d29c3169d873ac, type: 2}
 --- !u!1 &805636656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,7 +1991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &918998293
 Transform:
   m_ObjectHideFlags: 0
@@ -2022,12 +2022,13 @@ MonoBehaviour:
   SceneName: US_Level_Joris
   textlol: {fileID: 0}
   LastWin: 0
-  minTime_Obstacle: 2
-  maxTime_Obstacle: 4
-  decayTime_Fuel: 2
+  minTime_Obstacle: 4
+  maxTime_Obstacle: 6
+  decayTime_Fuel: 0
   StarOne: 0
   StarTwo: 0
   StarThree: 0
+  unlockedStars: 0
   ObjectiveIsSelledBurger: 0
   SelledBurgerList: 140000002800000078000000
   SelledBurger: 0
@@ -2417,7 +2418,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 478148068}
+      - m_Target: {fileID: 11400000, guid: bb66718198200ee4d9d29c3169d873ac, type: 2}
         m_MethodName: SendValues
         m_Mode: 1
         m_Arguments:
@@ -3290,7 +3291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1992106765
 Transform:
   m_ObjectHideFlags: 0
@@ -3321,12 +3322,13 @@ MonoBehaviour:
   SceneName: US_Level_Joris
   textlol: {fileID: 0}
   LastWin: 0
-  minTime_Obstacle: 2
-  maxTime_Obstacle: 4
+  minTime_Obstacle: 3
+  maxTime_Obstacle: 7
   decayTime_Fuel: 2
   StarOne: 0
   StarTwo: 0
   StarThree: 0
+  unlockedStars: 0
   ObjectiveIsSelledBurger: 1
   SelledBurgerList: 0a0000001400000032000000
   SelledBurger: 0

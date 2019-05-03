@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class loadScene : MonoBehaviour
 {
-    public int index;
-    public Material Color;
+    public string LevelName;
 
-    void Update()
+    public void LoadScene()
     {
         if (Input.GetMouseButtonDown(0) || Input.touchCount > (0))
         {
@@ -17,10 +16,7 @@ public class loadScene : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.transform.name == gameObject.transform.name)
-                {
-                    gameObject.GetComponent<MeshRenderer>().material = Color; 
-                    SceneManager.LoadScene(index);
-                }
+                    SceneManager.LoadScene(LevelName);
             }
         }
     }

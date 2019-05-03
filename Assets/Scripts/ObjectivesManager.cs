@@ -62,6 +62,7 @@ public class ObjectivesManager : MonoBehaviour
         Win = false;
         SetObjectivesNumber();
 
+        LevelValues_HolderStatic.staticUnlockedStars = 0;
         LevelValues_HolderStatic.StarOne = false;
         LevelValues_HolderStatic.StarTwo = false;
         LevelValues_HolderStatic.StarThree = false;
@@ -128,14 +129,26 @@ public class ObjectivesManager : MonoBehaviour
         {
             if (LevelValues_HolderStatic.SelledBurger_Holded >= LevelValues_HolderStatic.ObjectiveKeys[0])
             {
+                if (StarOne == false)
+                {
+                    LevelValues_HolderStatic.staticUnlockedStars += 1;
+                }
                 StarOne = true;
-            }
+}
             if (LevelValues_HolderStatic.SelledBurger_Holded >= LevelValues_HolderStatic.ObjectiveKeys[1])
             {
+                if (StarTwo == false)
+                {
+                    LevelValues_HolderStatic.staticUnlockedStars += 1;
+                }
                 StarTwo = true;
             }
             if (LevelValues_HolderStatic.SelledBurger_Holded >= LevelValues_HolderStatic.ObjectiveKeys[2])
             {
+                if (StarThree == false)
+                {
+                    LevelValues_HolderStatic.staticUnlockedStars += 1;
+                }
                 StarThree = true;
             }
         }
@@ -144,14 +157,26 @@ public class ObjectivesManager : MonoBehaviour
         {
             if (LevelValues_HolderStatic.earnedMoney_Holded >= LevelValues_HolderStatic.ObjectiveKeys[0])
             {
+                if (StarOne == false)
+                {
+                    LevelValues_HolderStatic.staticUnlockedStars += 1;
+                }
                 StarOne = true;
             }
             if (LevelValues_HolderStatic.earnedMoney_Holded >= LevelValues_HolderStatic.ObjectiveKeys[1])
             {
+                if (StarTwo == false)
+                {
+                    LevelValues_HolderStatic.staticUnlockedStars += 1;
+                }
                 StarTwo = true;
             }
             if (LevelValues_HolderStatic.earnedMoney_Holded >= LevelValues_HolderStatic.ObjectiveKeys[2])
             {
+                if (StarThree == false)
+                {
+                    LevelValues_HolderStatic.staticUnlockedStars += 1;
+                }
                 StarThree = true;
             }
         }
@@ -180,7 +205,7 @@ public class ObjectivesManager : MonoBehaviour
         }
     }
 
-private void LooseState()
+    private void LooseState()
     {
         if (GameManager.GetComponent<FuelStock>().fuel <= 0)
         {

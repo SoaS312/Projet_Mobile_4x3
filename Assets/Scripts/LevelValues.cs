@@ -26,6 +26,7 @@ public class LevelValues : MonoBehaviour
     public bool StarOne;
     public bool StarTwo;
     public bool StarThree;
+    public int unlockedStars;
 
     [Header("Objectives")]
     public bool ObjectiveIsSelledBurger;
@@ -38,6 +39,44 @@ public class LevelValues : MonoBehaviour
     [ShowIf("ObjectiveIsMoneyEarned")]
     public List<int> MoneyEarnedList;
     public int earnedMoney;
+
+
+    public void Awake()
+    {
+        CheckStar();
+        if (LevelValues_HolderStatic.LevelName_Holder == this.gameObject.name)
+        {
+            LastWin = LevelValues_HolderStatic.Win;
+            if (LastWin)
+            {
+                if (unlockedStars < LevelValues_HolderStatic.staticUnlockedStars)
+                unlockedStars = LevelValues_HolderStatic.staticUnlockedStars;
+                CheckStar();
+            }
+        }
+        CheckStar();
+    }
+
+
+    public void Start()
+    {
+        CheckStar();
+        if (LastWin)
+        {
+            CheckStar();
+            SaveLoad.staticSaveLoad.SavingStars();
+            Debug.Log("Saved");
+        }
+        CheckStar();
+        if (!LastWin)
+        {
+            CheckStar();
+            SaveLoad.staticSaveLoad.LoadingStars();
+            CheckStar();
+            Debug.Log("Loaded");
+        }
+        CheckStar();
+    }
 
     public void SendValues()
     {
@@ -65,18 +104,36 @@ public class LevelValues : MonoBehaviour
         }
     }
 
-    public void Awake()
+    public void CheckStar()
     {
-        if (LevelValues_HolderStatic.LevelName_Holder == this.gameObject.name)
+        if (unlockedStars == 0 && unlockedStars < 1 && unlockedStars< 2 && unlockedStars < 3)
         {
-            LastWin = LevelValues_HolderStatic.Win;
-            if (LastWin)
-            {
-                StarOne = LevelValues_HolderStatic.StarOne;
-                    StarTwo = LevelValues_HolderStatic.StarTwo;
-                    StarThree = LevelValues_HolderStatic.StarThree;
-            }
+            StarOne = false;
+            StarTwo = false;
+            StarThree = false;
+        }
+
+        if (unlockedStars == 1 && unlockedStars < 2 && unlockedStars < 3)
+        {
+            StarOne = true;
+            StarTwo = false;
+            StarThree = false;
+        }
+
+        if (unlockedStars == 2 && unlockedStars < 3)
+        {
+            StarOne = true;
+            StarTwo = true;
+            StarThree = false;
+        }
+
+        if (unlockedStars >= 3)
+        {
+            StarOne = true;
+            StarTwo = true;
+            StarThree = true;
         }
     }
 }
+
 

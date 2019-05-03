@@ -9,6 +9,8 @@ public class LevelValues_HolderStatic : MonoBehaviour
     public static GameObject LevelValuesHolder;
     public static string LevelName_Holder;
 
+
+
     public static int maxMissionTime_holder;
     public static string Scene;
     [Header("Obstacles Settings")]
@@ -33,6 +35,7 @@ public class LevelValues_HolderStatic : MonoBehaviour
     public static bool StarOne;
     public static bool StarTwo;
     public static bool StarThree;
+    public static int staticUnlockedStars;
 
     public void Awake()
     {
