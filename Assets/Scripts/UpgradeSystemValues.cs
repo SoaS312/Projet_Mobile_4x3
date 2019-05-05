@@ -7,37 +7,39 @@ public class UpgradeSystemValues : MonoBehaviour
 {
     public static GameObject UpgradeSystemValuesHolder;
 
+    public static UpgradeSystemValues staticUpgradeSystem;
+
     // Dans le code du controlleur correspondant =>   valeur == upgradesystemvalues.jobUpgradeList[index];
 
     [Header("Driver")]
     public static int DriverLevelIndex;
     public int DriverLevelIndexLOOK; // A dégager quand l'upgrade fonctionnera bien
-    public List<int> DriverUpgradeList; // ça change
+    public List<int> DriverUpgradeList; // max fuel
 
     [Header("Cook")]
     public static int CookLevelIndex;
     public int CookLevelIndexLOOK;// A dégager quand l'upgrade fonctionnera bien
-    public List<int> CookUpgradeList; //
+    public List<int> CookUpgradeList; // max ready food
 
     [Header("Seller")]
     public static int SellerLevelIndex;
     public int SellerLevelIndexLOOK;// A dégager quand l'upgrade fonctionnera bien
-    public List<int> SellerUpgradeList; //
+    public List<int> SellerUpgradeList; // Money earned
 
     [Header("Vigile")]
     public static int VigileLevelIndex;
     public int VigileLevelIndexLOOK;// A dégager quand l'upgrade fonctionnera bien
-    public List<int> VigileUpgradeList; //
+    public List<int> VigileUpgradeList; // Attack value
 
     [Header("Helico")]
     public static int HelicoLevelIndex;
     public int HelicoLevelIndexLOOK;// A dégager quand l'upgrade fonctionnera bien
-    public List<int> HelicoUpgradeList; //
+    public List<int> HelicoUpgradeList; // Fuel given
 
     [Header("Scooter")]
     public static int ScooterLevelIndex;
     public int ScooterLevelIndexLOOK;// A dégager quand l'upgrade fonctionnera bien
-    public List<int> ScooterUpgradeList; //
+    public List<int> ScooterUpgradeList; // Food given
 
     public void Awake()
     {
@@ -62,17 +64,16 @@ public class UpgradeSystemValues : MonoBehaviour
         }
     }
 
-[Button]
-private void UpgradeDriver()
-    {
-        if (DriverLevelIndex < 100)
-        DriverLevelIndex += 1;
-    }
 
     [Button]
-    private void ResetDriver()
+    private void ResetIndex()
     {
         DriverLevelIndex = 0;
+        CookLevelIndex = 0;
+        SellerLevelIndex = 0;
+        VigileLevelIndex = 0;
+        HelicoLevelIndex = 0;
+        ScooterLevelIndex = 0;
     }
 
 

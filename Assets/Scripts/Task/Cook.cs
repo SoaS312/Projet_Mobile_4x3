@@ -18,9 +18,12 @@ public class Cook : MonoBehaviour
     public bool hasSwipeToLeft = false;
     public bool hasSwipeToRight = false;
 
+    public CrewUpgradeScriptable CookLevel;
+
 
     private void Start()
     {
+        maxCookingProgress = CookLevel.CrewUpgradeList[CookLevel.CrewLevelIndex];
         readyFood = 0;
         LevelValues_HolderStatic.SelledBurger_Holded = 0;
         staticCook = this;

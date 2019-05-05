@@ -44,7 +44,6 @@ public class LevelValuesScriptable : ScriptableObject
 
     public void Awake()
     {
-        Debug.Log(name);
         CheckStar();
         if (LevelValues_HolderStatic.LevelName_Holder == name)
         {

@@ -5,10 +5,11 @@ using UnityEngine;
 public class Vigile : MonoBehaviour
 {    
     public int attackValue;
+    public CrewUpgradeScriptable VigileLevel;
 
     private void Start()
     {
-        //attackValue = VigileUpgrade.staticVigileUpgrade.actualUpgradeValue;
+        attackValue = VigileLevel.CrewUpgradeList[VigileLevel.CrewLevelIndex];
     }
 
     void Update()

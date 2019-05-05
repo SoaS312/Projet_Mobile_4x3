@@ -14,11 +14,15 @@ public class LoadingScene : MonoBehaviour
     public void Start()
     {
         StartCoroutine(LoadingScreen());
+        if(Time.timeScale != 1)
+        {
+            Time.timeScale = 1;
+        }
     }
 
     IEnumerator LoadingScreen()
     {
-       yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f);
         async = SceneManager.LoadSceneAsync(LevelValues_HolderStatic.Scene);
         async.allowSceneActivation = false;
         filling.fillAmount += 0.05f;

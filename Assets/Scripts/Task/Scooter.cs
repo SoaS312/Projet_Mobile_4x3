@@ -12,6 +12,13 @@ public class Scooter : MonoBehaviour
     public float Timer;
     public float maxTimer = 0.05f;
 
+    public CrewUpgradeScriptable ScooterLevel;
+
+    private void Start()
+    {
+        foodAmount = ScooterLevel.CrewUpgradeList[ScooterLevel.CrewLevelIndex];
+    }
+
     void Update()
     {
         Buying();

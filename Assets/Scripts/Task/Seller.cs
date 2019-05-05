@@ -10,6 +10,14 @@ public class Seller : MonoBehaviour
     public bool SellerSelected;
     public static Seller staticSeller;
 
+    public CrewUpgradeScriptable SellerLevel;
+
+
+    private void Start()
+    {
+        MoneyEarn = SellerLevel.CrewUpgradeList[SellerLevel.CrewLevelIndex];
+    }
+
     void Update()
     {
         Selling();

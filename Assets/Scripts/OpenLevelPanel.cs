@@ -8,6 +8,7 @@ public class OpenLevelPanel : MonoBehaviour
 
     public void Show()
     {
+        this.gameObject.SetActive(true);
         this.gameObject.GetComponent<Animator>().SetBool("Show", true);
         this.gameObject.GetComponent<Animator>().SetBool("Hide", false);
     }
@@ -16,5 +17,9 @@ public class OpenLevelPanel : MonoBehaviour
     {
         this.gameObject.GetComponent<Animator>().SetBool("Show", false);
         this.gameObject.GetComponent<Animator>().SetBool("Hide", true);
+    }
+    public void Disable()
+    {
+        this.gameObject.SetActive(false);
     }
 }

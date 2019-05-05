@@ -12,6 +12,13 @@ public class Helico : MonoBehaviour
     public float Timer;
     public float maxTimer = 0.05f;
 
+    public CrewUpgradeScriptable HelicoLevel;
+
+    private void Start()
+    {
+        fuelAmount = HelicoLevel.CrewUpgradeList[HelicoLevel.CrewLevelIndex];
+    }
+
 
     public void Update()
     {

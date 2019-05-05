@@ -13,10 +13,9 @@ public class FuelStock : MonoBehaviour
 
     [Range(0, 10f)]
     public float decayTime;
-
-
-
     public GameObject ValuesHolder;
+
+    public CrewUpgradeScriptable DriverLevel;
 
     private void Awake()
     {
@@ -26,6 +25,7 @@ public class FuelStock : MonoBehaviour
     void Start()
     {
         staticFuelStock = this;
+        maxFuel = DriverLevel.CrewUpgradeList[DriverLevel.CrewLevelIndex];
         fuel = maxFuel;
         isDry = false;
     }

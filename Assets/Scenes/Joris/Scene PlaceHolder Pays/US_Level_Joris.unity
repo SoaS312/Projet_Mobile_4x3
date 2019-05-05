@@ -4119,6 +4119,7 @@ MonoBehaviour:
   foodProgress: {fileID: 186094414}
   hasSwipeToLeft: 0
   hasSwipeToRight: 0
+  CookLevel: {fileID: 11400000, guid: 2827e6769ff9fc242956cee7712bafdd, type: 2}
 --- !u!114 &414765675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4132,6 +4133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackValue: 35
+  VigileLevel: {fileID: 11400000, guid: 4c252e6f31715be44a27c336da8fa2bf, type: 2}
 --- !u!114 &414765676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4151,6 +4153,7 @@ MonoBehaviour:
   isHold: 0
   Timer: 0
   maxTimer: 0.1
+  ScooterLevel: {fileID: 11400000, guid: 546db9da61bec984f84ef64cecdb15f2, type: 2}
 --- !u!114 &414765677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4167,6 +4170,7 @@ MonoBehaviour:
   MoneyEarn: 250
   cook: {fileID: 414765674}
   SellerSelected: 0
+  SellerLevel: {fileID: 11400000, guid: 5fca7d0cf5a0f2b41b2a6854d3e20343, type: 2}
 --- !u!114 &414765678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4186,6 +4190,7 @@ MonoBehaviour:
   isHold: 0
   Timer: 0
   maxTimer: 0.1
+  HelicoLevel: {fileID: 11400000, guid: 2bedd35ee0499aa49b28075ed5d7cfb1, type: 2}
 --- !u!114 &414765679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12422,6 +12427,7 @@ MonoBehaviour:
   stockFuel: {fileID: 615194283}
   decayTime: 2
   ValuesHolder: {fileID: 0}
+  DriverLevel: {fileID: 11400000, guid: 838761b27531880418f12f9e59554f56, type: 2}
 --- !u!4 &1423032886
 Transform:
   m_ObjectHideFlags: 0
@@ -17191,6 +17197,8 @@ MonoBehaviour:
   - {fileID: 1194947870}
   FoodTruck: {fileID: 1823329267}
   OffsetY: 0.6
+  lerpTime: 1.5
+  currentLerpTime: 0
   DriverTutoGauche: {fileID: 1509410225}
   CookTutoGauche: {fileID: 2133895518}
   VigileTutoGauche: {fileID: 1776668814}
