@@ -102,7 +102,7 @@ public class MoveFuelPomp : MonoBehaviour
     
 
  
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.tag == "FoodTruck")
         {
@@ -110,7 +110,7 @@ public class MoveFuelPomp : MonoBehaviour
             Debug.Log("fueling");
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
         isFueling = false;
     }
