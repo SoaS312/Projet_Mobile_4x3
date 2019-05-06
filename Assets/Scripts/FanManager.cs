@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class FanManager : MonoBehaviour
 {
-    public bool willLeave = false;
+    private bool willLeave = false;
+    private int randomWillLeave;
 
-    public bool isAngry = false;
-    public bool isPunk = false;
+    private bool isAngry = false;
+    private bool isPunk = false;
 
     public int secondsBeingWaiting = 0;
 
@@ -20,19 +21,39 @@ public class FanManager : MonoBehaviour
     public int burgerLimit = 10;
 
     public int life = 100;
+    public int AttackValue = 1;
 
     public void OnEnable()
     {
+        randomWillLeave = Random.Range(0, 1);
+        if (randomWillLeave >= 1)
+        {
+            willLeave = true;
+        }
+        if (randomWillLeave <= 0)
+        {
+            willLeave = false;
+        }
+
+        if (willLeave)
+        {
+            burgerEated = 0;
+            burgerLimit = Random.Range(1, 10);
+        }
+
+
         // Sera a déterminé au hasard
-        willLeave = false;
         isAngry = false;
         isPunk = false;
-        secondsBeingWaiting = 0;
-        wrathTime = 100;
+        wrathTime = Random.Range(20,120);
         wrathIndex = 0;
         wrathLimit = 0;
+
+
+
+
+        secondsBeingWaiting = 0;
         burgerEated = 0;
-        burgerLimit = 10;
     }
 
     void Update()
@@ -56,6 +77,12 @@ public class FanManager : MonoBehaviour
         if (wrathIndex >= wrathLimit)
         {
             isPunk = true; // Il attaque le FT => Need to be killed.
+        }
+
+        if (isPunk)
+        {
+            //Ici il attack le FT
+            FuelStock.staticFuelStock.fuel -= AttackValue * Time.deltaTime;
         }
 
 
