@@ -5,6 +5,7 @@ using UnityEngine;
 public class Helico_Animation : MonoBehaviour
 {
     public Animator anim;
+    public bool isActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +16,16 @@ public class Helico_Animation : MonoBehaviour
     void Update()
     {
         
+       
     }
 
-    public void HelicoSwitch()
+    public void HelicoTrue()
     {
-        anim.SetTrigger("switch");   
+        anim.SetBool("switch", true);
+    }
+
+    public void HelicoFalse()
+    {
+        anim.SetBool("switch", false);
     }
 }
