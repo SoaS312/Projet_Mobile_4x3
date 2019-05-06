@@ -42,8 +42,22 @@ public class LevelValuesScriptable : ScriptableObject
     public int earnedMoney;
 
 
+
+    [Header("Unlockable")]
+    public bool isUnlocked = false;
+    public LevelValuesScriptable previousLevel;
+
+
     public void Awake()
     {
+        if(previousLevel.unlockedStars > 0)
+        {
+            isUnlocked = true;
+        }
+
+
+
+
         CheckStar();
         if (LevelValues_HolderStatic.LevelName_Holder == name)
         {
@@ -82,7 +96,6 @@ public class LevelValuesScriptable : ScriptableObject
     public void SendValues()
     {
         DetermineObjective();
-        //LevelValues_HolderStatic.Scene = SceneName;
         LevelValues_HolderStatic.Scene = SceneName;
         LevelValues_HolderStatic.maxMissionTime_holder = maxMissionTime;
         LevelValues_HolderStatic.minTime_Holded = minTime_Obstacle;
