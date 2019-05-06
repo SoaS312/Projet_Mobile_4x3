@@ -8,6 +8,8 @@ public class ObjectivesManager : MonoBehaviour
     public Transform Routes;
     public float FarAwaySpeed;
 
+    private bool WonMoney = false;
+
 
     public GameObject Foodtruck;
 
@@ -186,6 +188,8 @@ public class ObjectivesManager : MonoBehaviour
     {
         if (currentTime <= 0)
         {
+            WinMoney();
+
             Win = true;
             Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, /*myDeltaTime **/ decreaseSpeed);
             Routes.position += new Vector3(FarAwaySpeed, 0, 0);
@@ -201,7 +205,30 @@ public class ObjectivesManager : MonoBehaviour
                 WinScreen.SetActive(true);
                 UIGame.SetActive(false);
                 SpawnManager.SetActive(false);
+                FuelStock.staticFuelStock.decayTime = 0;
             }
+        }
+    }
+
+    private void WinMoney()
+    {
+        if (StarOne && !StarTwo && !StarThree && !WonMoney)
+        {
+            MoneyManager.StandardMoney += ScoreManager.money / 3;
+            WonMoney = true;
+            PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
+        }
+        else if (StarTwo && StarOne && !StarThree && !WonMoney)
+        {
+            MoneyManager.StandardMoney += ScoreManager.money / 2;
+            WonMoney = true;
+            PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
+        }
+        else if (StarThree && StarOne && StarTwo && !WonMoney)
+        {
+            MoneyManager.StandardMoney += ScoreManager.money;
+            WonMoney = true;
+            PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
         }
     }
 

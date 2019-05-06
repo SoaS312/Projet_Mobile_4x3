@@ -20,11 +20,11 @@ public class SaveLoad : MonoBehaviour
     {
 
         //Level1
-        PlayerPrefs.SetInt("unlockedStarsLevel01", Level[0].unlockedStars);/*
+        PlayerPrefs.SetInt("unlockedStarsLevel01", Level[0].unlockedStars);
         //Level2
         PlayerPrefs.SetInt("unlockedStarsLevel02", Level[1].unlockedStars);
         //Level3
-        PlayerPrefs.SetInt("unlockedStarsLevel03", Level[2].unlockedStars);*/
+        PlayerPrefs.SetInt("unlockedStarsLevel03", Level[2].unlockedStars);
     }
 
     [Button]
@@ -33,10 +33,10 @@ public class SaveLoad : MonoBehaviour
         if (PlayerPrefs.HasKey("unlockedStarsLevel01"))
             Level[0].unlockedStars = PlayerPrefs.GetInt("unlockedStarsLevel01", 0);
 
-        /*if (PlayerPrefs.HasKey("unlockedStarsLevel02"))
+        if (PlayerPrefs.HasKey("unlockedStarsLevel02"))
             Level[1].unlockedStars = PlayerPrefs.GetInt("unlockedStarsLevel02", 0);
 
         if (PlayerPrefs.HasKey("unlockedStarsLevel03"))
-            Level[2].unlockedStars = PlayerPrefs.GetInt("unlockedStarsLevel03", 0);*/
+            Level[2].unlockedStars = PlayerPrefs.GetInt("unlockedStarsLevel03", 0);
     }
 }

@@ -16,6 +16,12 @@ public class BuyLevel : MonoBehaviour
     public List<int> CookCost;
     public TMP_Text CookCostText;
 
+    public void OnEnable()
+    {
+        DriverCrew.CrewLevelIndex = PlayerPrefs.GetInt("DriverLevel");
+        CookCrew.CrewLevelIndex = PlayerPrefs.GetInt("CookLevel");
+    }
+
     public void Update()
     {
         DriverCostText.text = "" + DriverCost[DriverCrew.CrewLevelIndex];
@@ -24,7 +30,6 @@ public class BuyLevel : MonoBehaviour
 
     public void BuyStandardDriver()
     {
-        MoneyManager.StandardMoney = PlayerPrefs.GetInt("StandardMoney");
         DriverCrew.CrewLevelIndex = PlayerPrefs.GetInt("DriverLevel");
         if (MoneyManager.StandardMoney >= DriverCost[DriverCrew.CrewLevelIndex]) {
             MoneyManager.StandardMoney -= DriverCost[DriverCrew.CrewLevelIndex];
@@ -36,7 +41,6 @@ public class BuyLevel : MonoBehaviour
 
     public void BuyStandardCook()
     {
-        MoneyManager.StandardMoney = PlayerPrefs.GetInt("StandardMoney");
         CookCrew.CrewLevelIndex = PlayerPrefs.GetInt("CookLevel");
         if (MoneyManager.StandardMoney >= CookCost[CookCrew.CrewLevelIndex])
         {
