@@ -6,7 +6,7 @@ public class Helico : MonoBehaviour
 {
     public GameObject FoodTruck;
     public FuelStock FuelManager;
-    public int fuelAmount = 10;
+    public float fuelAmount = 0.5f;
     public int MoneyCost;
     public bool isHold = false;
     public float Timer;
@@ -42,8 +42,8 @@ public class Helico : MonoBehaviour
     {
         if (FuelManager.fuel < FuelManager.maxFuel && ScoreManager.money >= MoneyCost)
         {
-            FuelManager.fuel = (FuelManager.fuel + 1f);
-            ScoreManager.money -= 10;
+            FuelManager.fuel += fuelAmount;
+            ScoreManager.money -= 1;
         }
     }
 }

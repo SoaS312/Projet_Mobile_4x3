@@ -30,6 +30,8 @@ public class SaveLoad : MonoBehaviour
     [Button]
     public void LoadingStars()
     {
+        PlayerPrefs.GetInt("StandardMoney", MoneyManager.StandardMoney);
+
         if (PlayerPrefs.HasKey("unlockedStarsLevel01"))
             Level[0].unlockedStars = PlayerPrefs.GetInt("unlockedStarsLevel01", 0);
 
