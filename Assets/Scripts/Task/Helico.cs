@@ -42,8 +42,8 @@ public class Helico : MonoBehaviour
     {
         if (FuelManager.fuel < FuelManager.maxFuel && ScoreManager.money >= MoneyCost)
         {
-            FuelManager.fuel = (FuelManager.fuel + 0.45f);
-            ScoreManager.money -= MoneyCost;
+            FuelManager.fuel = (FuelManager.fuel + 1f);
+            ScoreManager.money -= 10;
         }
     }
 }

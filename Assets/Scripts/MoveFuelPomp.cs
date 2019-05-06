@@ -8,7 +8,7 @@ public class MoveFuelPomp : MonoBehaviour
 
     public bool isMooving;
     public bool isFueling;
-    public GameObject fuelPosition;
+    //public GameObject fuelPosition;
     Rigidbody rb;
     //private Vector3 init;
     public GameObject origin;
