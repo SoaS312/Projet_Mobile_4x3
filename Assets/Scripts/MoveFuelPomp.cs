@@ -6,7 +6,7 @@ using UnityEngine;
 public class MoveFuelPomp : MonoBehaviour
 {
 
-    bool isMooving;
+    public bool isMooving;
     public bool isFueling;
     public GameObject fuelPosition;
     Rigidbody rb;
@@ -14,6 +14,7 @@ public class MoveFuelPomp : MonoBehaviour
     public GameObject origin;
     public GameObject tuyeau;
     private GameObject fuelManager;
+    public LayerMask layermask;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,28 +34,34 @@ public class MoveFuelPomp : MonoBehaviour
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            //If we are clicing on the moveable object
+            
+            //Debug.DrawRay(Camera.main.transform.position, Input.mousePosition, Color.red);
+            //If we are clicking on the moveable object
             if (Physics.Raycast(ray, out hit, 100.0f, ~gameObject.layer))
             {
-                StartMovingObject();
+                if (hit.transform.tag == "Pompe")
+                {
+                    StartMovingObject();
+                }
             }
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && isMooving)
         {
 
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             //Moving the moveable object
-            if (Physics.Raycast(ray, out hit, 100.0f, gameObject.layer) && isMooving)
+            if (Physics.Raycast(ray, out hit, 100.0f, layermask) && isMooving)
             {
                 Vector3 hitPosition = hit.point - ray.direction * 0.5f;
 
-                //transform.LookAt(hitPosition);
-                transform.position = hitPosition;
-                rb.velocity = Vector3.zero;
+                
+            //transform.LookAt(hitPosition);
+            transform.position = hitPosition;
+            rb.velocity = Vector3.zero;
+                
 
             }
         }
@@ -64,17 +71,18 @@ public class MoveFuelPomp : MonoBehaviour
             StopMovingObject();
         }
 
+        
         if (isFueling)
         {
-            transform.position = fuelPosition.transform.position;
-            tuyeau.GetComponent<RopeControllerSimple>().enabled = false;
+            
+            //tuyeau.GetComponent<RopeControllerSimple>().enabled = false;
             fuelManager.GetComponent<Helico>().Buying();
         }
         else
         {
             tuyeau.GetComponent<RopeControllerSimple>().enabled = true;
         }
-
+        
     }
 
     void StartMovingObject()
@@ -83,21 +91,30 @@ public class MoveFuelPomp : MonoBehaviour
         rb.freezeRotation = true;
         rb.velocity = Vector3.zero;
     }
-
+    
     void StopMovingObject()
     {
         isMooving = false;
         rb.freezeRotation = false;
         this.transform.position = origin.transform.position;
+        rb.velocity = Vector3.zero;
     }
+    
 
-    private void OnCollisionEnter(Collision collision)
+ 
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "FoodTruck")
         {
             isFueling = true;
+            Debug.Log("fueling");
         }
-
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        isFueling = false;
+    }
+
+
 
 }

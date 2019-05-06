@@ -22,7 +22,7 @@ public class Helico : MonoBehaviour
 
     public void Update()
     {
-        Buying();
+        
 
         if (Timer > 0)
             Timer -= 1 * Time.deltaTime;
@@ -40,11 +40,10 @@ public class Helico : MonoBehaviour
 
     public void Buying()
     {
-        if (FuelManager.fuel < FuelManager.maxFuel && ScoreManager.money >= MoneyCost && isHold && Timer <= 0)
+        if (FuelManager.fuel < FuelManager.maxFuel && ScoreManager.money >= MoneyCost)
         {
-            FuelManager.fuel += fuelAmount;
+            FuelManager.fuel = (FuelManager.fuel + 0.45f);
             ScoreManager.money -= MoneyCost;
-            Timer = maxTimer;
         }
     }
 }
