@@ -9,7 +9,7 @@ public class SplineWalker : MonoBehaviour
 
     public float duration;
 
-    private float progress;
+    public float progress;
 
     public bool lookForward;
 
