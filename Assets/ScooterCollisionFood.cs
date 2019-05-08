@@ -10,6 +10,10 @@ public class ScooterCollisionFood : MonoBehaviour
 
     public Transform spawnPos;
 
+     public Material NonToxicMaterial;
+
+    public Material ToxicMaterial;
+
 
     public void Update()
     {
@@ -39,10 +43,12 @@ public class ScooterCollisionFood : MonoBehaviour
         if (Toxicindex > 30)
         {
             isToxic = false;
+            GetComponent<Renderer>().material = NonToxicMaterial;
         }
         else
         {
             isToxic = true;
+            GetComponent<Renderer>().material = ToxicMaterial;
         }
 
 
@@ -68,6 +74,7 @@ public class ScooterCollisionFood : MonoBehaviour
                     FoodStock.staticFoodStock.food -= Scooter.staticScooter.foodAmount;
                 }
                 GetComponent<SplineWalker>().progress = 0;
+                Scooter.staticScooter.PrepFoodList.Add(gameObject);
                 transform.position = spawnPos.position;
                 gameObject.SetActive(false);
             }

@@ -18,11 +18,14 @@ public class Scooter : MonoBehaviour
 
     public GameObject ScooterObj;
     public Transform StartPos;
+    public Transform ActualPos;
     public Transform ChosenPlace;
 
     public float lerpTime = 5; // Time it takes to reach
-    public float currentLerpTime = 0;
-        
+    public float currentCOMELerpTime = 0;
+
+    public float currentLEAVELerpTime = 0;
+
     public Transform ScooterPosGauche;
     public Transform ScooterPosDroite;
 
@@ -38,7 +41,8 @@ public class Scooter : MonoBehaviour
 
     private void Start()
     {
-        StartPos = ScooterObj.transform;
+        lerpTime = 0.75f;
+        StartPos = FollowersManager.staticFollowersManager.transform;
         staticScooter = this;
         foodAmount = ScooterLevel.CrewUpgradeList[ScooterLevel.CrewLevelIndex];
         timer = Random.Range(minTime, maxTime);
@@ -57,11 +61,29 @@ public class Scooter : MonoBehaviour
             ChosenPlace = ScooterPosDroite;
         }
 
-
-        currentLerpTime += Time.deltaTime;
-        if (currentLerpTime >= lerpTime)
+        if (currentCOMELerpTime < lerpTime && FoodTruckState.staticFoodTruckState.isScooterActive)
         {
-            currentLerpTime = lerpTime;
+            currentCOMELerpTime += Time.deltaTime;
+        }
+
+        if (currentCOMELerpTime >= lerpTime)
+        {
+            currentCOMELerpTime = lerpTime;
+            wasInPos = true;
+        }
+
+
+        if (currentLEAVELerpTime < lerpTime && !FoodTruckState.staticFoodTruckState.isScooterActive && wasInPos)
+        {
+            currentLEAVELerpTime += Time.deltaTime;
+        }
+
+        if (currentLEAVELerpTime >= lerpTime)
+        {
+            currentLEAVELerpTime = lerpTime;
+            wasInPos = false;
+            currentCOMELerpTime = 0;
+            currentLEAVELerpTime = 0;
         }
 
         MoveToPosition();
@@ -73,7 +95,7 @@ public class Scooter : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        if (timer <= 0)
+        if (timer <= 0 && ScoreManager.money > Scooter.staticScooter.MoneyCost)
         {
             int index = Random.Range(0, PrepFoodList.Count);
             FoodSelected = PrepFoodList[index];
@@ -81,7 +103,6 @@ public class Scooter : MonoBehaviour
             FoodSelected.SetActive(true);
             PrepFoodList.Remove(FoodSelected);
             timer = Random.Range(minTime, maxTime);
-            Debug.Log("Pooling");
         }
 
 
@@ -92,8 +113,8 @@ public class Scooter : MonoBehaviour
 
         if (FoodTruckState.staticFoodTruckState.isScooterActive)
         {
-            wasInPos = true;
-            ScooterObj.transform.position = Vector3.Lerp(StartPos.position, ChosenPlace.position, (currentLerpTime / lerpTime)*Time.deltaTime);
+            hasResettedTime = false;
+            ScooterObj.transform.position = Vector3.Lerp(StartPos.position, ChosenPlace.position, currentCOMELerpTime/lerpTime);
         }
     }
 
@@ -101,12 +122,7 @@ public class Scooter : MonoBehaviour
     {
         if (!FoodTruckState.staticFoodTruckState.isScooterActive && wasInPos)
         {
-            if (!hasResettedTime)
-            {
-                currentLerpTime = 0; hasResettedTime = true;
-            }
-            ScooterObj.transform.position = Vector3.Lerp(ChosenPlace.position, StartPos.position, currentLerpTime / lerpTime);
-            wasInPos = false;
+            ScooterObj.transform.position = Vector3.Lerp(ChosenPlace.position, StartPos.position, currentLEAVELerpTime / lerpTime);
         }
     }
 }

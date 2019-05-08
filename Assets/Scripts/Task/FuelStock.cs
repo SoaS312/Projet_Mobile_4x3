@@ -28,6 +28,7 @@ public class FuelStock : MonoBehaviour
         maxFuel = DriverLevel.CrewUpgradeList[DriverLevel.CrewLevelIndex];
         fuel = maxFuel;
         isDry = false;
+        decayTime = LevelValues_HolderStatic.decayTime_Holded;
     }
 
     void Update()
