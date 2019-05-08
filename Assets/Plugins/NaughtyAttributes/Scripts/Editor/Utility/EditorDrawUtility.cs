@@ -34,13 +34,10 @@ namespace NaughtyAttributes.Editor
                 {
                     case MessageType.None:
                     case MessageType.Info:
-                        Debug.Log(message, context);
                         break;
                     case MessageType.Warning:
-                        Debug.LogWarning(message, context);
                         break;
                     case MessageType.Error:
-                        Debug.LogError(message, context);
                         break;
                 }
             }

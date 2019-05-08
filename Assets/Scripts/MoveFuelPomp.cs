@@ -100,7 +100,6 @@ public class MoveFuelPomp : MonoBehaviour
         if (collision.gameObject.tag == "FoodTruck")
         {
             isFueling = true;
-            Debug.Log("fueling");
         }
     }
     private void OnTriggerExit(Collider collision)

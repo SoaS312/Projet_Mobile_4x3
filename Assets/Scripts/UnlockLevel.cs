@@ -11,6 +11,9 @@ public class UnlockLevel : MonoBehaviour
 
     public Sprite UnlockedStar;
 
+    public Sprite CloseSprite;
+    public Sprite OpenSprite;
+
     public List<Image> Stars;
 
     public void Start()
@@ -18,6 +21,15 @@ public class UnlockLevel : MonoBehaviour
         LevelButton = GetComponent<Button>();
         CheckIfUnlockable();
         ActiveStars();
+        if (ActualLevel.unlockedStars <= 0)
+        {
+            GetComponent<Image>().sprite = CloseSprite;
+        }
+
+        if (ActualLevel.unlockedStars >= 1)
+        {
+            GetComponent<Image>().sprite = OpenSprite;
+        }
     }
 
     private void ActiveStars()

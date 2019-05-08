@@ -51,9 +51,6 @@ public class Cook : MonoBehaviour
 
     private void Cooking()
     {
-        /*if( readyFood < maxReadyFood && foodStockManager.food > 0)
-                            cookingProgress += 1;
-                            foodStockManager.food -= usedFoodByClick;*/
 
         if (FoodTruckState.staticFoodTruckState.isCookActive)
         {

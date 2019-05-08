@@ -31,7 +31,7 @@ public class ObstacleTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "FoodTruck" && isObstacle)
+        if (other.tag == "FoodTruck" && isObstacle)
         {
             FuelStock.staticFuelStock.fuel -= FuelValue;
             gameObject.SetActive(false);
@@ -41,7 +41,7 @@ public class ObstacleTrigger : MonoBehaviour
         else
         if (other.tag == "FoodTruck" && isBonus && isFuelBonus)
         {
-            FuelStock.staticFuelStock.fuel += FuelValue;
+            FuelStock.staticFuelStock.fuel += FuelValue*2;
             gameObject.SetActive(false);
             Spawn.staticSpawn.Obstacles.Add(gameObject);
             gameObject.transform.position = Dump.transform.position;

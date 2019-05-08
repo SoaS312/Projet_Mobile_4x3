@@ -9,8 +9,7 @@ using UnityEngine.SceneManagement;
 public class LevelValuesScriptable : ScriptableObject
 {
     public int maxMissionTime;
-
-    //public Object SceneToLoad;
+    
     public string SceneName;
     public Text textlol;
 

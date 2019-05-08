@@ -21,7 +21,7 @@ public class Scooter : MonoBehaviour
     public Transform ActualPos;
     public Transform ChosenPlace;
 
-    public float lerpTime = 5; // Time it takes to reach
+    public float lerpTime = 2; // Time it takes to reach
     public float currentCOMELerpTime = 0;
 
     public float currentLEAVELerpTime = 0;

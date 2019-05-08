@@ -11,7 +11,6 @@ public class ClickingArea : MonoBehaviour
     public int speed;
     public Camera cam;
     public UnityEvent ClickEvent;
-    //public GameObject NuageEffect;
 
     public void Update()
     {
@@ -22,11 +21,6 @@ public class ClickingArea : MonoBehaviour
             if (cam.fieldOfView > ZoomFOV)
             {
                 cam.fieldOfView -= speed * Time.deltaTime;
-            }
-
-            if (cam.fieldOfView <= ZoomFOV)
-            {
-                //NuageEffect.GetComponent<ParticleSystem>().Play();
             }
         }
     }
@@ -41,8 +35,6 @@ public class ClickingArea : MonoBehaviour
             {
                 if (hit.transform.name == gameObject.transform.name)
                 zoomIn = true;
-                //NuageEffect.GetComponent<ParticleSystem>().Play();
-                //DesactiveObj();
 
                 foreach (Transform child in hit.transform)
                 {
@@ -52,9 +44,4 @@ public class ClickingArea : MonoBehaviour
             }
         }
     }
-
-    /*public void DesactiveObj()
-    {
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
-    }*/
 }

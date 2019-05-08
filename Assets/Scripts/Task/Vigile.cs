@@ -29,8 +29,7 @@ public class Vigile : MonoBehaviour
                 if (Physics.Raycast(ray, out hit))
                 {
                     if (hit.transform.gameObject.tag == "Followers")
-                    {
-                        Debug.Log("Je te casse la tête");
+                    {   
                         hit.transform.GetComponent<FanManager>().life -= attackValue;
                     }
 

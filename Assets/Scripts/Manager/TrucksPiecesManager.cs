@@ -10,18 +10,6 @@ public class TrucksPiecesManager : MonoBehaviour
     public GameObject VigilePart;
     public GameObject VigilePerso;
 
-
-    void Start()
-    {
-/*
-        DriverPart.SetActive(true);
-        CookPart.SetActive(true);
-        SellerPart.SetActive(true);
-        VigilePart.SetActive(true);*/
-    }
-
-
-
     void Update()
     {
         if (this.GetComponent<FoodTruckState>().isDriverActive)
