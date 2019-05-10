@@ -5,8 +5,8 @@ using NaughtyAttributes;
 
 public class BoostManager : MonoBehaviour
 {
-    public bool isInvicible, isUndryiable, isAutoCokking, isInfiniteFood;
-    public float timer, maxTime;
+    public static bool isInvicible, isUndryiable, isAutoCokking, isInfiniteFood;
+    public static float timer, maxTime;
 
     public float cookTime, maxCookTime;
 
@@ -46,7 +46,6 @@ public class BoostManager : MonoBehaviour
         }
     }
 
-    [Button]
     public void SetTime()
     {
         timer = maxTime;
