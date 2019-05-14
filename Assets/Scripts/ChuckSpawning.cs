@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChuckSpawning : MonoBehaviour
 {
     public bool spawnOnce = false;
+    public static ChuckSpawning staticChuckSpawning;
 
     [Header("===Settings===")]
     public Vector3 position;
@@ -17,7 +18,6 @@ public class ChuckSpawning : MonoBehaviour
     public List<GameObject> Chuncks;
     public GameObject gameObjectSelected;
 
-    public static ChuckSpawning staticChuckSpawning;
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class ChuckSpawning : MonoBehaviour
     void Spawning()
     {
 
-        if (Input.GetKeyDown("l") || timer <= 0)
+        if (timer <= 0)
         {
             Vector3 Pos = position + new Vector3(Random.Range(-size.x / 2, size.x / 2), 0, 0);
             int index = Random.Range(0, Chuncks.Count);

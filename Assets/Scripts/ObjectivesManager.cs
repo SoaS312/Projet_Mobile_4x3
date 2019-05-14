@@ -37,6 +37,7 @@ public class ObjectivesManager : MonoBehaviour
     public TextMeshProUGUI FirstStarText;
     public TextMeshProUGUI SecondStarText;
     public TextMeshProUGUI ThirdStarText;
+    public TextMeshProUGUI MoneyText;
     public GameObject HomeButtonToActive;
     public GameObject[] ButtonsToDesactive;
 
@@ -191,7 +192,7 @@ public class ObjectivesManager : MonoBehaviour
             WinMoney();
 
             Win = true;
-            Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, /*myDeltaTime **/ decreaseSpeed);
+            Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, decreaseSpeed);
             Routes.position += new Vector3(FarAwaySpeed, 0, 0);
             Foodtruck.GetComponent<BoxCollider>().enabled = false;
             if (Time.timeScale <= 0 && Win)
@@ -217,18 +218,21 @@ public class ObjectivesManager : MonoBehaviour
             MoneyManager.StandardMoney += ScoreManager.money / 3;
             WonMoney = true;
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
+            MoneyText.text = "You earned " + (ScoreManager.money / 3) + " money.";
         }
         else if (StarTwo && StarOne && !StarThree && !WonMoney)
         {
             MoneyManager.StandardMoney += ScoreManager.money / 2;
             WonMoney = true;
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
+            MoneyText.text = "You earned " + (ScoreManager.money / 2) + " money.";
         }
         else if (StarThree && StarOne && StarTwo && !WonMoney)
         {
             MoneyManager.StandardMoney += ScoreManager.money;
             WonMoney = true;
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
+            MoneyText.text = "You earned " + (ScoreManager.money) + " money.";
         }
     }
 
@@ -236,7 +240,7 @@ public class ObjectivesManager : MonoBehaviour
     {
         if (GameManager.GetComponent<FuelStock>().fuel <= 0)
         {
-            Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, /*myDeltaTime **/ decreaseSpeed);
+            Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, decreaseSpeed);
             if (Time.timeScale <= 0)
             {
                 Loose = true;

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FanManager : MonoBehaviour
 {
-    private bool willLeave = false;
+    public bool willLeave = false;
     private int randomWillLeave;
 
-    private bool isAngry = false;
-    private bool isPunk = false;
+    public bool isAngry = false;
+    public bool isPunk = false;
 
-    public int secondsBeingWaiting = 0;
+    public float secondsBeingWaiting = 0;
 
     public int wrathTime = 100;
 
@@ -23,10 +23,20 @@ public class FanManager : MonoBehaviour
     public int life = 100;
     public int AttackValue = 1;
 
+    public float AttackActualTimer;
+    public float AttackMaxTimer;
+
+
+
+    public Material NormalMat;
+    public Material AngryMat;
+    public Material PunkMat;
+
     public void OnEnable()
     {
-        randomWillLeave = Random.Range(0, 1);
-        if (randomWillLeave >= 1)
+
+        randomWillLeave = Random.Range(0, 100);
+        if (randomWillLeave >= 30)
         {
             willLeave = true;
         }
@@ -37,27 +47,27 @@ public class FanManager : MonoBehaviour
 
         if (willLeave)
         {
-            burgerEated = 0;
             burgerLimit = Random.Range(1, 10);
         }
 
-
-        // Sera a déterminé au hasard
         isAngry = false;
         isPunk = false;
         wrathTime = Random.Range(20,120);
         wrathIndex = 0;
-        wrathLimit = 0;
-
-
-
-
+        wrathLimit = Random.Range(1, 5);
         secondsBeingWaiting = 0;
         burgerEated = 0;
+        GetComponent<Renderer>().material = NormalMat;
     }
 
     void Update()
     {
+
+        if (secondsBeingWaiting <= wrathTime)
+        {
+            secondsBeingWaiting += Time.deltaTime;
+        }
+
         LifeCheck();
 
         if (willLeave)
@@ -65,24 +75,36 @@ public class FanManager : MonoBehaviour
             if(burgerEated >= burgerLimit)
             {
                 gameObject.GetComponent<TakePlace>().needToLeave = true;
-                //Il part et reviens dans le pool.
             }
         }
 
         if (secondsBeingWaiting >= wrathTime)
         {
-            isAngry = true; // Il s'impatiente et devient en colère => Prochaine étape le cassage.
+            GetComponent<Renderer>().material = AngryMat;
+            isAngry = true;
+            secondsBeingWaiting = 0;
+            wrathIndex += 1;
         }
 
         if (wrathIndex >= wrathLimit)
         {
-            isPunk = true; // Il attaque le FT => Need to be killed.
+            isPunk = true;
         }
 
         if (isPunk)
         {
-            //Ici il attack le FT
-            FuelStock.staticFuelStock.fuel -= AttackValue * Time.deltaTime;
+            GetComponent<Renderer>().material = PunkMat;
+
+            if (AttackActualTimer >= AttackMaxTimer)
+            {
+                AttackActualTimer -= Time.deltaTime;
+            }
+
+            if (AttackActualTimer <= 0)
+            {
+                AttackActualTimer = AttackMaxTimer;
+                FuelStock.staticFuelStock.fuel -= AttackValue * Time.deltaTime;
+            }
         }
 
 
@@ -92,7 +114,7 @@ public class FanManager : MonoBehaviour
     {
         if (life <= 0)
         {
-            gameObject.GetComponent<TakePlace>().Die(); // A changer pour qu'il "meurt", reparte dans le pool et puisse revenir plus tard avec différent settings.
+            gameObject.GetComponent<TakePlace>().Die(); 
         }
     }
 }

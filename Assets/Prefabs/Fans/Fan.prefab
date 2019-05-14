@@ -106,13 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8c9279b7a76fa4e8acfd10d13c6f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Places: []
-  chosenPlace: 0
-  originalPos: {x: 0, y: 0, z: 0}
-  RangementPlaces: {fileID: 529713603480105896, guid: a9a3ada6c6004344a840651b63bee494,
-    type: 3}
-  OffsetY: 0.3
-  followerManager: {fileID: 0}
+  Moving: 0
+  needToLeave: 0
+  SpawnPos: {fileID: 0}
+  ChosenPlace: {fileID: 0}
+  hasResettedTime: 0
+  lerpTime: 3
+  currentLerpTime: 0
 --- !u!114 &4548117371598114644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,4 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bf6c42775b4ab4495e75844928d342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsBeingWaiting: 0
+  wrathTime: 100
+  wrathIndex: 0
+  wrathLimit: 10
+  burgerEated: 0
+  burgerLimit: 10
   life: 100
+  AttackValue: 1

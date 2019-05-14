@@ -46,10 +46,8 @@ public class animVigile : MonoBehaviour
                 {
                     if ((hit.transform.gameObject.tag == "Followers"))
                     {
-                        //fanposition.position = ((hit.transform.position.x-0.2f), hit.transform.position.y, hit.transform.position.z);
                         fanposition.position = hit.transform.position + new Vector3(1f, 0, 0);
                         anim.SetTrigger("isAttacking");
-                        //transform.position = Vector3.Lerp(transform.position, hit.transform.position, 0.1f);
                         isAttacking = true;
                     }
 
@@ -61,6 +59,5 @@ public class animVigile : MonoBehaviour
     public void GoTruck()
     { 
         isAttacking = false;
-        Debug.Log("retour Camion !");
     }
 }

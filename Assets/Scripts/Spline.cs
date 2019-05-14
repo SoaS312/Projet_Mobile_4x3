@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoldButton : MonoBehaviour
+public class Spline : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

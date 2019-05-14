@@ -8,8 +8,7 @@ using UnityEngine.SceneManagement;
 public class LevelValues : MonoBehaviour
 {
     public int maxMissionTime;
-
-    //public Object SceneToLoad;
+    
     public string SceneName;
     public Text textlol;
 
@@ -81,7 +80,6 @@ public class LevelValues : MonoBehaviour
     public void SendValues()
     {
         DetermineObjective();
-        //LevelValues_HolderStatic.Scene = SceneName;
         LevelValues_HolderStatic.Scene = SceneName;
         LevelValues_HolderStatic.maxMissionTime_holder = maxMissionTime;
         LevelValues_HolderStatic.minTime_Holded = minTime_Obstacle;

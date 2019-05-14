@@ -18,7 +18,7 @@ public class PauseMenu : MonoBehaviour
         staticPauseMenu = this;
         isPaused = true;
         needPause = false;
-       // Time.timeScale = 0f;
+        Time.timeScale = 0f;
         //PausedMenu.SetActive(true);
         scene = SceneManager.GetActiveScene();
     }

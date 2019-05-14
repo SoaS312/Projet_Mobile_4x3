@@ -15,7 +15,7 @@ public class ObstacleTrigger : MonoBehaviour
     [ShowIf("isBonus")]
     public bool isFoodBonus;
     [ShowIf("isBonus")]
-    public bool isMoneyBonus;
+    public bool isNoFuelDecayBonus;
     [ShowIf("isBonus")]
     public bool isInvicibleBonus;
     [ShowIf("isBonus")]
@@ -31,7 +31,7 @@ public class ObstacleTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "FoodTruck" && isObstacle)
+        if (other.tag == "FoodTruck" && isObstacle)
         {
             FuelStock.staticFuelStock.fuel -= FuelValue;
             gameObject.SetActive(false);
@@ -41,7 +41,7 @@ public class ObstacleTrigger : MonoBehaviour
         else
         if (other.tag == "FoodTruck" && isBonus && isFuelBonus)
         {
-            FuelStock.staticFuelStock.fuel += FuelValue;
+            FuelStock.staticFuelStock.fuel += FuelValue*2;
             gameObject.SetActive(false);
             Spawn.staticSpawn.Obstacles.Add(gameObject);
             gameObject.transform.position = Dump.transform.position;
@@ -53,6 +53,11 @@ public class ObstacleTrigger : MonoBehaviour
             gameObject.SetActive(false);
             Spawn.staticSpawn.Obstacles.Add(gameObject);
             gameObject.transform.position = Dump.transform.position;
+        }
+        else 
+        if (other.tag == "Foodtruck" && isBonus && isNoFuelDecayBonus)
+        {
+            BoostManager.isUndryiable = true;
         }
     }
 }
