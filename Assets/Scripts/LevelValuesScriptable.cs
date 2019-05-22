@@ -11,7 +11,6 @@ public class LevelValuesScriptable : ScriptableObject
     public int maxMissionTime;
     
     public string SceneName;
-    public Text textlol;
 
     public bool LastWin;
 
