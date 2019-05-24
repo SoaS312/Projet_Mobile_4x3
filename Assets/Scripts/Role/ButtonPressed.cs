@@ -31,7 +31,7 @@ public class ButtonPressed : MonoBehaviour
 
     public void RevertColor()
     {
-        image.color = iniColor;
+  //      image.color = iniColor;
     }
 
     public void onPress()
