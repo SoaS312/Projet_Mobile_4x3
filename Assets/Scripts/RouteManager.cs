@@ -20,11 +20,17 @@ public class RouteManager : MonoBehaviour
     public GameObject DriverTutoGauche;
     public GameObject CookTutoGauche;
     public GameObject VigileTutoGauche;
+    public GameObject SellerTutoGauche;
+    public GameObject ScooterTutoGauche;
+    public GameObject HelicoTutoGauche;
 
     [Header("Tuto Droite")]
     public GameObject DriverTutoDroite;
     public GameObject CookTutoDroite;
     public GameObject VigileTutoDroite;
+    public GameObject SellerTutoDroite;
+    public GameObject ScooterTutoDroite;
+    public GameObject HelicoTutoDroite;
 
     public void Awake()
     {
@@ -75,6 +81,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 DriverTutoGauche.SetActive(false);
                 DriverTutoDroite.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
             else
             {
@@ -84,6 +92,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 DriverTutoDroite.SetActive(false);
                 DriverTutoGauche.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
         }
     }
@@ -100,6 +110,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 DriverTutoGauche.SetActive(false);
                 DriverTutoDroite.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
             else
             {
@@ -109,6 +121,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 DriverTutoDroite.SetActive(false);
                 DriverTutoGauche.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
         }
     }
@@ -125,6 +139,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 DriverTutoGauche.SetActive(false);
                 DriverTutoDroite.SetActive(false);
+                SellerTutoGauche.SetActive(true);
+                SellerTutoDroite.SetActive(false);
             }
             else
             {
@@ -134,6 +150,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 DriverTutoDroite.SetActive(false);
                 DriverTutoGauche.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(true);
             }
         }
     }
@@ -150,6 +168,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 DriverTutoGauche.SetActive(false);
                 DriverTutoDroite.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
             else
             {
@@ -159,6 +179,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 DriverTutoDroite.SetActive(false);
                 DriverTutoGauche.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
         }
     }
@@ -175,6 +197,8 @@ public class RouteManager : MonoBehaviour
                 DriverTutoDroite.SetActive(false);
                 VigileTutoGauche.SetActive(false);
                 VigileTutoDroite.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
             else
             {
@@ -184,6 +208,8 @@ public class RouteManager : MonoBehaviour
                 DriverTutoGauche.SetActive(false);
                 VigileTutoGauche.SetActive(false);
                 VigileTutoDroite.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
         }
     }
@@ -200,6 +226,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 VigileTutoGauche.SetActive(false);
                 VigileTutoDroite.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
             else
             {
@@ -209,6 +237,8 @@ public class RouteManager : MonoBehaviour
                 CookTutoDroite.SetActive(false);
                 VigileTutoGauche.SetActive(false);
                 VigileTutoDroite.SetActive(false);
+                SellerTutoGauche.SetActive(false);
+                SellerTutoDroite.SetActive(false);
             }
         }
     }
