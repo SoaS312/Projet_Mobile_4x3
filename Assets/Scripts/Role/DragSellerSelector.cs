@@ -75,6 +75,7 @@ public class DragSellerSelector : MonoBehaviour
                 ScoreManager.money += Seller.staticSeller.MoneyEarn;
                 FollowersManager.staticFollowersManager.actualFollowPoints += Random.Range(25, 51);
                 hit.transform.gameObject.GetComponent<FanManager>().burgerEated += 1;
+                hit.transform.gameObject.GetComponent<FanManager>().BeHappy(1f);
                 hit.transform.gameObject.GetComponent<FanManager>().secondsBeingWaiting = 0;
 
             }

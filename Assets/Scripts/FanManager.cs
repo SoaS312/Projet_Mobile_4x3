@@ -21,19 +21,37 @@ public class FanManager : MonoBehaviour
     public int burgerLimit = 10;
 
     public int life = 100;
-    public int AttackValue = 1;
+    public int AttackValue = 5;
 
     public float AttackActualTimer;
-    public float AttackMaxTimer;
+    public float AttackMaxTimer = 3;
+
+    public GameObject BulleStatut;
+    public SpriteRenderer FeelingSprite;
+
+    public List<Material> GuyMaterial;
+
+    public float statusTime = 0;
 
 
+    public Sprite Happy;
+    public Sprite Angry;
+    public Sprite Punk;
 
-    public Material NormalMat;
-    public Material AngryMat;
-    public Material PunkMat;
+    public SkinnedMeshRenderer Skinning;
+    public int materialIndex;
+
 
     public void OnEnable()
     {
+        materialIndex = Random.Range(0, GuyMaterial.Count);
+        Skinning.material = GuyMaterial[materialIndex];
+
+
+        AttackMaxTimer = 3;
+        AttackActualTimer = AttackMaxTimer;
+
+        BulleStatut.SetActive(false);
 
         randomWillLeave = Random.Range(0, 100);
         if (randomWillLeave >= 30)
@@ -57,11 +75,24 @@ public class FanManager : MonoBehaviour
         wrathLimit = Random.Range(1, 5);
         secondsBeingWaiting = 0;
         burgerEated = 0;
-        GetComponent<Renderer>().material = NormalMat;
+        //GetComponent<Renderer>().material = NormalMat;
     }
 
     void Update()
     {
+
+        if (statusTime > 0)
+        {
+            statusTime -= Time.deltaTime;
+            BulleStatut.SetActive(true);
+
+        }
+
+        if (statusTime <= 0)
+        {
+            statusTime = 0;
+            BulleStatut.SetActive(false);
+        }
 
         if (secondsBeingWaiting <= wrathTime)
         {
@@ -72,7 +103,7 @@ public class FanManager : MonoBehaviour
 
         if (willLeave)
         {
-            if(burgerEated >= burgerLimit)
+            if (burgerEated >= burgerLimit)
             {
                 gameObject.GetComponent<TakePlace>().needToLeave = true;
             }
@@ -80,10 +111,10 @@ public class FanManager : MonoBehaviour
 
         if (secondsBeingWaiting >= wrathTime)
         {
-            GetComponent<Renderer>().material = AngryMat;
             isAngry = true;
             secondsBeingWaiting = 0;
             wrathIndex += 1;
+            BeAngry(2f);
         }
 
         if (wrathIndex >= wrathLimit)
@@ -91,23 +122,47 @@ public class FanManager : MonoBehaviour
             isPunk = true;
         }
 
+        PunkAttack();
+
+    }
+
+    private void PunkAttack()
+    {
         if (isPunk)
         {
-            GetComponent<Renderer>().material = PunkMat;
-
-            if (AttackActualTimer >= AttackMaxTimer)
+            Debug.Log("I'm a punk");
+            if (AttackActualTimer >= 0)
             {
+                Debug.Log("Calculting");
                 AttackActualTimer -= Time.deltaTime;
             }
 
             if (AttackActualTimer <= 0)
             {
+                Debug.Log("Attacking");
                 AttackActualTimer = AttackMaxTimer;
-                FuelStock.staticFuelStock.fuel -= AttackValue * Time.deltaTime;
+                FuelStock.staticFuelStock.fuel -= AttackValue;
+                BePunk(1f);
             }
         }
+    }
 
+    public void BeHappy(float duration)
+    {
+        statusTime = duration;
+        FeelingSprite.sprite = Happy;
+    }
 
+    public void BeAngry(float duration)
+    {
+        statusTime = duration;
+        FeelingSprite.sprite = Angry;
+    }
+
+    public void BePunk(float duration)
+    {
+        statusTime = duration;
+        FeelingSprite.sprite = Punk;
     }
 
     private void LifeCheck()
