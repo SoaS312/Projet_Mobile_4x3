@@ -214,7 +214,7 @@ public class RouteManager : MonoBehaviour
         }
     }
 
-    private void IfDriverisActive()
+      private void IfDriverisActive()
     {
         if (FoodTruckState.staticFoodTruckState.isDriverActive)
         {

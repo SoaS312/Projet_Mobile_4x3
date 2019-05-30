@@ -14,11 +14,13 @@ public class TrucksPiecesManager : MonoBehaviour
     {
         if (this.GetComponent<FoodTruckState>().isDriverActive)
         {
+            /*
             CookPart.SetActive(false);
             SellerPart.SetActive(false);
             VigilePart.SetActive(false);
             VigilePerso.SetActive(false);
             DriverPart.SetActive(true);
+            */
         }
         if (this.GetComponent<FoodTruckState>().isCookActive)
         {

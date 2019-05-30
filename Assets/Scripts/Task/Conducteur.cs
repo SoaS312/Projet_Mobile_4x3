@@ -36,6 +36,7 @@ public class Conducteur : MonoBehaviour
 
                 RouteManager.staticRouteManager.Move();
                 actualTimer = MaxTimer;
+                Debug.Log("Gauche");
             }
             if (SwipeLogger.staticSwipeLogger.stockedDirection == "Right" && RouteManager.Index > 0 && actualTimer <= 0)
             {
@@ -44,6 +45,7 @@ public class Conducteur : MonoBehaviour
 
                 RouteManager.staticRouteManager.Move();
                 actualTimer = MaxTimer;
+                Debug.Log("Droite");
             }
         }
     }
