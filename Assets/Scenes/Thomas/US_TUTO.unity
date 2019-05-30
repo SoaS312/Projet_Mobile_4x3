@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6163,7 +6163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &638904697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6264,7 +6264,7 @@ Animator:
   m_GameObject: {fileID: 643508664}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f64375852fe4ed14eb174556a2b4a0bb, type: 2}
+  m_Controller: {fileID: 9100000, guid: db3c96ca690cd734fb6b91cbc42f8084, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6285,6 +6285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af360d604a372ed46a98146c29a61dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CookAnimator: {fileID: 9100000, guid: db3c96ca690cd734fb6b91cbc42f8084, type: 2}
 --- !u!1 &649607725 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5216904762351378750, guid: 7ff5d26b55a6d42408c090d158859c2e,
@@ -7927,7 +7928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &853826737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7944,7 +7945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 69.434006}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 193.7, y: -463.5}
+  m_AnchoredPosition: {x: 86.23, y: -463.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853826738
@@ -11402,7 +11403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1257498169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11437,7 +11438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1764706, g: 0.6156863, b: 0.98823535, a: 1}
+  m_Color: {r: 0.07564971, g: 0.54430604, b: 0.9433962, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -17273,6 +17274,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 149508212}
         m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 643508667}
+        m_MethodName: ClicDriver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
