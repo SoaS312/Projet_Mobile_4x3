@@ -23,4 +23,9 @@ public class TutoAnimManager : MonoBehaviour
         anim.SetTrigger("ClicDriver");
     }
 
+    public void StopAnim()
+    {
+        anim.enabled = false;
+    }
+
 }
