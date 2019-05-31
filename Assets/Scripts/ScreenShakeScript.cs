@@ -42,6 +42,10 @@ public class ScreenShakeScript : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             shakeDuration = shakeTime;
+            if (!PlayerPrefs.HasKey("Vibrations"))
+            {
+                Handheld.Vibrate();
+            }
         }
     }
 }
