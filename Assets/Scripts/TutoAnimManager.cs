@@ -6,6 +6,7 @@ public class TutoAnimManager : MonoBehaviour
 {
     private Animator anim;
     public RuntimeAnimatorController CookAnimator;
+    public RuntimeAnimatorController SellerAnimator;
 
 
     // Start is called before the first frame update
@@ -17,7 +18,6 @@ public class TutoAnimManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //anim.runtimeAnimatorController = CookAnimator;
     }
 
     public void ClicDriver()
@@ -33,6 +33,16 @@ public class TutoAnimManager : MonoBehaviour
     public void StopAnim()
     {
         anim.enabled = false;
+    }
+
+    public void CookAnim()
+    {
+        anim.runtimeAnimatorController = CookAnimator;
+    }
+
+    public void SellerAnim()
+    {
+        anim.runtimeAnimatorController = SellerAnimator;
     }
 
 }

@@ -18,7 +18,7 @@ public class LevelValues_HolderStatic : MonoBehaviour
     public static float maxTime_Holded = 6;
 
     [Header("Fuel Settings")]
-    public static float decayTime_Holded = 2;
+    public static float decayTime_Holded = 0.5f;
 
     [Header("Ojectives")]
     public static bool Win;
