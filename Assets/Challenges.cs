@@ -9,7 +9,7 @@ public class Challenges : ScriptableObject
     [Dropdown("ChallengeTypes")]
     public string ChallengeType;
 
-    private string[] ChallengeTypes = new string[] { "3Stars", "AreaComplete", "BurgerSelled", "MoneyEarned", "FanKicked", "FanSatisfied" };
+    private string[] ChallengeTypes = new string[] { "3Stars", "AreaComplete", "BurgerSelled", "MoneyEarned", "FanKicked", "FanSatisfied", "StarsEarned" };
 
     [ResizableTextArea]
     public string ChallengeText;
@@ -18,8 +18,9 @@ public class Challenges : ScriptableObject
     // public AreaStarsCheck AreaToCheck; Need to creat AreaStarsCheck
     public int BurgerLimit;
     public int MoneyLimit;
-    public int FanKicked;
-    public int FanSatisfied;
+    public int FanKickedLimit;
+    public int FanSatisfiedLimit;
+    public int StarsEarnedLimit;
 
     public bool ChallengeCompleted;
     public Challenges PreviousChallengeToComplete;
