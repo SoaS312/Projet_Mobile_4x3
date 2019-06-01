@@ -11434,7 +11434,6 @@ GameObject:
   - component: {fileID: 1489652747}
   - component: {fileID: 1489652746}
   - component: {fileID: 1489652745}
-  - component: {fileID: 1489652748}
   m_Layer: 5
   m_Name: BuyCookUpgrade
   m_TagString: Untagged
@@ -11553,26 +11552,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489652743}
   m_CullTransparentMesh: 0
---- !u!114 &1489652748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489652743}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: 90
-  m_FlexibleWidth: 1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!1 &1506872125
 GameObject:
   m_ObjectHideFlags: 0
@@ -14412,12 +14391,15 @@ MonoBehaviour:
   DriverCrew: {fileID: 11400000, guid: 838761b27531880418f12f9e59554f56, type: 2}
   DriverCost: e8030000d0070000b80b0000a00f00008813000070170000581b0000401f00002823000010270000f82a0000e02e0000c8320000b0360000983a0000803e00006842000050460000384a0000204e0000
   DriverCostText: {fileID: 1851129131}
+  DriverStandardButtonShake: {fileID: 0}
+  DriverPreniumButtonShake: {fileID: 0}
   DriverCostPrenium: 0a000000140000001e00000028000000320000003c00000046000000500000005a000000640000006e00000078000000820000008c00000096000000a0000000aa000000b4000000be000000c8000000
   DriverCostPreniumText: {fileID: 35410042}
   DriverLevel: {fileID: 495045551}
   CookCrew: {fileID: 11400000, guid: 2827e6769ff9fc242956cee7712bafdd, type: 2}
   CookCost: 8813000010270000983a0000204e0000a861000030750000b8880000409c0000c8af0000
   CookCostText: {fileID: 247735739}
+  CookStandardButtonShake: {fileID: 0}
   CookCostPrenium: 320000006400000096000000c8000000fa0000002c0100005e01000090010000c2010000
   CookCostPreniumText: {fileID: 1230446578}
   CookLevel: {fileID: 1226864604}

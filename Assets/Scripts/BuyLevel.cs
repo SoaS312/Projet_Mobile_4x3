@@ -10,6 +10,8 @@ public class BuyLevel : MonoBehaviour
     public CrewUpgradeScriptable DriverCrew;
     public List<int> DriverCost;
     public TMP_Text DriverCostText;
+    public Shake DriverStandardButtonShake;
+    public Shake DriverPreniumButtonShake;
 
     [Header("Driver Prenium")]
     public List<int> DriverCostPrenium;
@@ -22,6 +24,8 @@ public class BuyLevel : MonoBehaviour
     public CrewUpgradeScriptable CookCrew;
     public List<int> CookCost;
     public TMP_Text CookCostText;
+    public Shake CookStandardButtonShake;
+    //public Shake DriverPreniumButtonShake;
 
     [Header("Cook Prenium")]
     public List<int> CookCostPrenium;
@@ -127,7 +131,9 @@ public class BuyLevel : MonoBehaviour
         }
         else
         {
-            Debug.Log("Vibrate"); // petit effet erreur/pas possible
+            DriverStandardButtonShake.Shaking(5f);
+            if (!PlayerPrefs.HasKey("Vibrations"))
+                Handheld.Vibrate();
         }
     }
 
@@ -142,6 +148,12 @@ public class BuyLevel : MonoBehaviour
             PlayerPrefs.SetInt("PreniumMoney", MoneyManager.PreniumMoney);
             DriverLevel.text = "Level " + DriverCrew.CrewLevelIndex + ":";
         }
+        else
+        {
+            DriverPreniumButtonShake.Shaking(5f);
+            if (!PlayerPrefs.HasKey("Vibrations"))
+                Handheld.Vibrate();
+        }
     }
 
     public void BuyStandardCook()
@@ -154,6 +166,11 @@ public class BuyLevel : MonoBehaviour
             PlayerPrefs.SetInt("CookLevel", CookCrew.CrewLevelIndex);
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
             CookLevel.text = "Level " + CookCrew.CrewLevelIndex + ":";
+        }
+        else
+        {
+            if (!PlayerPrefs.HasKey("Vibrations"))
+                Handheld.Vibrate();
         }
     }
 
