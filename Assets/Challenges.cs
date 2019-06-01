@@ -15,7 +15,7 @@ public class Challenges : ScriptableObject
     public string ChallengeText;
 
     public LevelValuesScriptable LevelToCheck;
-    // public AreaStarsCheck AreaToCheck; Need to creat AreaStarsCheck
+    // public AreaCheck AreaToCheck; Need to creat AreaStarsCheck
     public int BurgerLimit;
     public int MoneyLimit;
     public int FanKickedLimit;
