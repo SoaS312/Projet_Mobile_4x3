@@ -7,6 +7,7 @@ public class TutoAnimManager : MonoBehaviour
     private Animator anim;
     public RuntimeAnimatorController CookAnimator;
     public RuntimeAnimatorController SellerAnimator;
+    public GameObject Fans;
 
 
     // Start is called before the first frame update
@@ -43,6 +44,16 @@ public class TutoAnimManager : MonoBehaviour
     public void SellerAnim()
     {
         anim.runtimeAnimatorController = SellerAnimator;
+    }
+
+    public void ClicSeller()
+    {
+        anim.SetTrigger("ClicSeller");
+    }
+
+    public void EnableFan()
+    {
+        Fans.gameObject.SetActive(true);
     }
 
 }
