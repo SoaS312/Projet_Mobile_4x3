@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc7b2a7bc2b873544ad9f6880170bb4b, type: 3}
-  m_Name: AreaNewYork
+  m_Name: Burger Step 2
   m_EditorClassIdentifier: 
-  ChallengeType: AreaComplete
-  ChallengeText: Complete New York area.
-  ChallengeName: New York Tour
-  BurgerLimit: 0
+  ChallengeType: BurgerSelled
+  ChallengeText: Sell 100 burgers in total.
+  ChallengeName: Burger mania - Setp 2
+  BurgerLimit: 100
   MoneyLimit: 0
   FanKickedLimit: 0
   FanSatisfiedLimit: 0
   StarsEarnedLimit: 0
   ChallengeCompleted: 0
-  PreviousChallengeToComplete: {fileID: 0}
+  PreviousChallengeToComplete: {fileID: 11400000, guid: 327e80b93dd14cd4b87d2321179fe175,
+    type: 2}

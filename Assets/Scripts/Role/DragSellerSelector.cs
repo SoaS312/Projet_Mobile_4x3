@@ -71,8 +71,10 @@ public class DragSellerSelector : MonoBehaviour
 
             if (hit.transform.gameObject.tag == "Followers" && Seller.staticSeller.cook.readyFood > 0)
             {
+                PlayerPrefs.SetInt("TotalSelledBurger", PlayerPrefs.GetInt("TotalSelledBurger") + 1);
                 Seller.staticSeller.cook.readyFood -= 1;
                 ScoreManager.money += Seller.staticSeller.MoneyEarn;
+                PlayerPrefs.SetInt("TotalMoneyEarned", PlayerPrefs.GetInt("TotalMoneyEarned") + Seller.staticSeller.MoneyEarn);
                 FollowersManager.staticFollowersManager.actualFollowPoints += Random.Range(25, 51);
                 hit.transform.gameObject.GetComponent<FanManager>().burgerEated += 1;
                 hit.transform.gameObject.GetComponent<FanManager>().BeHappy(1f);

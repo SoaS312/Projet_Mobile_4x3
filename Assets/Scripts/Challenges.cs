@@ -13,14 +13,13 @@ public class Challenges : ScriptableObject
 
     [ResizableTextArea]
     public string ChallengeText;
+    public string ChallengeName;
 
-    public LevelValuesScriptable LevelToCheck;
-    // public AreaCheck AreaToCheck; Need to creat AreaStarsCheck
-    public int BurgerLimit;
-    public int MoneyLimit;
-    public int FanKickedLimit;
-    public int FanSatisfiedLimit;
-    public int StarsEarnedLimit;
+    public float BurgerLimit;
+    public float MoneyLimit;
+    public float FanKickedLimit;
+    public float FanSatisfiedLimit;
+    public float StarsEarnedLimit;
 
     public bool ChallengeCompleted;
     public Challenges PreviousChallengeToComplete;

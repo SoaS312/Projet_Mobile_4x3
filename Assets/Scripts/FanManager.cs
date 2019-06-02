@@ -106,6 +106,7 @@ public class FanManager : MonoBehaviour
             if (burgerEated >= burgerLimit)
             {
                 gameObject.GetComponent<TakePlace>().needToLeave = true;
+                PlayerPrefs.SetInt("TotalFanSatisfied", PlayerPrefs.GetInt("TotalFanSatisfied") + 1);
             }
         }
 
@@ -169,7 +170,8 @@ public class FanManager : MonoBehaviour
     {
         if (life <= 0)
         {
-            gameObject.GetComponent<TakePlace>().Die(); 
+            gameObject.GetComponent<TakePlace>().Die();
+            PlayerPrefs.SetInt("TotalFanKicked", PlayerPrefs.GetInt("TotalFanKicked") + 1);
         }
     }
 }

@@ -219,6 +219,7 @@ public class ObjectivesManager : MonoBehaviour
             WonMoney = true;
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
             MoneyText.text = "You earned " + (ScoreManager.money / 3) + " money.";
+            PlayerPrefs.SetInt("TotalStarsEarned", PlayerPrefs.GetInt("TotalStarsEarned") + 1);
         }
         else if (StarTwo && StarOne && !StarThree && !WonMoney)
         {
@@ -226,6 +227,7 @@ public class ObjectivesManager : MonoBehaviour
             WonMoney = true;
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
             MoneyText.text = "You earned " + (ScoreManager.money / 2) + " money.";
+            PlayerPrefs.SetInt("TotalStarsEarned", PlayerPrefs.GetInt("TotalStarsEarned") + 2);
         }
         else if (StarThree && StarOne && StarTwo && !WonMoney)
         {
@@ -233,6 +235,7 @@ public class ObjectivesManager : MonoBehaviour
             WonMoney = true;
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
             MoneyText.text = "You earned " + (ScoreManager.money) + " money.";
+            PlayerPrefs.SetInt("TotalStarsEarned", PlayerPrefs.GetInt("TotalStarsEarned") + 3);
         }
     }
 
