@@ -9,8 +9,15 @@ public class ClickingArea : MonoBehaviour
 {
     public string AreaName;
     public GameObject ZoneLevelToShow;
+    public GameObject RetourMapAActiver;
+    private GameObject MapPlanisphere;
 
-    public void ZoomToRegion()
+    public void Start()
+    {
+        MapPlanisphere = transform.parent.gameObject;
+    }
+
+    public void Update()
     {
         if (Input.GetMouseButtonDown(0) || Input.touchCount > (0))
             {
@@ -20,9 +27,13 @@ public class ClickingArea : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                Debug.Log(hit.transform.name);
+
                 if (hit.transform.name == gameObject.transform.name)
                 {
-                    Debug.Log("Do Something");
+                    ZoneLevelToShow.SetActive(true);
+                    RetourMapAActiver.SetActive(true);
+                    MapPlanisphere.SetActive(false);
                 }
 
             }
