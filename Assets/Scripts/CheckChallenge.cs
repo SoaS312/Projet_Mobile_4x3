@@ -38,6 +38,7 @@ public class CheckChallenge : MonoBehaviour
         FanSatisfiedObjectif();
         ThreeStarsObjectif();
         AreaCompleteObjectif();
+        StarsEarnedObjectif();
 
         if (Complete && AssociatedChallenge.ChallengeCompleted)
         {
@@ -97,8 +98,8 @@ public class CheckChallenge : MonoBehaviour
     {
         if (AssociatedChallenge.ChallengeType == "StarsEarned")
         {
-            GaugeFill.fillAmount = PlayerPrefs.GetInt("TotalStarsEarned") / AssociatedChallenge.StarsEarnedLimit;
             GaugePercent.text = PlayerPrefs.GetInt("TotalStarsEarned") + " / " + AssociatedChallenge.StarsEarnedLimit;
+            GaugeFill.fillAmount = PlayerPrefs.GetInt("TotalStarsEarned") / AssociatedChallenge.StarsEarnedLimit;
 
             if (PlayerPrefs.GetInt("TotalStarsEarned") >= AssociatedChallenge.StarsEarnedLimit && !ReadyToBeClaimed)
             {
