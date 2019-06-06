@@ -16,6 +16,8 @@ public class CheckChallenge : MonoBehaviour
     public bool Complete;
     public Image GaugeFill;
     public TMP_Text GaugePercent;
+    public List<Challenges> NextChallenges;
+    public int NextIndex;
 
 
     private void OnEnable()
@@ -36,6 +38,24 @@ public class CheckChallenge : MonoBehaviour
         FanSatisfiedObjectif();
         ThreeStarsObjectif();
         AreaCompleteObjectif();
+
+        if (Complete && AssociatedChallenge.ChallengeCompleted)
+        {
+            Complete = false;
+            ReadyToBeClaimed = false;
+            NextIndex += 1;
+
+            AssociatedChallenge = NextChallenges[NextIndex];
+            ChallengeNameText.text = AssociatedChallenge.ChallengeName;
+            Description.text = AssociatedChallenge.ChallengeText;
+
+            BurgerObjectif();
+            MoneyObjectif();
+            FanKickedObjectif();
+            FanSatisfiedObjectif();
+            ThreeStarsObjectif();
+            AreaCompleteObjectif();
+        }
     }
 
     private void AreaCompleteObjectif()

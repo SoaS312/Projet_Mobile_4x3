@@ -3,44 +3,52 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DragMapWorld : MonoBehaviour {
-    public float dragSpeed = 2;
+    /*public float dragSpeed = 2;
     private Vector3 dragOrigin;
-    private Vector3 move;
+    private Vector3 move;*/
 
+    public Vector3 TouchStart;
+    public float zoomOutMin;
+    public float zoomOutMax;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            dragOrigin = Input.mousePosition;
-            return;
+            TouchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-
-        if (!Input.GetMouseButton(0)) return;
-
-        Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
-
-
-            move = new Vector3(pos.x * dragSpeed, pos.y * dragSpeed, 0);
-
-        transform.Translate(move, Space.World);
-
-        if (transform.position.x > 20)
+        if (Input.touchCount == 2)
         {
-            transform.position = new Vector3(20,transform.position.y, 0);
-        }else if (transform.position.x < -20)
-        {
-            transform.position = new Vector3(-20, transform.position.y, 0);
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
+
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+            float prevMagnitude = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float currentMagnitude = (touchZero.position - touchOne.position).magnitude;
+
+            float difference = currentMagnitude - prevMagnitude;
+
+            Zoom(difference * 0.01f);
         }
+        else if (Input.GetMouseButton(0))
+        {
+                Vector3 direction = TouchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (transform.position.y > 10)
-        {
-            transform.position = new Vector3(transform.position.x, 10, 0);
+                Camera.main.transform.position += direction;
+
+            Camera.main.transform.position = new Vector3(Mathf.Clamp(transform.position.x, -20, 20), Mathf.Clamp(transform.position.y, -5, 5), transform.position.z);
+
+
         }
-        else if (transform.position.y < -10)
-        {
-            transform.position = new Vector3(transform.position.x, -10, 0);
-        }
+        Zoom(Input.GetAxis("Mouse ScrollWheel"));
 
     }
+
+    void Zoom(float increment)
+    {
+        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - increment, zoomOutMin, zoomOutMax);
+    }
+
 }
