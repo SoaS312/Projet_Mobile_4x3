@@ -9,6 +9,15 @@ public class DragSellerSelector : MonoBehaviour
     Rigidbody rb;
     public GameObject origin;
 
+    public AudioClip SellingMeal;
+
+    private AudioSource source;
+
+    void Awake()
+    {
+        source = GameObject.FindGameObjectWithTag("FoodTruck").GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         isMooving = false;
@@ -71,6 +80,7 @@ public class DragSellerSelector : MonoBehaviour
 
             if (hit.transform.gameObject.tag == "Followers" && Seller.staticSeller.cook.readyFood > 0)
             {
+                source.PlayOneShot(SellingMeal, 1);
                 PlayerPrefs.SetInt("TotalSelledBurger", PlayerPrefs.GetInt("TotalSelledBurger") + 1);
                 Seller.staticSeller.cook.readyFood -= 1;
                 ScoreManager.money += Seller.staticSeller.MoneyEarn;

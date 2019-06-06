@@ -41,6 +41,14 @@ public class FanManager : MonoBehaviour
     public SkinnedMeshRenderer Skinning;
     public int materialIndex;
 
+    public AudioClip FanDestroy;
+
+    private AudioSource source;
+
+    void Awake()
+    {
+        source = GameObject.FindGameObjectWithTag("FoodTruck").GetComponent<AudioSource>();
+    }
 
     public void OnEnable()
     {
@@ -170,6 +178,7 @@ public class FanManager : MonoBehaviour
     {
         if (life <= 0)
         {
+            source.PlayOneShot(FanDestroy, 1);
             gameObject.GetComponent<TakePlace>().Die();
             PlayerPrefs.SetInt("TotalFanKicked", PlayerPrefs.GetInt("TotalFanKicked") + 1);
         }

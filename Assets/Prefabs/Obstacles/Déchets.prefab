@@ -384,11 +384,16 @@ MonoBehaviour:
   isObstacle: 1
   isFuelBonus: 0
   isFoodBonus: 0
-  isMoneyBonus: 0
+  isNoFuelDecayBonus: 0
   isInvicibleBonus: 0
   isAutoCookBonus: 0
   FuelValue: 10
   FoodValue: 0
+  Dump: {fileID: 0}
+  obstacleHit: {fileID: 0}
+  bonusFood: {fileID: 0}
+  bonusFuel: {fileID: 0}
+  bonusNoFuelDecay: {fileID: 0}
 --- !u!1001 &7837809109801543606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -396,6 +401,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5506341466506020382}
     m_Modifications:
+    - target: {fileID: 67753459653488966, guid: f2f8e23eb0b1f3b418bb087b653de540,
+        type: 3}
+      propertyPath: m_Name
+      value: Signalisation_002
+      objectReference: {fileID: 0}
     - target: {fileID: 67753459653586278, guid: f2f8e23eb0b1f3b418bb087b653de540,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -450,11 +460,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 67753459653488966, guid: f2f8e23eb0b1f3b418bb087b653de540,
-        type: 3}
-      propertyPath: m_Name
-      value: Signalisation_002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2f8e23eb0b1f3b418bb087b653de540, type: 3}
