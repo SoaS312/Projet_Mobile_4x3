@@ -24,4 +24,23 @@ public class Challenges : ScriptableObject
     public bool ChallengeCompleted;
     public Challenges PreviousChallengeToComplete;
 
+    public int RewardQuantity;
+    public Sprite DiamLogo;
+    public Sprite MoneyLogo;
+    public bool DiamReward;
+    public bool MoneyReward;
+
+    public void GetReward()
+    {
+        if (DiamReward)
+        {
+            PlayerPrefs.SetInt("PreniumMoney",PlayerPrefs.GetInt("PreniumMoney")+RewardQuantity);
+        }
+
+        if (MoneyReward)
+        {
+            PlayerPrefs.SetInt("StandardMoney", PlayerPrefs.GetInt("StandardMoney") + RewardQuantity);
+        }
+    }
+
 }

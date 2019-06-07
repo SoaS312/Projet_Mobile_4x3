@@ -18,6 +18,9 @@ public class CheckChallenge : MonoBehaviour
     public TMP_Text GaugePercent;
     public List<Challenges> NextChallenges;
     public int NextIndex;
+    public GameObject Reward;
+
+
 
 
     private void OnEnable()
@@ -37,10 +40,10 @@ public class CheckChallenge : MonoBehaviour
         FanKickedObjectif();
         FanSatisfiedObjectif();
         ThreeStarsObjectif();
-        AreaCompleteObjectif();
+        //AreaCompleteObjectif();
         StarsEarnedObjectif();
 
-        if (Complete && AssociatedChallenge.ChallengeCompleted)
+        if (Complete && AssociatedChallenge.ChallengeCompleted && NextChallenges.Count > 0)
         {
             Complete = false;
             ReadyToBeClaimed = false;
@@ -55,7 +58,7 @@ public class CheckChallenge : MonoBehaviour
             FanKickedObjectif();
             FanSatisfiedObjectif();
             ThreeStarsObjectif();
-            AreaCompleteObjectif();
+            //AreaCompleteObjectif();
         }
     }
 
@@ -164,13 +167,34 @@ public class CheckChallenge : MonoBehaviour
         }
     }
 
-    void Accomplish()
+    public void Accomplish()
     {
         if (ReadyToBeClaimed && !AssociatedChallenge.ChallengeCompleted)
         {
+            Reward.SetActive(true);
+
+            if (AssociatedChallenge.DiamReward) {
+                Reward.GetComponent<ChallengeReward>().AssociatedChallenge = AssociatedChallenge;
+                Reward.GetComponent<ChallengeReward>().LogoImage.sprite = AssociatedChallenge.DiamLogo;
+                Reward.GetComponent<ChallengeReward>().RewardQuantity.text = "+ " + AssociatedChallenge.RewardQuantity;
+                Reward.GetComponent<ChallengeReward>().Reward();
+            }
+            if (AssociatedChallenge.MoneyReward)
+            {
+                Reward.GetComponent<ChallengeReward>().AssociatedChallenge = AssociatedChallenge;
+                Reward.GetComponent<ChallengeReward>().LogoImage.sprite = AssociatedChallenge.MoneyLogo;
+                Reward.GetComponent<ChallengeReward>().RewardQuantity.text = "+ " +AssociatedChallenge.RewardQuantity;
+                Reward.GetComponent<ChallengeReward>().Reward();
+            }
             Complete = true;
             AssociatedChallenge.ChallengeCompleted = true;
             PlayerPrefs.SetInt(AssociatedChallenge.ChallengeName, 1);
         }
+    }
+
+    [Button]
+    public void Erase()
+    {
+        PlayerPrefs.DeleteKey(AssociatedChallenge.ChallengeName);
     }
 }
