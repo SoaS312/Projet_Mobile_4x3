@@ -22,6 +22,5 @@ public class Seller : MonoBehaviour
     {
         staticSeller = this;
         cook = this.gameObject.GetComponent<Cook>();
-
     }
 }
