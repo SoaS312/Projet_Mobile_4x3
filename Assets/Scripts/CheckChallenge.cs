@@ -20,8 +20,21 @@ public class CheckChallenge : MonoBehaviour
     public int NextIndex;
     public GameObject Reward;
 
+    public GameObject ChallengeNotification;
+    public Animator AnimationNotif;
 
 
+    public void HaveANotification()
+    {
+        if (!ChallengeNotification.activeInHierarchy && !AnimationNotif.GetBool("Play"))
+        {
+            if (ReadyToBeClaimed)
+            {
+                ChallengeNotification.SetActive(true);
+                AnimationNotif.SetBool("Play", true);
+            }
+        }
+    }
 
     private void OnEnable()
     {
@@ -40,7 +53,7 @@ public class CheckChallenge : MonoBehaviour
         FanKickedObjectif();
         FanSatisfiedObjectif();
         ThreeStarsObjectif();
-        //AreaCompleteObjectif();
+        AreaCompleteObjectif();
         StarsEarnedObjectif();
 
         if (Complete && AssociatedChallenge.ChallengeCompleted && NextChallenges.Count > 0)
@@ -58,7 +71,7 @@ public class CheckChallenge : MonoBehaviour
             FanKickedObjectif();
             FanSatisfiedObjectif();
             ThreeStarsObjectif();
-            //AreaCompleteObjectif();
+            AreaCompleteObjectif();
         }
     }
 
@@ -177,14 +190,12 @@ public class CheckChallenge : MonoBehaviour
                 Reward.GetComponent<ChallengeReward>().AssociatedChallenge = AssociatedChallenge;
                 Reward.GetComponent<ChallengeReward>().LogoImage.sprite = AssociatedChallenge.DiamLogo;
                 Reward.GetComponent<ChallengeReward>().RewardQuantity.text = "+ " + AssociatedChallenge.RewardQuantity;
-                Reward.GetComponent<ChallengeReward>().Reward();
             }
             if (AssociatedChallenge.MoneyReward)
             {
                 Reward.GetComponent<ChallengeReward>().AssociatedChallenge = AssociatedChallenge;
                 Reward.GetComponent<ChallengeReward>().LogoImage.sprite = AssociatedChallenge.MoneyLogo;
                 Reward.GetComponent<ChallengeReward>().RewardQuantity.text = "+ " +AssociatedChallenge.RewardQuantity;
-                Reward.GetComponent<ChallengeReward>().Reward();
             }
             Complete = true;
             AssociatedChallenge.ChallengeCompleted = true;
