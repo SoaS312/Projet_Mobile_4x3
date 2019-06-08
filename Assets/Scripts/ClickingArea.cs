@@ -11,6 +11,7 @@ public class ClickingArea : MonoBehaviour
     public GameObject ZoneLevelToShow;
     public GameObject RetourMapAActiver;
     private GameObject MapPlanisphere;
+    public GameObject GoCountryPanel;
 
     public void Start()
     {
@@ -27,13 +28,14 @@ public class ClickingArea : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log(hit.transform.name);
-
                 if (hit.transform.name == gameObject.transform.name)
                 {
-                    ZoneLevelToShow.SetActive(true);
-                    RetourMapAActiver.SetActive(true);
-                    MapPlanisphere.SetActive(false);
+                    GoCountryPanel.SetActive(true);
+                    GoCountryPanel.GetComponent<OpenCountry>().TripName.text = "Go to " + AreaName + " ?";
+                    OpenCountry.ZoneLevelToShow = ZoneLevelToShow;
+                    OpenCountry.RetourMapAActiver = RetourMapAActiver;
+                    OpenCountry.MapPlanisphere = MapPlanisphere;
+                    GoCountryPanel.GetComponent<Animator>().SetBool("Open", true);
                 }
 
             }
