@@ -10,6 +10,12 @@ public class ObjectivesManager : MonoBehaviour
 
     private bool WonMoney = false;
 
+    public GameObject ParticleLikes;
+    public ParticleSystem Likes;
+    public ParticleSystem Dislikes;
+    public static int LikesNumber;
+    public static int DislikesNumber;
+
 
     public GameObject Foodtruck;
 
@@ -195,9 +201,14 @@ public class ObjectivesManager : MonoBehaviour
             Time.timeScale = Mathf.MoveTowards(Time.timeScale, minTimeScale, decreaseSpeed);
             Routes.position += new Vector3(FarAwaySpeed, 0, 0);
             Foodtruck.GetComponent<BoxCollider>().enabled = false;
+            if (Time.timeScale <= 0.1 && Win)
+            {
+                ParticleLikes.SetActive(true);
+            }
+
             if (Time.timeScale <= 0 && Win)
             {
-                TitleNameText.text = "You made it";
+                ParticleLikes.SetActive(true);
                 HomeButtonToActive.SetActive(true);
                 foreach (GameObject obj in ButtonsToDesactive)
                 {
