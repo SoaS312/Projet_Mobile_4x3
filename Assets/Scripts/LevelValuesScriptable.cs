@@ -100,6 +100,9 @@ public class LevelValuesScriptable : ScriptableObject
         LevelValues_HolderStatic.maxTime_Holded = maxTime_Obstacle;
         LevelValues_HolderStatic.decayTime_Holded = decayTime_Fuel;
         LevelValues_HolderStatic.LevelName_Holder = name;
+        LevelValues_HolderStatic.StarOne = StarOne;
+        LevelValues_HolderStatic.StarTwo = StarTwo;
+        LevelValues_HolderStatic.StarThree = StarThree;
     }
 
     private void DetermineObjective()

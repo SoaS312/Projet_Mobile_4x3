@@ -13,11 +13,14 @@ public class GetLevelValues : MonoBehaviour
     public string GetSceneToLoad;
 
     public bool StarOne;
-    public GameObject StarOneUI;
+    public Image StarOneUI;
     public bool StarTwo;
-    public GameObject StarTwoUI;
+    public Image StarTwoUI;
     public bool StarThree;
-    public GameObject StarThreeUI;
+    public Image StarThreeUI;
+
+    public Sprite FullStar;
+    public Sprite VoidStar;
 
 
     public TextMeshProUGUI FirstStarText;
@@ -25,12 +28,41 @@ public class GetLevelValues : MonoBehaviour
     public TextMeshProUGUI ThirdStarText;
 
 
-
     [Button]
     public void Doit()
     {
         SetObjectivesNumber();
         GetValues();
+        ShowStars();
+    }
+
+    public void ShowStars()
+    {
+        if (StarOne)
+        {
+            StarOneUI.sprite = FullStar;
+        } else
+        {
+            StarOneUI.sprite = VoidStar;
+        }
+
+        if (StarTwo)
+        {
+            StarTwoUI.sprite = FullStar;
+        }
+        else
+        {
+            StarTwoUI.sprite = VoidStar;
+        }
+
+        if (StarThree)
+        {
+            StarThreeUI.sprite = FullStar;
+        }
+        else
+        {
+            StarThreeUI.sprite = VoidStar;
+        }
     }
 
     private void GetValues()

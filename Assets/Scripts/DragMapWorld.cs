@@ -38,7 +38,7 @@ public class DragMapWorld : MonoBehaviour {
 
                 Camera.main.transform.position += direction;
 
-            Camera.main.transform.position = new Vector3(Mathf.Clamp(transform.position.x, -20, 20), Mathf.Clamp(transform.position.y, -5, 5), transform.position.z);
+            Camera.main.transform.position = new Vector3(Mathf.Clamp(transform.position.x, -20, 20), Mathf.Clamp(transform.position.y, -7.5f, 5), transform.position.z);
 
 
         }
