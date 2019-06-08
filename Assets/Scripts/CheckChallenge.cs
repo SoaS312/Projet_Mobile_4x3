@@ -11,7 +11,6 @@ public class CheckChallenge : MonoBehaviour
     public TMP_Text Description;
     public Challenges AssociatedChallenge;
     public bool ReadyToBeClaimed;
-    // public gameObject Shining;
     public AreaCheck AssociatedArea;
     public bool Complete;
     public Image GaugeFill;
@@ -20,15 +19,22 @@ public class CheckChallenge : MonoBehaviour
     public int NextIndex;
     public GameObject Reward;
 
+    public Image Logo;
+    public Image Fond;
+
     public GameObject ChallengeNotification;
     public Animator AnimationNotif;
+
+    public Animator PopupNotif;
+
+    public GameObject CheckValidate;
 
 
     public void HaveANotification()
     {
-        if (!ChallengeNotification.activeInHierarchy && !AnimationNotif.GetBool("Play"))
+        if (!AnimationNotif.GetBool("Play"))
         {
-            if (ReadyToBeClaimed)
+            if (ReadyToBeClaimed && !Complete)
             {
                 ChallengeNotification.SetActive(true);
                 AnimationNotif.SetBool("Play", true);
@@ -36,18 +42,10 @@ public class CheckChallenge : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        ChallengeNameText.text = AssociatedChallenge.ChallengeName;
-        Description.text = AssociatedChallenge.ChallengeText;
+        PopupNotif = GetComponent<Animator>();
 
-        if (PlayerPrefs.HasKey(AssociatedChallenge.ChallengeName)){
-            Complete = true;
-        }
-    }
-
-    void Update()
-    {
         BurgerObjectif();
         MoneyObjectif();
         FanKickedObjectif();
@@ -72,6 +70,36 @@ public class CheckChallenge : MonoBehaviour
             FanSatisfiedObjectif();
             ThreeStarsObjectif();
             AreaCompleteObjectif();
+        }
+
+        ChallengeNameText.text = AssociatedChallenge.ChallengeName;
+        Description.text = AssociatedChallenge.ChallengeText;
+
+        if (PlayerPrefs.HasKey(AssociatedChallenge.ChallengeName))
+        {
+            Complete = true;
+        }
+
+        if (Complete && AssociatedChallenge.ChallengeCompleted)
+        {
+            PopupNotif.enabled = false;
+            ReadyToBeClaimed = false;
+            Logo.color = new Color32(125, 125, 125, 255);
+            Fond.color = new Color32(125, 125, 125, 255);
+            ChallengeNameText.color = new Color32(125, 125, 125, 255);
+            Description.color = new Color32(125, 125, 125, 255);
+            CheckValidate.SetActive(true);
+        }
+
+        HaveANotification();
+
+        if (ReadyToBeClaimed && !Complete)
+        {
+            PopupNotif.SetBool("Play", true);
+        }
+        else if (!ReadyToBeClaimed || Complete)
+        {
+            PopupNotif.SetBool("Play", false);
         }
     }
 
@@ -186,6 +214,23 @@ public class CheckChallenge : MonoBehaviour
         {
             Reward.SetActive(true);
 
+            PopupNotif.enabled = false;
+            ReadyToBeClaimed = false;
+            Logo.color = new Color32(125, 125, 125, 255);
+            Fond.color = new Color32(125, 125, 125, 255);
+            ChallengeNameText.color = new Color32(125, 125, 125, 255);
+            Description.color = new Color32(125, 125, 125, 255);
+            CheckValidate.SetActive(true);
+
+            if (ReadyToBeClaimed && !Complete)
+            {
+                PopupNotif.SetBool("Play", true);
+            }
+            else if (!ReadyToBeClaimed || Complete)
+            {
+                PopupNotif.SetBool("Play", false);
+            }
+
             if (AssociatedChallenge.DiamReward) {
                 Reward.GetComponent<ChallengeReward>().AssociatedChallenge = AssociatedChallenge;
                 Reward.GetComponent<ChallengeReward>().LogoImage.sprite = AssociatedChallenge.DiamLogo;
@@ -197,15 +242,38 @@ public class CheckChallenge : MonoBehaviour
                 Reward.GetComponent<ChallengeReward>().LogoImage.sprite = AssociatedChallenge.MoneyLogo;
                 Reward.GetComponent<ChallengeReward>().RewardQuantity.text = "+ " +AssociatedChallenge.RewardQuantity;
             }
+            ChallengeNotification.SetActive(false);
+            AnimationNotif.SetBool("Play", false);
             Complete = true;
+            ReadyToBeClaimed = false;
             AssociatedChallenge.ChallengeCompleted = true;
             PlayerPrefs.SetInt(AssociatedChallenge.ChallengeName, 1);
+        }
+
+        if (Complete && AssociatedChallenge.ChallengeCompleted && NextChallenges.Count > 0)
+        {
+            Complete = false;
+            ReadyToBeClaimed = false;
+            NextIndex += 1;
+
+            AssociatedChallenge = NextChallenges[NextIndex];
+            ChallengeNameText.text = AssociatedChallenge.ChallengeName;
+            Description.text = AssociatedChallenge.ChallengeText;
+
+            BurgerObjectif();
+            MoneyObjectif();
+            FanKickedObjectif();
+            FanSatisfiedObjectif();
+            ThreeStarsObjectif();
+            AreaCompleteObjectif();
         }
     }
 
     [Button]
     public void Erase()
     {
+        AssociatedChallenge.ChallengeCompleted = false;
+        Complete = false;
         PlayerPrefs.DeleteKey(AssociatedChallenge.ChallengeName);
     }
 }
