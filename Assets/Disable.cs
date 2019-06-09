@@ -19,7 +19,6 @@ public class Disable : MonoBehaviour
         Small.interactable = true; Med.interactable = true; Large.interactable = true;
     }
 
-
     void DisableThisFockingPanel()
     {
         this.gameObject.SetActive(false);
