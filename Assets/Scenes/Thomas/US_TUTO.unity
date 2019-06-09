@@ -124,11 +124,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "D\xE9chets (1)"
       objectReference: {fileID: 0}
-    - target: {fileID: 5506341466506020450, guid: 57270d169bba90a488fd3b9509c3b0c1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5506341466506020382, guid: 57270d169bba90a488fd3b9509c3b0c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -183,11 +178,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159481820659088508, guid: 57270d169bba90a488fd3b9509c3b0c1,
-        type: 3}
-      propertyPath: speed
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1321934404548645427, guid: 57270d169bba90a488fd3b9509c3b0c1,
         type: 3}
@@ -2836,6 +2826,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Routes: {fileID: 1682490681}
   FarAwaySpeed: 0.1
+  ParticleLikes: {fileID: 0}
+  Likes: {fileID: 0}
+  Dislikes: {fileID: 0}
   Foodtruck: {fileID: 0}
   GameManager: {fileID: 1423032883}
   LoseScreen: {fileID: 1705092944}
@@ -4008,11 +4001,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Signalisation
       objectReference: {fileID: 0}
-    - target: {fileID: 5506341466506020450, guid: f85cc26fb04563e4daa61c32b622cf6b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5506341466506020382, guid: f85cc26fb04563e4daa61c32b622cf6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4073,11 +4061,6 @@ PrefabInstance:
       propertyPath: Dump
       value: 
       objectReference: {fileID: 548917810}
-    - target: {fileID: 4159481820659088508, guid: f85cc26fb04563e4daa61c32b622cf6b,
-        type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f85cc26fb04563e4daa61c32b622cf6b, type: 3}
 --- !u!1 &374887615
@@ -6531,11 +6514,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "D\xE9chets (2)"
       objectReference: {fileID: 0}
-    - target: {fileID: 5506341466506020450, guid: 57270d169bba90a488fd3b9509c3b0c1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5506341466506020382, guid: 57270d169bba90a488fd3b9509c3b0c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6591,21 +6569,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4159481820659088508, guid: 57270d169bba90a488fd3b9509c3b0c1,
-        type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 1321934404548645427, guid: 57270d169bba90a488fd3b9509c3b0c1,
         type: 3}
       propertyPath: Dump
       value: 
       objectReference: {fileID: 548917810}
-    - target: {fileID: 1710254340851686824, guid: 57270d169bba90a488fd3b9509c3b0c1,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57270d169bba90a488fd3b9509c3b0c1, type: 3}
 --- !u!1001 &539939530
@@ -9990,11 +9958,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BonusFuel (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 2620138231409378297, guid: c58fdf5dd5281194bace4483ee6871d3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6217398420019864390, guid: c58fdf5dd5281194bace4483ee6871d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10049,11 +10012,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 545035831708292175, guid: c58fdf5dd5281194bace4483ee6871d3,
-        type: 3}
-      propertyPath: speed
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8197593009043680878, guid: c58fdf5dd5281194bace4483ee6871d3,
         type: 3}
@@ -10552,11 +10510,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BonusFood (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2620138231409378297, guid: 392412173b2069d49b7b17fb0c1b1258,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6217398420019864390, guid: 392412173b2069d49b7b17fb0c1b1258,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10611,11 +10564,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 545035831708292175, guid: 392412173b2069d49b7b17fb0c1b1258,
-        type: 3}
-      propertyPath: speed
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8197593009043680878, guid: 392412173b2069d49b7b17fb0c1b1258,
         type: 3}
@@ -12771,11 +12719,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BonusFood
       objectReference: {fileID: 0}
-    - target: {fileID: 2620138231409378297, guid: 392412173b2069d49b7b17fb0c1b1258,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6217398420019864390, guid: 392412173b2069d49b7b17fb0c1b1258,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12830,11 +12773,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 545035831708292175, guid: 392412173b2069d49b7b17fb0c1b1258,
-        type: 3}
-      propertyPath: speed
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8197593009043680878, guid: 392412173b2069d49b7b17fb0c1b1258,
         type: 3}
@@ -14319,11 +14257,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Signalisation (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5506341466506020450, guid: f85cc26fb04563e4daa61c32b622cf6b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5506341466506020382, guid: f85cc26fb04563e4daa61c32b622cf6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14384,11 +14317,6 @@ PrefabInstance:
       propertyPath: Dump
       value: 
       objectReference: {fileID: 548917810}
-    - target: {fileID: 4159481820659088508, guid: f85cc26fb04563e4daa61c32b622cf6b,
-        type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f85cc26fb04563e4daa61c32b622cf6b, type: 3}
 --- !u!1 &1139951034
@@ -16814,11 +16742,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BonusFuel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2620138231409378297, guid: c58fdf5dd5281194bace4483ee6871d3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6217398420019864390, guid: c58fdf5dd5281194bace4483ee6871d3,
         type: 3}
@@ -20730,11 +20653,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Signalisation (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 5506341466506020450, guid: f85cc26fb04563e4daa61c32b622cf6b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5506341466506020382, guid: f85cc26fb04563e4daa61c32b622cf6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20795,11 +20713,6 @@ PrefabInstance:
       propertyPath: Dump
       value: 
       objectReference: {fileID: 548917810}
-    - target: {fileID: 4159481820659088508, guid: f85cc26fb04563e4daa61c32b622cf6b,
-        type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f85cc26fb04563e4daa61c32b622cf6b, type: 3}
 --- !u!1 &1711752240
@@ -21410,11 +21323,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BonusFood (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 2620138231409378297, guid: 392412173b2069d49b7b17fb0c1b1258,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6217398420019864390, guid: 392412173b2069d49b7b17fb0c1b1258,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21469,11 +21377,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 545035831708292175, guid: 392412173b2069d49b7b17fb0c1b1258,
-        type: 3}
-      propertyPath: speed
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8197593009043680878, guid: 392412173b2069d49b7b17fb0c1b1258,
         type: 3}
@@ -23884,11 +23787,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BonusFuel (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2620138231409378297, guid: c58fdf5dd5281194bace4483ee6871d3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6217398420019864390, guid: c58fdf5dd5281194bace4483ee6871d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23943,11 +23841,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 545035831708292175, guid: c58fdf5dd5281194bace4483ee6871d3,
-        type: 3}
-      propertyPath: speed
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8197593009043680878, guid: c58fdf5dd5281194bace4483ee6871d3,
         type: 3}
@@ -25672,11 +25565,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "D\xE9chets"
       objectReference: {fileID: 0}
-    - target: {fileID: 5506341466506020450, guid: 57270d169bba90a488fd3b9509c3b0c1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5506341466506020382, guid: 57270d169bba90a488fd3b9509c3b0c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25731,11 +25619,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159481820659088508, guid: 57270d169bba90a488fd3b9509c3b0c1,
-        type: 3}
-      propertyPath: speed
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1321934404548645427, guid: 57270d169bba90a488fd3b9509c3b0c1,
         type: 3}
