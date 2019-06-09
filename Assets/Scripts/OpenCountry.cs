@@ -8,6 +8,7 @@ public class OpenCountry : MonoBehaviour
     public static GameObject ZoneLevelToShow;
     public static GameObject RetourMapAActiver;
     public static GameObject MapPlanisphere;
+    public static GameObject PlanDeTable;
     public TextMeshProUGUI TripName;
 
     public void Close()
@@ -21,6 +22,7 @@ public class OpenCountry : MonoBehaviour
         ZoneLevelToShow.SetActive(true);
         RetourMapAActiver.SetActive(true);
         MapPlanisphere.SetActive(false);
+        PlanDeTable.SetActive(false);
         GetComponent<Animator>().SetBool("Open", false);
         GetComponent<Animator>().SetBool("Close", true);
     }

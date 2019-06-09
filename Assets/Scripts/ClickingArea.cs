@@ -12,6 +12,7 @@ public class ClickingArea : MonoBehaviour
     public GameObject RetourMapAActiver;
     private GameObject MapPlanisphere;
     public GameObject GoCountryPanel;
+    public GameObject PlanDeTable;
 
     public void Start()
     {
@@ -35,6 +36,7 @@ public class ClickingArea : MonoBehaviour
                     OpenCountry.ZoneLevelToShow = ZoneLevelToShow;
                     OpenCountry.RetourMapAActiver = RetourMapAActiver;
                     OpenCountry.MapPlanisphere = MapPlanisphere;
+                    OpenCountry.PlanDeTable = PlanDeTable;
                     GoCountryPanel.GetComponent<Animator>().SetBool("Open", true);
                 }
 
