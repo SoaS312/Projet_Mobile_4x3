@@ -2,43 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
+using NaughtyAttributes;
+using TMPro;
 
 public class ClickingArea : MonoBehaviour
-
 {
-    public bool zoomIn = false;
-    public int ZoomFOV;
-    public int speed;
-    public Camera cam;
-    public UnityEvent ClickEvent;
+    public string AreaName;
+    public GameObject ZoneLevelToShow;
+    public GameObject RetourMapAActiver;
+    private GameObject MapPlanisphere;
+    public GameObject GoCountryPanel;
+    public GameObject PlanDeTable;
+
+    public void Start()
+    {
+        MapPlanisphere = transform.parent.gameObject;
+    }
 
     public void Update()
     {
-        ZoomToRegion();
-
-        if (zoomIn)
-        {
-            if (cam.fieldOfView > ZoomFOV)
-            {
-                cam.fieldOfView -= speed * Time.deltaTime;
-            }
-        }
-    }
-
-    public void ZoomToRegion()
-    {
         if (Input.GetMouseButtonDown(0) || Input.touchCount > (0))
             {
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.transform.name == gameObject.transform.name)
-                zoomIn = true;
-
-                foreach (Transform child in hit.transform)
                 {
-                    child.gameObject.SetActive(true);
+                    GoCountryPanel.SetActive(true);
+                    GoCountryPanel.GetComponent<OpenCountry>().TripName.text = "Go to " + AreaName + " ?";
+                    OpenCountry.ZoneLevelToShow = ZoneLevelToShow;
+                    OpenCountry.RetourMapAActiver = RetourMapAActiver;
+                    OpenCountry.MapPlanisphere = MapPlanisphere;
+                    OpenCountry.PlanDeTable = PlanDeTable;
+                    GoCountryPanel.GetComponent<Animator>().SetBool("Open", true);
                 }
 
             }

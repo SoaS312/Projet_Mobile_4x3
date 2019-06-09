@@ -10,9 +10,9 @@ public class ScooterCollisionFood : MonoBehaviour
 
     public Transform spawnPos;
 
-     public Sprite NonToxicMaterial;
+     public Mesh NonToxicMaterial;
 
-    public Sprite ToxicMaterial;
+    public Mesh ToxicMaterial;
 
 
     public void Update()
@@ -42,12 +42,12 @@ public class ScooterCollisionFood : MonoBehaviour
 
         if (Toxicindex > 30)
         {
-            GetComponent<SpriteRenderer>().sprite = NonToxicMaterial;
+            GetComponent<MeshFilter>().mesh = NonToxicMaterial;
         }
         else
         {
             isToxic = true;
-            GetComponent<SpriteRenderer>().sprite = ToxicMaterial;
+            GetComponent<MeshFilter>().mesh = ToxicMaterial;
         }
 
 

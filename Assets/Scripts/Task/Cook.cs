@@ -20,9 +20,14 @@ public class Cook : MonoBehaviour
 
     public CrewUpgradeScriptable CookLevel;
 
+    public AudioClip Cooking1;
+    public AudioClip Cooking2;
+
+    private AudioSource source;
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         maxCookingProgress = CookLevel.CrewUpgradeList[CookLevel.CrewLevelIndex];
         readyFood = 0;
         LevelValues_HolderStatic.SelledBurger_Holded = 0;
@@ -56,6 +61,7 @@ public class Cook : MonoBehaviour
         {
             if (SwipeLogger.staticSwipeLogger.stockedDirection == "Left" && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToLeft)
             {
+                source.PlayOneShot(Cooking1, 1);
                 hasSwipeToLeft = true;
                 hasSwipeToRight = false;
                 cookingProgress += 1;
@@ -64,6 +70,7 @@ public class Cook : MonoBehaviour
             }
             if (SwipeLogger.staticSwipeLogger.stockedDirection == "Right" && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToRight)
             {
+                source.PlayOneShot(Cooking2, 1);
                 hasSwipeToRight = true;
                 hasSwipeToLeft = false;
                 cookingProgress += 1;
