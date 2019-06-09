@@ -91,15 +91,12 @@ public class FanManager : MonoBehaviour
 
         if (statusTime > 0)
         {
-            statusTime -= Time.deltaTime;
-            BulleStatut.SetActive(true);
-
+            statusTime -= Time.deltaTime; BulleStatut.SetActive(true);
         }
 
         if (statusTime <= 0)
         {
-            statusTime = 0;
-            BulleStatut.SetActive(false);
+            statusTime = 0; BulleStatut.SetActive(false);
         }
 
         if (secondsBeingWaiting <= wrathTime)
@@ -113,17 +110,13 @@ public class FanManager : MonoBehaviour
         {
             if (burgerEated >= burgerLimit)
             {
-                gameObject.GetComponent<TakePlace>().needToLeave = true;
-                PlayerPrefs.SetInt("TotalFanSatisfied", PlayerPrefs.GetInt("TotalFanSatisfied") + 1);
+                gameObject.GetComponent<TakePlace>().needToLeave = true; PlayerPrefs.SetInt("TotalFanSatisfied", PlayerPrefs.GetInt("TotalFanSatisfied") + 1);
             }
         }
 
         if (secondsBeingWaiting >= wrathTime)
         {
-            isAngry = true;
-            secondsBeingWaiting = 0;
-            wrathIndex += 1;
-            BeAngry(2f);
+            isAngry = true; secondsBeingWaiting = 0; wrathIndex += 1; BeAngry(2f); LikesParticles.DislikesNumber += 1;
         }
 
         if (wrathIndex >= wrathLimit)
@@ -142,7 +135,7 @@ public class FanManager : MonoBehaviour
             Debug.Log("I'm a punk");
             if (AttackActualTimer >= 0)
             {
-                Debug.Log("Calculting");
+                Debug.Log("Calcultaing");
                 AttackActualTimer -= Time.deltaTime;
             }
 

@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7888,6 +7888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 265911409}
   - component: {fileID: 265911410}
+  - component: {fileID: 265911411}
   m_Layer: 0
   m_Name: WIN/LOSE Manager
   m_TagString: Untagged
@@ -7955,6 +7956,21 @@ MonoBehaviour:
   StarThree: 0
   StarThreeUI: {fileID: 886969387}
   Objective_number: 
+--- !u!114 &265911411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265911408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06660e74f3397854bb230993e303d767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLikesIndex: 5
+  DisplayLikes: 0
+  DisplayDislikes: 0
 --- !u!1 &269532259
 GameObject:
   m_ObjectHideFlags: 0

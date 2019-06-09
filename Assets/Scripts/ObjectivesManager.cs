@@ -204,6 +204,11 @@ public class ObjectivesManager : MonoBehaviour
             if (Time.timeScale <= 0.1 && Win)
             {
                 ParticleLikes.SetActive(true);
+                var PSLikes = Likes.emission;
+                PSLikes.rateOverTime = LikesParticles.LikesNumber + 3;
+
+                var PSDislikes = Dislikes.emission;
+                PSDislikes.rateOverTime = LikesParticles.DislikesNumber;
             }
 
             if (Time.timeScale <= 0 && Win)

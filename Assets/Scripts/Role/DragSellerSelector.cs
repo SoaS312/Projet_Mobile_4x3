@@ -89,6 +89,7 @@ public class DragSellerSelector : MonoBehaviour
                 hit.transform.gameObject.GetComponent<FanManager>().burgerEated += 1;
                 hit.transform.gameObject.GetComponent<FanManager>().BeHappy(1f);
                 hit.transform.gameObject.GetComponent<FanManager>().secondsBeingWaiting = 0;
+                LikesParticles.LikesIndex += 1;
 
             }
         }
