@@ -11,6 +11,27 @@ public class GoUp : MonoBehaviour
     public void Start()
     {
         Timer = 0;
+        CheckSprite();
+    }
+
+    private void CheckSprite()
+    {
+        if (FoodTruckState.staticFoodTruckState.isCookActive)
+        {
+            GetComponent<SpriteRenderer>().sprite = LunchesPlus;
+        }
+        if (FoodTruckState.staticFoodTruckState.isSellerActive)
+        {
+            GetComponent<SpriteRenderer>().sprite = MoneyPlus;
+        }
+        if (FoodTruckState.staticFoodTruckState.isScooterActive)
+        {
+            GetComponent<SpriteRenderer>().sprite = FoodPlus;
+        }
+        if (FoodTruckState.staticFoodTruckState.isHelicoActive)
+        {
+            GetComponent<SpriteRenderer>().sprite = EssencePlus;
+        }
     }
 
     void Update()
