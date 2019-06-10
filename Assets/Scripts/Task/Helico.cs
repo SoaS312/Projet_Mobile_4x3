@@ -51,6 +51,7 @@ public class Helico : MonoBehaviour
         if (ScoreManager.money >= MoneyCost && FoodTruckState.staticFoodTruckState.isHelicoActive)
         {
             FuelManager.fuel += fuelAmount * Time.deltaTime;
+            SpawnGameFeelIcons.staticSpawnGameFeelIcons.ForceFuelSpriteSpawn();
         }
     }
 }

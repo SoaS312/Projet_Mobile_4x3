@@ -41,6 +41,7 @@ public class Cook : MonoBehaviour
         {
             cookingProgress = 0;
             readyFood += 1;
+            SpawnGameFeelIcons.staticSpawnGameFeelIcons.Spawn();
             LevelValues_HolderStatic.SelledBurger_Holded += 1;
         }
 
