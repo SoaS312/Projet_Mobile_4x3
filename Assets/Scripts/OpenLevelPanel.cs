@@ -6,6 +6,18 @@ using UnityEngine.Animations;
 public class OpenLevelPanel : MonoBehaviour
 {
 
+    public GameObject Map, Cuisine;
+
+    public void ShowElements()
+    {
+        Map.SetActive(true); Cuisine.SetActive(true);
+    }
+
+    public void HideElements()
+    {
+        Map.SetActive(false); Cuisine.SetActive(false);
+    }
+
     public void Show()
     {
         this.gameObject.SetActive(true);

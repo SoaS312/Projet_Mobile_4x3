@@ -6,6 +6,7 @@ public class GoUp : MonoBehaviour
 {
     public float Timer;
     public float MaxTime;
+    public Sprite EssencePlus, FoodPlus, MoneyPlus, LunchesPlus;
 
     public void Start()
     {

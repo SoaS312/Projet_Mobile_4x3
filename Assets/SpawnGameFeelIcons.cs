@@ -8,6 +8,7 @@ public class SpawnGameFeelIcons : MonoBehaviour
 {
     public List<GameObject> Icons;
     public int Index;
+    public float minXMove, maxXMove, minYMove, maxYMove;
 
     public void Spawn()
     {
@@ -15,7 +16,7 @@ public class SpawnGameFeelIcons : MonoBehaviour
         {
             Icons[Index].SetActive(true);
             Icons[Index].GetComponent<GoUp>().Timer = 0;
-            Icons[Index].transform.position = transform.position;
+            Icons[Index].transform.position = new Vector3(Random.Range(transform.position.x - minXMove, transform.position.x + maxXMove), Random.Range(transform.position.x - minYMove, transform.position.x + maxYMove), transform.position.z);
             Index += 1;
         }
         else
