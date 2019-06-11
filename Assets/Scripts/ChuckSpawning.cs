@@ -37,7 +37,7 @@ public class ChuckSpawning : MonoBehaviour
 
         if (timer <= 0)
         {
-            Vector3 Pos = position + new Vector3(Random.Range(-size.x / 2, size.x / 2), 0, 0);
+            Vector3 Pos = position;
             int index = Random.Range(0, Chuncks.Count);
             gameObjectSelected = Chuncks[index];
                 gameObjectSelected.transform.position = Pos;

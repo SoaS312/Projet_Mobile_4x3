@@ -53,7 +53,8 @@ public class ScreenShakeScript : MonoBehaviour
     {
         if (other.tag == "Obstacle")
         {
-            source.PlayOneShot(obstacleHit, 1);
+            if (!PlayerPrefs.HasKey("Sound"))
+                source.PlayOneShot(obstacleHit, 1);
             shakeDuration = shakeTime;
             if (!PlayerPrefs.HasKey("Vibrations"))
             {
@@ -63,19 +64,22 @@ public class ScreenShakeScript : MonoBehaviour
 
         if (other.tag == "Bonus" && other.gameObject.GetComponent<ObstacleTrigger>().isFuelBonus)
         {
-            source.PlayOneShot(bonusFuel, 1);
+            if (!PlayerPrefs.HasKey("Sound"))
+                source.PlayOneShot(bonusFuel, 1);
         }
 
 
         if (other.tag == "Bonus" && other.gameObject.GetComponent<ObstacleTrigger>().isFoodBonus)
         {
-            source.PlayOneShot(bonusFood, 1);
+            if (!PlayerPrefs.HasKey("Sound"))
+                source.PlayOneShot(bonusFood, 1);
         }
 
 
         if (other.tag == "Bonus" && other.gameObject.GetComponent<ObstacleTrigger>().isNoFuelDecayBonus)
         {
-            source.PlayOneShot(bonusNoFuelDecay, 1);
+            if (!PlayerPrefs.HasKey("Sound"))
+                source.PlayOneShot(bonusNoFuelDecay, 1);
         }
 
     }
