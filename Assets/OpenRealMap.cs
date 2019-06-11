@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class OpenRealMap : MonoBehaviour
 {
-    public GameObject Map;
+    public GameObject Map, MapToClose;
 
     public void Openmap()
     {
         Map.SetActive(true);
-        gameObject.SetActive(false);
+        MapToClose.SetActive(false);
     }
 }

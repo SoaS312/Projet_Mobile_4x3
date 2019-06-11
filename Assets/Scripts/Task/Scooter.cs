@@ -104,9 +104,6 @@ public class Scooter : MonoBehaviour
             PrepFoodList.Remove(FoodSelected);
             timer = Random.Range(minTime, maxTime);
         }
-
-
-
     }
 
     public void MoveToPosition() { 

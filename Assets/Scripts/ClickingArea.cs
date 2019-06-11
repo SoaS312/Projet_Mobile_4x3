@@ -13,9 +13,11 @@ public class ClickingArea : MonoBehaviour
     private GameObject MapPlanisphere;
     public GameObject GoCountryPanel;
     public GameObject PlanDeTable;
+    public GameObject Outline;
 
     public void Start()
     {
+        Outline.SetActive(false);
         MapPlanisphere = transform.parent.gameObject;
     }
 
@@ -31,6 +33,7 @@ public class ClickingArea : MonoBehaviour
             {
                 if (hit.transform.name == gameObject.transform.name)
                 {
+                    Outline.SetActive(true);
                     GoCountryPanel.SetActive(true);
                     GoCountryPanel.GetComponent<OpenCountry>().TripName.text = "Go to " + AreaName + " ?";
                     OpenCountry.ZoneLevelToShow = ZoneLevelToShow;
