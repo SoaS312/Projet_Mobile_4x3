@@ -41,8 +41,8 @@ public class Scooter : MonoBehaviour
 
     private void Start()
     {
+        //StartPos = FollowersManager.staticFollowersManager.transform;
         lerpTime = 0.75f;
-        StartPos = FollowersManager.staticFollowersManager.transform;
         staticScooter = this;
         foodAmount = ScooterLevel.CrewUpgradeList[ScooterLevel.CrewLevelIndex];
         timer = Random.Range(minTime, maxTime);
@@ -51,7 +51,8 @@ public class Scooter : MonoBehaviour
 
     void Update()
     {
-        if(RouteManager.Index <= 0)
+
+        if (RouteManager.Index <= 0)
         {
             ChosenPlace = ScooterPosGauche;
         }

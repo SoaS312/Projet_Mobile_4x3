@@ -6,7 +6,7 @@ using NaughtyAttributes;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int money;        // The player's score.
+    public static float money;        // The player's score.
 
     public TextMeshProUGUI text;                      // Reference to the Text component.
 
@@ -19,8 +19,8 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        text.text = "" +money;
-        LevelValues_HolderStatic.earnedMoney_Holded = money;
+        text.text = "" + Mathf.RoundToInt(money);
+        LevelValues_HolderStatic.earnedMoney_Holded = Mathf.RoundToInt(money);
     }
 
     [Button]

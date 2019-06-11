@@ -67,7 +67,7 @@ public class ScooterCollisionFood : MonoBehaviour
                 if (!isToxic)
                 {
                     FoodStock.staticFoodStock.food += Scooter.staticScooter.foodAmount;
-                    SpawnGameFeelIcons.staticSpawnGameFeelIcons.ForceFoodSpriteSpawn();
+                    //SpawnGameFeelIcons.staticSpawnGameFeelIcons.ForceFoodSpriteSpawn();
                 }
                 else if (isToxic)
                 {

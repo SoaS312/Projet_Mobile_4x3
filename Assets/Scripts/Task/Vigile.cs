@@ -36,12 +36,12 @@ public class Vigile : MonoBehaviour
                 {
                     if (hit.transform.gameObject.tag == "Followers")
                     {
-                        if (!PlayerPrefs.HasKey("Sound"))
+                        /*if (!PlayerPrefs.HasKey("Sound"))
                         {
                             int index = Random.Range(0, Fights.Length);
                             PlayedFight = Fights[index];
                             source.PlayOneShot(PlayedFight, 1);
-                        }
+                        }*/
                         hit.transform.GetComponent<FanManager>().life -= attackValue;
                     }
 

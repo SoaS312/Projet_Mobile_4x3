@@ -171,8 +171,8 @@ public class FanManager : MonoBehaviour
     {
         if (life <= 0)
         {
-            if (!PlayerPrefs.HasKey("Sound"))
-                source.PlayOneShot(FanDestroy, 1);
+            /*if (!PlayerPrefs.HasKey("Sound"))
+                source.PlayOneShot(FanDestroy, 1);*/
             gameObject.GetComponent<TakePlace>().Die();
             PlayerPrefs.SetInt("TotalFanKicked", PlayerPrefs.GetInt("TotalFanKicked") + 1);
         }

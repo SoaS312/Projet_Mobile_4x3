@@ -231,7 +231,7 @@ public class ObjectivesManager : MonoBehaviour
     {
         if (StarOne && !StarTwo && !StarThree && !WonMoney)
         {
-            MoneyManager.StandardMoney += ScoreManager.money / 3;
+            MoneyManager.StandardMoney += Mathf.RoundToInt(ScoreManager.money) / 3;
             WonMoney = true;
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
             MoneyText.text = "You earned " + (ScoreManager.money / 3) + " money.";
@@ -239,7 +239,7 @@ public class ObjectivesManager : MonoBehaviour
         }
         else if (StarTwo && StarOne && !StarThree && !WonMoney)
         {
-            MoneyManager.StandardMoney += ScoreManager.money / 2;
+            MoneyManager.StandardMoney += Mathf.RoundToInt(ScoreManager.money) / 2;
             WonMoney = true;
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
             MoneyText.text = "You earned " + (ScoreManager.money / 2) + " money.";
@@ -247,7 +247,7 @@ public class ObjectivesManager : MonoBehaviour
         }
         else if (StarThree && StarOne && StarTwo && !WonMoney)
         {
-            MoneyManager.StandardMoney += ScoreManager.money;
+            MoneyManager.StandardMoney += Mathf.RoundToInt(ScoreManager.money);
             WonMoney = true;
             PlayerPrefs.SetInt("StandardMoney", MoneyManager.StandardMoney);
             MoneyText.text = "You earned " + (ScoreManager.money) + " money.";

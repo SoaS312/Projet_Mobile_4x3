@@ -37,11 +37,13 @@ public class Cook : MonoBehaviour
 
     void Update()
     {
+        Cooking();
+
         if (cookingProgress == maxCookingProgress)
         {
             cookingProgress = 0;
             readyFood += 1;
-            SpawnGameFeelIcons.staticSpawnGameFeelIcons.Spawn();
+            //SpawnGameFeelIcons.staticSpawnGameFeelIcons.Spawn();
             LevelValues_HolderStatic.SelledBurger_Holded += 1;
         }
 
@@ -51,8 +53,6 @@ public class Cook : MonoBehaviour
         {
             actualTimer -= 1 * Time.deltaTime;
         }
-
-        Cooking();
     }
 
     private void Cooking()
@@ -62,8 +62,10 @@ public class Cook : MonoBehaviour
         {
             if (SwipeLogger.staticSwipeLogger.stockedDirection == "Left" && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToLeft)
             {
-                if (!PlayerPrefs.HasKey("Sound"))
+                /*if (!PlayerPrefs.HasKey("Sound"))
+                {
                     source.PlayOneShot(Cooking1, 1);
+                }*/
                 hasSwipeToLeft = true;
                 hasSwipeToRight = false;
                 cookingProgress += 1;
@@ -72,8 +74,10 @@ public class Cook : MonoBehaviour
             }
             if (SwipeLogger.staticSwipeLogger.stockedDirection == "Right" && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToRight)
             {
-                if (!PlayerPrefs.HasKey("Sound"))
+                /*if (!PlayerPrefs.HasKey("Sound"))
+                {
                     source.PlayOneShot(Cooking2, 1);
+                }*/
                 hasSwipeToRight = true;
                 hasSwipeToLeft = false;
                 cookingProgress += 1;

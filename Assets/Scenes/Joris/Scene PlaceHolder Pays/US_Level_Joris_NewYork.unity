@@ -8500,15 +8500,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186094412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.97, y: 0.97, z: 0.97}
   m_Children: []
   m_Father: {fileID: 1197351481}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -13, y: 11}
+  m_AnchoredPosition: {x: 2, y: 5.9}
   m_SizeDelta: {x: 100, y: 114.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &186094414
@@ -9283,7 +9283,7 @@ RectTransform:
   - {fileID: 1446301139}
   - {fileID: 491431071}
   m_Father: {fileID: 505215886}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13427,7 +13427,7 @@ MonoBehaviour:
   wasInPos: 0
   ScooterLevel: {fileID: 11400000, guid: 546db9da61bec984f84ef64cecdb15f2, type: 2}
   ScooterObj: {fileID: 1704543318}
-  StartPos: {fileID: 1626103954}
+  StartPos: {fileID: 626216759}
   ActualPos: {fileID: 0}
   ChosenPlace: {fileID: 0}
   lerpTime: 2
@@ -13482,7 +13482,7 @@ MonoBehaviour:
   FoodTruck: {fileID: 1823329267}
   FuelManager: {fileID: 1423032885}
   fuelAmount: 7
-  MoneyCost: 35
+  MoneyCost: 0.25
   isHold: 0
   Timer: 0
   maxTimer: 0.1
@@ -15824,7 +15824,6 @@ Transform:
   m_Children:
   - {fileID: 1680543865}
   - {fileID: 989878949}
-  - {fileID: 1569020546}
   - {fileID: 1761135482}
   - {fileID: 226362398}
   - {fileID: 1705092945}
@@ -20924,715 +20923,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07a8673fe12762e4eac72dcfe13aaf24, type: 3}
---- !u!1001 &818289400
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1823329268}
-    m_Modifications:
-    - target: {fileID: 7931794929969946535, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_Name
-      value: GameFeelSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946529, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.size
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[0]
-      value: 
-      objectReference: {fileID: 1985378550}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[1]
-      value: 
-      objectReference: {fileID: 731228727}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[2]
-      value: 
-      objectReference: {fileID: 432650861}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[3]
-      value: 
-      objectReference: {fileID: 1826674927}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[4]
-      value: 
-      objectReference: {fileID: 832988439}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[5]
-      value: 
-      objectReference: {fileID: 1504343277}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[6]
-      value: 
-      objectReference: {fileID: 387337508}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[7]
-      value: 
-      objectReference: {fileID: 1395362773}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[8]
-      value: 
-      objectReference: {fileID: 698166045}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[9]
-      value: 
-      objectReference: {fileID: 1534981326}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[10]
-      value: 
-      objectReference: {fileID: 1098108407}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[11]
-      value: 
-      objectReference: {fileID: 185426372}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[12]
-      value: 
-      objectReference: {fileID: 1865719054}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[13]
-      value: 
-      objectReference: {fileID: 2040198729}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[14]
-      value: 
-      objectReference: {fileID: 2095251385}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[15]
-      value: 
-      objectReference: {fileID: 835068750}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[16]
-      value: 
-      objectReference: {fileID: 760134142}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[17]
-      value: 
-      objectReference: {fileID: 492562467}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[18]
-      value: 
-      objectReference: {fileID: 422108328}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[19]
-      value: 
-      objectReference: {fileID: 277799617}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[20]
-      value: 
-      objectReference: {fileID: 1924629214}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[21]
-      value: 
-      objectReference: {fileID: 994643611}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[22]
-      value: 
-      objectReference: {fileID: 1171967302}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[23]
-      value: 
-      objectReference: {fileID: 1605684168}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[24]
-      value: 
-      objectReference: {fileID: 754607725}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[25]
-      value: 
-      objectReference: {fileID: 916498783}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[26]
-      value: 
-      objectReference: {fileID: 418800503}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[27]
-      value: 
-      objectReference: {fileID: 1581866016}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[28]
-      value: 
-      objectReference: {fileID: 366818738}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[29]
-      value: 
-      objectReference: {fileID: 2041075763}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: maxXMove
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: minXMove
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: minYMove
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: maxYMove
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: minZMove
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: maxZMove
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Index
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[30]
-      value: 
-      objectReference: {fileID: 1522221281}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[31]
-      value: 
-      objectReference: {fileID: 46959901}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[32]
-      value: 
-      objectReference: {fileID: 2045171347}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[33]
-      value: 
-      objectReference: {fileID: 1663277360}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[34]
-      value: 
-      objectReference: {fileID: 1194299159}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[35]
-      value: 
-      objectReference: {fileID: 1701203609}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[36]
-      value: 
-      objectReference: {fileID: 1865752849}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[37]
-      value: 
-      objectReference: {fileID: 1587583653}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[38]
-      value: 
-      objectReference: {fileID: 1087544072}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[39]
-      value: 
-      objectReference: {fileID: 784890675}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[40]
-      value: 
-      objectReference: {fileID: 1957972936}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[41]
-      value: 
-      objectReference: {fileID: 1687835435}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[42]
-      value: 
-      objectReference: {fileID: 625218962}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[43]
-      value: 
-      objectReference: {fileID: 2102246537}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[44]
-      value: 
-      objectReference: {fileID: 1915061320}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[45]
-      value: 
-      objectReference: {fileID: 1006281269}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[46]
-      value: 
-      objectReference: {fileID: 640381007}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[47]
-      value: 
-      objectReference: {fileID: 234513364}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[48]
-      value: 
-      objectReference: {fileID: 1774515534}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[49]
-      value: 
-      objectReference: {fileID: 678343016}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[50]
-      value: 
-      objectReference: {fileID: 420657491}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[51]
-      value: 
-      objectReference: {fileID: 227074292}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[52]
-      value: 
-      objectReference: {fileID: 2067370524}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[53]
-      value: 
-      objectReference: {fileID: 859651923}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[54]
-      value: 
-      objectReference: {fileID: 1985882472}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[55]
-      value: 
-      objectReference: {fileID: 882445462}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[56]
-      value: 
-      objectReference: {fileID: 1226504670}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[57]
-      value: 
-      objectReference: {fileID: 1162590481}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[58]
-      value: 
-      objectReference: {fileID: 197271676}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[59]
-      value: 
-      objectReference: {fileID: 1398845051}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[60]
-      value: 
-      objectReference: {fileID: 1197237158}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[61]
-      value: 
-      objectReference: {fileID: 624388192}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[62]
-      value: 
-      objectReference: {fileID: 1590006353}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[63]
-      value: 
-      objectReference: {fileID: 980331865}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[64]
-      value: 
-      objectReference: {fileID: 122144440}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[65]
-      value: 
-      objectReference: {fileID: 241785155}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[66]
-      value: 
-      objectReference: {fileID: 1243633578}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[67]
-      value: 
-      objectReference: {fileID: 685214405}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[68]
-      value: 
-      objectReference: {fileID: 157292853}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[69]
-      value: 
-      objectReference: {fileID: 1883260575}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[70]
-      value: 
-      objectReference: {fileID: 31664283}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[71]
-      value: 
-      objectReference: {fileID: 86953722}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[72]
-      value: 
-      objectReference: {fileID: 1621014734}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[73]
-      value: 
-      objectReference: {fileID: 890074310}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[74]
-      value: 
-      objectReference: {fileID: 1309639528}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[75]
-      value: 
-      objectReference: {fileID: 1126342751}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[76]
-      value: 
-      objectReference: {fileID: 35337769}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[77]
-      value: 
-      objectReference: {fileID: 440004914}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[78]
-      value: 
-      objectReference: {fileID: 395869415}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[79]
-      value: 
-      objectReference: {fileID: 437492148}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[80]
-      value: 
-      objectReference: {fileID: 1076271615}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[81]
-      value: 
-      objectReference: {fileID: 1916993717}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[82]
-      value: 
-      objectReference: {fileID: 1333713977}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[83]
-      value: 
-      objectReference: {fileID: 2028088760}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[84]
-      value: 
-      objectReference: {fileID: 1994697572}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[85]
-      value: 
-      objectReference: {fileID: 555044126}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[86]
-      value: 
-      objectReference: {fileID: 858592611}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[87]
-      value: 
-      objectReference: {fileID: 740243007}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[88]
-      value: 
-      objectReference: {fileID: 1300037433}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[89]
-      value: 
-      objectReference: {fileID: 412929008}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[90]
-      value: 
-      objectReference: {fileID: 1470573817}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[91]
-      value: 
-      objectReference: {fileID: 1135820227}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[92]
-      value: 
-      objectReference: {fileID: 1941988996}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[93]
-      value: 
-      objectReference: {fileID: 1322863762}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[94]
-      value: 
-      objectReference: {fileID: 1970634920}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[95]
-      value: 
-      objectReference: {fileID: 1021614388}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[96]
-      value: 
-      objectReference: {fileID: 2059170360}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[97]
-      value: 
-      objectReference: {fileID: 1624280060}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[98]
-      value: 
-      objectReference: {fileID: 837405206}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[99]
-      value: 
-      objectReference: {fileID: 91999853}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[100]
-      value: 
-      objectReference: {fileID: 725300374}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[101]
-      value: 
-      objectReference: {fileID: 389060964}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[102]
-      value: 
-      objectReference: {fileID: 1823035320}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[103]
-      value: 
-      objectReference: {fileID: 496370044}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[104]
-      value: 
-      objectReference: {fileID: 1438850560}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[105]
-      value: 
-      objectReference: {fileID: 939166022}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[106]
-      value: 
-      objectReference: {fileID: 1642479677}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[107]
-      value: 
-      objectReference: {fileID: 1865790154}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[108]
-      value: 
-      objectReference: {fileID: 934320441}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[109]
-      value: 
-      objectReference: {fileID: 1691612582}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[110]
-      value: 
-      objectReference: {fileID: 249189258}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[111]
-      value: 
-      objectReference: {fileID: 311895644}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[112]
-      value: 
-      objectReference: {fileID: 669498513}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[113]
-      value: 
-      objectReference: {fileID: 1161607840}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[114]
-      value: 
-      objectReference: {fileID: 1328187426}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[115]
-      value: 
-      objectReference: {fileID: 1825818932}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[116]
-      value: 
-      objectReference: {fileID: 912432897}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[117]
-      value: 
-      objectReference: {fileID: 1488949709}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[118]
-      value: 
-      objectReference: {fileID: 44277582}
-    - target: {fileID: 7931794929969946534, guid: 5281f3a9ff2483543863d1970843cf3e,
-        type: 3}
-      propertyPath: Icons.Array.data[119]
-      value: 
-      objectReference: {fileID: 71760138}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5281f3a9ff2483543863d1970843cf3e, type: 3}
 --- !u!1001 &822380518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27240,7 +26530,7 @@ RectTransform:
   - {fileID: 1523064314}
   - {fileID: 360939535}
   m_Father: {fileID: 505215886}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -28828,7 +28118,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197351480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 296}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.9, y: 2, z: 0.68172}
   m_Children:
   - {fileID: 186094413}
@@ -28837,7 +28127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -49.999878, y: -134.1101}
+  m_AnchoredPosition: {x: 23.5, y: -296}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1197351482
@@ -28860,7 +28150,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 635356a454317944ab34f74abc470e03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08e9786a05b0d0143b75c744156f50be, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -35111,49 +34401,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556521811}
   m_CullTransparentMesh: 0
---- !u!1 &1569020544
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1569020546}
-  - component: {fileID: 1569020545}
-  m_Layer: 0
-  m_Name: FPS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1569020545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569020544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd27390246efcb94c9d573f4d24175e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1569020546
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569020544}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -52.91531, y: -4.675, z: 10.89}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 505215886}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571936403
 GameObject:
   m_ObjectHideFlags: 0
@@ -38572,7 +37819,7 @@ RectTransform:
   - {fileID: 465382659}
   - {fileID: 1240393103}
   m_Father: {fileID: 505215886}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -44564,7 +43811,7 @@ RectTransform:
   - {fileID: 1543300485}
   - {fileID: 1205422766}
   m_Father: {fileID: 505215886}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
