@@ -62,7 +62,8 @@ public class Cook : MonoBehaviour
         {
             if (SwipeLogger.staticSwipeLogger.stockedDirection == "Left" && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToLeft)
             {
-                source.PlayOneShot(Cooking1, 1);
+                if (!PlayerPrefs.HasKey("Sound"))
+                    source.PlayOneShot(Cooking1, 1);
                 hasSwipeToLeft = true;
                 hasSwipeToRight = false;
                 cookingProgress += 1;
@@ -71,7 +72,8 @@ public class Cook : MonoBehaviour
             }
             if (SwipeLogger.staticSwipeLogger.stockedDirection == "Right" && foodStockManager.food > 0 && actualTimer <= 0 && !hasSwipeToRight)
             {
-                source.PlayOneShot(Cooking2, 1);
+                if (!PlayerPrefs.HasKey("Sound"))
+                    source.PlayOneShot(Cooking2, 1);
                 hasSwipeToRight = true;
                 hasSwipeToLeft = false;
                 cookingProgress += 1;

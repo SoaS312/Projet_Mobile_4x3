@@ -83,6 +83,10 @@ public class RouteManager : MonoBehaviour
                 DriverTutoDroite.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(true);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
             else
             {
@@ -94,6 +98,10 @@ public class RouteManager : MonoBehaviour
                 DriverTutoGauche.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(true);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
         }
     }
@@ -112,6 +120,10 @@ public class RouteManager : MonoBehaviour
                 DriverTutoDroite.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(true);
+                HelicoTutoDroite.SetActive(false);
             }
             else
             {
@@ -123,6 +135,10 @@ public class RouteManager : MonoBehaviour
                 DriverTutoGauche.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(true);
             }
         }
     }
@@ -141,6 +157,10 @@ public class RouteManager : MonoBehaviour
                 DriverTutoDroite.SetActive(false);
                 SellerTutoGauche.SetActive(true);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
             else
             {
@@ -152,6 +172,10 @@ public class RouteManager : MonoBehaviour
                 DriverTutoGauche.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(true);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
         }
     }
@@ -170,6 +194,10 @@ public class RouteManager : MonoBehaviour
                 DriverTutoDroite.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
             else
             {
@@ -181,6 +209,10 @@ public class RouteManager : MonoBehaviour
                 DriverTutoGauche.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
         }
     }
@@ -199,6 +231,10 @@ public class RouteManager : MonoBehaviour
                 VigileTutoDroite.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
             else
             {
@@ -210,6 +246,10 @@ public class RouteManager : MonoBehaviour
                 VigileTutoDroite.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
         }
     }
@@ -228,6 +268,10 @@ public class RouteManager : MonoBehaviour
                 VigileTutoDroite.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
             else
             {
@@ -239,6 +283,10 @@ public class RouteManager : MonoBehaviour
                 VigileTutoDroite.SetActive(false);
                 SellerTutoGauche.SetActive(false);
                 SellerTutoDroite.SetActive(false);
+                ScooterTutoGauche.SetActive(false);
+                ScooterTutoDroite.SetActive(false);
+                HelicoTutoGauche.SetActive(false);
+                HelicoTutoDroite.SetActive(false);
             }
         }
     }
