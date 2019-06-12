@@ -8,6 +8,7 @@ public class PopEffect : MonoBehaviour
     public AnimationCurve Pop;
     public Vector3 iniPos;
     public float maxJumpY;
+    public bool Loop = false;
 
     [Header("Timing")]
     public float second;
@@ -32,6 +33,15 @@ public class PopEffect : MonoBehaviour
             float percentTimer = second / JumpDuration;
             Hopping(percentTimer);
         }
+
+        if (Loop)
+        {
+            if(second >= JumpDuration)
+            {
+                second = 0;
+            }
+        }
+
     }
 
     void Hopping(float jumpPercent)

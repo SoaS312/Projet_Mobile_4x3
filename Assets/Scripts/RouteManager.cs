@@ -12,7 +12,7 @@ public class RouteManager : MonoBehaviour
     public static RouteManager staticRouteManager;
 
 
-    public float lerpTime = 1.5f; // Time it takes to reach
+    public float lerpTime = 1.5f;
     public float currentLerpTime = 0;
 
 
