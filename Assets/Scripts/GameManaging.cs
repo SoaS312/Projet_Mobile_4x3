@@ -75,7 +75,66 @@ public class GameManaging : MonoBehaviour
                 WarningBothDroite.SetActive(true);
             }
         }
+
+        if (FoodStock.staticFoodStock.food > (FoodStock.staticFoodStock.maxFood / 3) && FuelStock.staticFuelStock.fuel > (FuelStock.staticFuelStock.maxFuel / 3) )
+        {
+            if (RouteManager.Index == 0)
+            {
+                WarningFuelDroite.SetActive(false);
+                WarningFuelGauche.SetActive(false);
+                WarningFoodGauche.SetActive(false);
+                WarningFoodDroite.SetActive(false);
+                WarningBothGauche.SetActive(false);
+                WarningBothDroite.SetActive(false);
+            }
+            else if (RouteManager.Index == 1)
+            {
+                WarningFuelGauche.SetActive(false);
+                WarningFuelDroite.SetActive(false);
+                WarningFoodGauche.SetActive(false);
+                WarningFoodDroite.SetActive(false);
+                WarningBothGauche.SetActive(false);
+                WarningBothDroite.SetActive(false);
+            }
+            }
+
+        if (FoodStock.staticFoodStock.food > (FoodStock.staticFoodStock.maxFood / 3))
+        {
+            if (RouteManager.Index == 0)
+            {
+                WarningFoodGauche.SetActive(false);
+                WarningFoodDroite.SetActive(false);
+                WarningBothGauche.SetActive(false);
+                WarningBothDroite.SetActive(false);
+            }
+            else if (RouteManager.Index == 1)
+            {
+                WarningFoodGauche.SetActive(false);
+                WarningFoodDroite.SetActive(false);
+                WarningBothGauche.SetActive(false);
+                WarningBothDroite.SetActive(false);
+            }
+        }
+
+        if (FuelStock.staticFuelStock.fuel > (FuelStock.staticFuelStock.maxFuel / 3))
+        {
+            if (RouteManager.Index == 0)
+            {
+                WarningFuelDroite.SetActive(false);
+                WarningFuelGauche.SetActive(false);
+                WarningBothGauche.SetActive(false);
+                WarningBothDroite.SetActive(false);
+            }
+            else if (RouteManager.Index == 1)
+            {
+                WarningFuelGauche.SetActive(false);
+                WarningFuelDroite.SetActive(false);
+                WarningBothGauche.SetActive(false);
+                WarningBothDroite.SetActive(false);
+            }
+        }
     }
+
 
     void Awake()
     {

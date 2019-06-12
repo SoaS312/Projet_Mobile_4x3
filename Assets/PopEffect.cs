@@ -16,7 +16,7 @@ public class PopEffect : MonoBehaviour
 
     void Start()
     {
-        iniPos = new Vector3(0, 0, 0);
+        //iniPos = new Vector3(0, 0, 0);
         second = 0;
     }
 

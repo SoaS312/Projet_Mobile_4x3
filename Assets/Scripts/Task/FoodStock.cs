@@ -18,10 +18,15 @@ public class FoodStock : MonoBehaviour
         food = maxFood; 
     }
 
-    // Update is called once per frame
     void Update()
     {
         stockFood.fillAmount = food / maxFood;
+
+        if (food > maxFood)
+        {
+            food = maxFood;
+        }
+
 
         if (food < 0)
         {

@@ -36,11 +36,11 @@ public class ScooterCollisionFood : MonoBehaviour
         }
     }
 
-    public void OnEnable()
+    public void Start()
     {
         Toxicindex = Random.Range(0, 100);
 
-        if (Toxicindex > 30)
+        if (Toxicindex > 15)
         {
             GetComponent<MeshFilter>().mesh = NonToxicMaterial;
         }
