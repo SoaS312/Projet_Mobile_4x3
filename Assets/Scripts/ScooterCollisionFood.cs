@@ -71,7 +71,7 @@ public class ScooterCollisionFood : MonoBehaviour
                 }
                 else if (isToxic)
                 {
-                    FoodStock.staticFoodStock.food -= Scooter.staticScooter.foodAmount;
+                    FoodStock.staticFoodStock.food -= Mathf.RoundToInt(Scooter.staticScooter.foodAmount/2);
                 }
                 GetComponent<SplineWalker>().progress = 0;
                 Scooter.staticScooter.PrepFoodList.Add(gameObject);
