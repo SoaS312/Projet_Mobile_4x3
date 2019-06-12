@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OpenChallengesPanel : MonoBehaviour
 {
+    public GameObject Tab1, Tab2;
+
     public void Show()
     {
         this.gameObject.SetActive(true);
@@ -17,8 +19,10 @@ public class OpenChallengesPanel : MonoBehaviour
         this.gameObject.GetComponent<Animator>().SetBool("Hide", true);
     }
 
+
     public void Disable()
     {
-        this.gameObject.SetActive(false);
+        this.gameObject.SetActive(true);
+        Tab1.SetActive(true); Tab2.SetActive(true);
     }
 }
