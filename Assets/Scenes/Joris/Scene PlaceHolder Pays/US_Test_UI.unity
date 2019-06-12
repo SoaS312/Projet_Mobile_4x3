@@ -2594,7 +2594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 40.00003, y: -8508.001}
+  m_AnchoredPosition: {x: 40.00003, y: -28360.002}
   m_SizeDelta: {x: -592, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &69974423
@@ -6786,8 +6786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - {fileID: 11400000, guid: 8a9ad2e76e109e24d91ff48f67bd1558, type: 2}
+  - {fileID: 11400000, guid: bb66718198200ee4d9d29c3169d873ac, type: 2}
   - {fileID: 11400000, guid: a069436b596a8a14d85e546f909858a3, type: 2}
-  - {fileID: 11400000, guid: 04b1320f8165d564199a8e5fc843d7a6, type: 2}
   NameOfArea: New York
   AreaCompleted: 0
   ActualStars: 0
@@ -9499,7 +9499,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: a069436b596a8a14d85e546f909858a3, type: 2}
+      - m_Target: {fileID: 11400000, guid: bb66718198200ee4d9d29c3169d873ac, type: 2}
         m_MethodName: SendValues
         m_Mode: 1
         m_Arguments:
@@ -13587,14 +13587,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
-    - target: {fileID: 2300008, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
-    - target: {fileID: 2300010, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
     - target: {fileID: 2300012, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13619,6 +13611,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
+    - target: {fileID: 2300030, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
+    - target: {fileID: 2300032, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
+    - target: {fileID: 2300008, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
+    - target: {fileID: 2300010, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
     - target: {fileID: 2300024, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13628,14 +13636,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
     - target: {fileID: 2300028, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
-    - target: {fileID: 2300030, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
-    - target: {fileID: 2300032, guid: fa9d8b8e4dbcb394e98b4339be2155d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9cd3ae7f6f1f5e94fa8b1fbefb780a55, type: 2}
@@ -14482,7 +14482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d58465fd1f1654a8893100c5388af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: {fileID: 11400000, guid: a069436b596a8a14d85e546f909858a3, type: 2}
+  Level: {fileID: 11400000, guid: bb66718198200ee4d9d29c3169d873ac, type: 2}
 --- !u!1 &919325925
 GameObject:
   m_ObjectHideFlags: 0
@@ -18964,7 +18964,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -256.00012, y: 4609.2007}
+  m_AnchoredPosition: {x: -256.00012, y: 15363.994}
   m_SizeDelta: {x: -592.00024, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1132784226
@@ -26983,7 +26983,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 04b1320f8165d564199a8e5fc843d7a6, type: 2}
+      - m_Target: {fileID: 11400000, guid: a069436b596a8a14d85e546f909858a3, type: 2}
         m_MethodName: SendValues
         m_Mode: 1
         m_Arguments:
@@ -27067,7 +27067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862a1826a929b2542b189e31124f8f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActualLevel: {fileID: 11400000, guid: 04b1320f8165d564199a8e5fc843d7a6, type: 2}
+  ActualLevel: {fileID: 0}
   UnlockedStar: {fileID: 21300000, guid: 810698f2d4f858349a543558087c9500, type: 3}
   CloseSprite: {fileID: 21300000, guid: f4719bf3180d27d4b9dd0fa72ffef2ea, type: 3}
   OpenSprite: {fileID: 21300000, guid: 357b782adba016946a16011e1949067d, type: 3}
@@ -30964,7 +30964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d58465fd1f1654a8893100c5388af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: {fileID: 11400000, guid: 04b1320f8165d564199a8e5fc843d7a6, type: 2}
+  Level: {fileID: 11400000, guid: a069436b596a8a14d85e546f909858a3, type: 2}
 --- !u!1 &2000022514
 GameObject:
   m_ObjectHideFlags: 0
