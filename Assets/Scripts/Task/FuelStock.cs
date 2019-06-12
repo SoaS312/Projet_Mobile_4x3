@@ -10,7 +10,6 @@ public class FuelStock : MonoBehaviour
     public float maxFuel;
     public bool isDry;
     public Image stockFuel;
-    public GameObject WarningFuelGauche, WarningFuelDroite;
 
     [Range(0, 10f)]
     public float decayTime;
@@ -35,19 +34,6 @@ public class FuelStock : MonoBehaviour
     void Update()
     {
         stockFuel.fillAmount = fuel / maxFuel;
-
-        if (fuel <= (maxFuel/3))
-        {
-            if(RouteManager.Index == 0)
-            {
-                WarningFuelDroite.SetActive(false);
-                WarningFuelGauche.SetActive(true);
-            } else if (RouteManager.Index == 1)
-            {
-                WarningFuelGauche.SetActive(false);
-                WarningFuelDroite.SetActive(true);
-            }
-        }
 
        fuel -= Time.deltaTime*decayTime;
 
