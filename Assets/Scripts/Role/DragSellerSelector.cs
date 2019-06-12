@@ -80,10 +80,10 @@ public class DragSellerSelector : MonoBehaviour
 
             if (hit.transform.gameObject.tag == "Followers" && Seller.staticSeller.cook.readyFood > 0)
             {
-                /*if (!PlayerPrefs.HasKey("Sound"))
+                if (!PlayerPrefs.HasKey("Sound"))
                 {
                     source.PlayOneShot(SellingMeal, 1);
-                }*/
+                }
                 PlayerPrefs.SetInt("TotalSelledBurger", PlayerPrefs.GetInt("TotalSelledBurger") + 1);
                 Seller.staticSeller.cook.readyFood -= 1;
                 //SpawnGameFeelIcons.staticSpawnGameFeelIcons.Spawn();
