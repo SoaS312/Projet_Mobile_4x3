@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cuistot_Body_mat
-  m_Shader: {fileID: 4800000, guid: 713099432a3e54d4ab4a37fda4f3eb15, type: 3}
-  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_Shader: {fileID: 4800000, guid: 76374158b4c4e5744b394e9290aae693, type: 3}
+  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _TEX_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -71,11 +71,18 @@ Material:
         m_Texture: {fileID: 2800000, guid: 25f2225114f54c141b29de022e83c38c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ToonShade:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Asym: 0
+    - _Brightness: 1
     - _BumpScale: 1
     - _CutOut: 0
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DetailTex: 1
     - _DstBlend: 0
     - _Gloss: 0.5
     - _GlossIntensity: 1
@@ -87,14 +94,18 @@ Material:
     - _NormalIntensity: 0.6
     - _OcclusionStrength: 1
     - _OcclussionIntensity: 0
+    - _Outline: 2.32
     - _OutlineWidth: 0.0048
     - _Parallax: 0.08
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TintColor: 0
     - _UVSec: 0
+    - _VertexColor: 0
     - _ZWrite: 1
     m_Colors:
+    - _Asymmetry: {r: 0, g: 0.25, b: 0.5, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HDREmissionColor: {r: 0, g: 0, b: 0, a: 1}
