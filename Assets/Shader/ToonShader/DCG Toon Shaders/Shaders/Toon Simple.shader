@@ -153,7 +153,7 @@ Shader "DCG/Toon Shaders/Toon Simple" {
             #include "AutoLight.cginc"
             #include "Lighting.cginc"
             #pragma multi_compile_fwdadd_fullshadows
-            #pragma only_renderers d3d9 d3d11 glcore gles 
+            //#pragma only_renderers d3d9 d3d11 glcore gles 
             #pragma target 3.0
             uniform float4 _Color;
             uniform sampler2D _Diffuse; uniform float4 _Diffuse_ST;

@@ -15,7 +15,7 @@ public class DragSellerSelector : MonoBehaviour
 
     void Awake()
     {
-        source = GameObject.FindGameObjectWithTag("FoodTruck").GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
     }
 
     void Start()
