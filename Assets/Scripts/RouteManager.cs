@@ -47,14 +47,13 @@ public class RouteManager : MonoBehaviour
             currentLerpTime = lerpTime;
         }
 
-        //transform.position = Vector3.Lerp(transform.position, new Vector3(VoiesRoutes[Index].transform.position.x, OffsetY, VoiesRoutes[Index].transform.position.z), currentLerpTime / lerpTime);
-
         FoodTruck.transform.position = new Vector3(VoiesRoutes[Index].transform.position.x, OffsetY, VoiesRoutes[Index].transform.position.z);
-        //FoodTruck.transform.position = Vector3.MoveTowards(transform.position, new Vector3(VoiesRoutes[Index].transform.position.x, OffsetY, VoiesRoutes[Index].transform.position.z), 1 * Time.deltaTime);
-    }
+}
 
     public void Update()
     {
+        Move();
+
         if (Index > 1)
         {
             Index = 1;
