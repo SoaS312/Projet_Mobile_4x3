@@ -6,9 +6,11 @@ public class ChangeSkin : MonoBehaviour
 {
     public List<MeshRenderer> TruckMaterials;
     public Material StartMaterial;
+    public bool NeedStartMaterial;
 
     void Start()
     {
+        if(NeedStartMaterial)
         SkinHolder.TruckMaterial = StartMaterial;
     }
 
