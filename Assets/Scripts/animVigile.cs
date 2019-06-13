@@ -5,40 +5,45 @@ using UnityEngine;
 public class animVigile : MonoBehaviour
 {
     public GameObject startposition;
-    public bool isAttacking= false;
-    private Transform fanposition;
+    public bool isAttacking = false;
     private Animator anim;
+    public Vector3 fanposition;
+    [Range(0.00001f, 1f)]
+    public float speed;
 
     private void Start()
     {
-        fanposition = transform;
+        
         anim = GetComponent<Animator>();
     }
 
     void Update()
-    {   
-        
-       
-        Kicking();
+    {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Kicking();
+        }
 
         if (!isAttacking)
         {
-            transform.position = Vector3.Lerp(transform.position, startposition.transform.position, 0.05f);
+            transform.position = Vector3.Lerp(transform.position, startposition.transform.position, speed*Time.deltaTime*10);
         }
 
         if (isAttacking)
         {
-            transform.position = Vector3.Lerp(transform.position, fanposition.position, 0.05f);
+            //StartCoroutine(GoFightCheh());
+            transform.position = Vector3.Lerp(transform.position, fanposition, speed*Time.deltaTime*10);
+            Debug.Log("fdp");
+            StartCoroutine(GoTruckCheh());
         }
-
+        
     }
 
     private void Kicking()
     {
         if (FoodTruckState.staticFoodTruckState.isVigileActive)
         {
-            if (Input.GetMouseButton(0))
-            {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
@@ -46,18 +51,35 @@ public class animVigile : MonoBehaviour
                 {
                     if ((hit.transform.gameObject.tag == "Followers"))
                     {
-                        fanposition.position = hit.transform.position + new Vector3(1f, 0, 0);
-                        anim.SetTrigger("isAttacking");
-                        isAttacking = true;
+
+                    anim.SetBool("Attack", true);
+                    //isAttacking = true;
+                    fanposition = hit.transform.position + new Vector3(1f, 0, 0);
                     }
 
+
                 }
-            }
         }
+    }
+    public void LerpAttack()
+    {
+        isAttacking = true;
     }
 
     public void GoTruck()
     { 
         isAttacking = false;
+    }
+
+    IEnumerator GoTruckCheh()
+    {
+        yield return new WaitForSeconds(1);
+        isAttacking = false;
+        anim.SetBool("Attack", false);
+    }
+    IEnumerator GoFightCheh()
+    {
+        anim.SetBool("Attack", true);
+        yield return new WaitForSeconds(1f);
     }
 }

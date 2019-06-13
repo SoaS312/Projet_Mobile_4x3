@@ -349,6 +349,10 @@ MonoBehaviour:
   isCookActive: 0
   isHelicoActive: 0
   isScooterActive: 0
+  DriverSelec: {fileID: 8300000, guid: 0ae551fab8e1c0c4f8f914f3db1bcb23, type: 3}
+  VigileSelec: {fileID: 8300000, guid: 9f152950626461d4d887d5b65f6c9694, type: 3}
+  SellerSelec: {fileID: 8300000, guid: a4bbcff253365bc45b42b5497fa62bce, type: 3}
+  CookSelec: {fileID: 8300000, guid: ad5720fc5e777f544ba6ae716c11f48a, type: 3}
 --- !u!114 &4151011652024275130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +370,7 @@ MonoBehaviour:
   maxCookingProgress: 5
   readyFood: 0
   foodStockManager: {fileID: 4151011651145105636}
-  usedFoodByClick: 5
+  usedFoodByClick: 2
   actualTimer: 0
   MaxTimer: 0.1
   foodProgress: {fileID: 0}
@@ -472,7 +476,7 @@ MonoBehaviour:
   FoodTruck: {fileID: 0}
   FuelManager: {fileID: 4151011651145105637}
   fuelAmount: 7
-  MoneyCost: 0.25
+  MoneyCost: 0.1
   isHold: 0
   Timer: 0
   maxTimer: 0.1
@@ -773,11 +777,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FollowersManager
       objectReference: {fileID: 0}
-    - target: {fileID: 219153597750220675, guid: 80da19074b3f11842bdeb4c670506c40,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 219153597750220673, guid: 80da19074b3f11842bdeb4c670506c40,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -835,20 +834,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 219153597750220672, guid: 80da19074b3f11842bdeb4c670506c40,
         type: 3}
-      propertyPath: Follower.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 219153597750220672, guid: 80da19074b3f11842bdeb4c670506c40,
-        type: 3}
       propertyPath: FanPooling.Array.size
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 219153597750220672, guid: 80da19074b3f11842bdeb4c670506c40,
         type: 3}
-      propertyPath: Follower.Array.data[0]
-      value: 
-      objectReference: {fileID: 5216904762351378750, guid: 7ff5d26b55a6d42408c090d158859c2e,
-        type: 3}
+      propertyPath: Follower.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 219153597750220672, guid: 80da19074b3f11842bdeb4c670506c40,
         type: 3}
       propertyPath: FanPooling.Array.data[0]
@@ -947,11 +940,6 @@ PrefabInstance:
     - target: {fileID: 219153597750220672, guid: 80da19074b3f11842bdeb4c670506c40,
         type: 3}
       propertyPath: FanPooling.Array.data[19]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 219153597750220672, guid: 80da19074b3f11842bdeb4c670506c40,
-        type: 3}
-      propertyPath: FanPooling.Array.data[20]
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
