@@ -16,8 +16,13 @@ public class MoveFuelPomp : MonoBehaviour
     private GameObject fuelManager;
     public LayerMask layermask;
 
+    public AudioClip FillFuel;
+
+    private AudioSource source;
+
     void Start()
     {
+        source = GetComponent<AudioSource>();
         fuelManager = GameObject.Find("ControllManager");
         isMooving = false;
         rb = GetComponent<Rigidbody>();
@@ -69,6 +74,11 @@ public class MoveFuelPomp : MonoBehaviour
         
         if (isFueling)
         {
+            if (!PlayerPrefs.HasKey("Sound"))
+            {
+                if(!source.isPlaying)
+                source.PlayOneShot(FillFuel, 1);
+            }
             fuelManager.GetComponent<Helico>().Buying();
         }
         else
