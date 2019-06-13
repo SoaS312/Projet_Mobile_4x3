@@ -42,6 +42,7 @@ public class FanManager : MonoBehaviour
     public int materialIndex;
 
     public AudioClip FanDestroy;
+    public AudioClip FanAttack;
 
     private AudioSource source;
 
@@ -135,12 +136,16 @@ public class FanManager : MonoBehaviour
             Debug.Log("I'm a punk");
             if (AttackActualTimer >= 0)
             {
-                Debug.Log("Calcultaing");
+                Debug.Log("Calculating");
                 AttackActualTimer -= Time.deltaTime;
             }
 
             if (AttackActualTimer <= 0)
             {
+                if (!PlayerPrefs.HasKey("Sound"))
+                {
+                    source.PlayOneShot(FanAttack, 1);
+                }
                 Debug.Log("Attacking");
                 AttackActualTimer = AttackMaxTimer;
                 FuelStock.staticFuelStock.fuel -= AttackValue;
@@ -172,7 +177,9 @@ public class FanManager : MonoBehaviour
         if (life <= 0)
         {
             if (!PlayerPrefs.HasKey("Sound"))
+            {
                 source.PlayOneShot(FanDestroy, 1);
+            }
             gameObject.GetComponent<TakePlace>().Die();
             PlayerPrefs.SetInt("TotalFanKicked", PlayerPrefs.GetInt("TotalFanKicked") + 1);
         }

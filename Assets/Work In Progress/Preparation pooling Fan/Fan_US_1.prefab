@@ -189,6 +189,7 @@ MonoBehaviour:
   Skinning: {fileID: 1670171973780750652}
   materialIndex: 0
   FanDestroy: {fileID: 8300000, guid: 5ffa8b41ccaf8cd45982685cec1161ed, type: 3}
+  FanAttack: {fileID: 8300000, guid: 7273d8e889cbd174b83894e2295b8e10, type: 3}
 --- !u!114 &7492359959470605889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +367,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7431f2c42798ab14e9b60c418da405ef, type: 2}
     - target: {fileID: 13700000, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -414,11 +419,7 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 1670171973794451484}
-    - target: {fileID: 9500000, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 7431f2c42798ab14e9b60c418da405ef, type: 2}
-    - target: {fileID: 100012, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
+    - target: {fileID: 100010, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -426,11 +427,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100016, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
+    - target: {fileID: 100012, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -438,11 +435,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
+    - target: {fileID: 100016, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: da03ef8d20e87d049ae1009a238c5a8d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
