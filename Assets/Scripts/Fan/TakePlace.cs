@@ -52,9 +52,7 @@ public class TakePlace : MonoBehaviour
     [Button]
     public void Die()
     {
-        FollowersManager.staticFollowersManager.Places.Add(ChosenPlace.gameObject);
-        gameObject.SetActive(false);
-        FollowersManager.staticFollowersManager.FanPooling.Add(this.gameObject);
+        StartCoroutine(WaitToDie());
     }
 
     [Button]
@@ -68,5 +66,13 @@ public class TakePlace : MonoBehaviour
             gameObject.SetActive(false);
             FollowersManager.staticFollowersManager.FanPooling.Add(this.gameObject);
         }
+    }
+
+    IEnumerator WaitToDie()
+    {
+        yield return new WaitForSeconds(2);
+        FollowersManager.staticFollowersManager.Places.Add(ChosenPlace.gameObject);
+        gameObject.SetActive(false);
+        FollowersManager.staticFollowersManager.FanPooling.Add(this.gameObject);
     }
 }

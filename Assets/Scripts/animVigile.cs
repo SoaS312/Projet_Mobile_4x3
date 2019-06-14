@@ -8,13 +8,16 @@ public class animVigile : MonoBehaviour
     public bool isAttacking = false;
     private Animator anim;
     public Vector3 fanposition;
+    public GameObject Baston;
     [Range(0.00001f, 1f)]
     public float speed;
+    public GameObject Mesh;
+    public SkinnedMeshRenderer Salope;
 
     private void Start()
     {
-        
         anim = GetComponent<Animator>();
+        //Salope = Mesh.GetComponent<MeshRenderer>();
     }
 
     void Update()
@@ -22,7 +25,10 @@ public class animVigile : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            
             Kicking();
+            ParticleBaston();
+
         }
 
         if (!isAttacking)
@@ -32,7 +38,6 @@ public class animVigile : MonoBehaviour
 
         if (isAttacking)
         {
-            //StartCoroutine(GoFightCheh());
             transform.position = Vector3.Lerp(transform.position, fanposition, speed*Time.deltaTime*10);
             Debug.Log("fdp");
             StartCoroutine(GoTruckCheh());
@@ -53,8 +58,11 @@ public class animVigile : MonoBehaviour
                     {
 
                     anim.SetBool("Attack", true);
+
+                    StartCoroutine(GoFightCheh());
                     //isAttacking = true;
                     fanposition = hit.transform.position + new Vector3(1f, 0, 0);
+                    
                     }
 
 
@@ -73,7 +81,12 @@ public class animVigile : MonoBehaviour
 
     IEnumerator GoTruckCheh()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
+        //Mesh.SetActive(false);
+        Salope.enabled = false;
+        yield return new WaitForSeconds(2);
+        //Mesh.SetActive(true);
+        Salope.enabled = true;
         isAttacking = false;
         anim.SetBool("Attack", false);
     }
@@ -81,5 +94,17 @@ public class animVigile : MonoBehaviour
     {
         anim.SetBool("Attack", true);
         yield return new WaitForSeconds(1f);
+    }
+
+    public void ParticleBaston()
+    {
+        Baston.transform.position = fanposition + new Vector3(-1f, 1, 0);
+        Baston.SetActive(true);
+        StartCoroutine(WaitForPS());
+    }
+    IEnumerator WaitForPS()
+    {
+        yield return new WaitForSeconds(3);
+        Baston.SetActive(false);
     }
 }
