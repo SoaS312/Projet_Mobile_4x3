@@ -38,9 +38,12 @@ public class Vigile : MonoBehaviour
                     {
                         if (!PlayerPrefs.HasKey("Sound"))
                         {
-                            int index = Random.Range(0, Fights.Length);
-                            PlayedFight = Fights[index];
-                            source.PlayOneShot(PlayedFight, 1);
+                            if (!source.isPlaying)
+                            {
+                                int index = Random.Range(0, Fights.Length);
+                                PlayedFight = Fights[index];
+                                source.PlayOneShot(PlayedFight, 1);
+                            }
                         }
                         hit.transform.GetComponent<FanManager>().life -= attackValue;
                     }

@@ -75,7 +75,7 @@ public class FanManager : MonoBehaviour
 
         if (willLeave)
         {
-            burgerLimit = Random.Range(1, 10);
+            burgerLimit = Random.Range(1,1);
         }
 
         isAngry = false;
@@ -186,6 +186,7 @@ public class FanManager : MonoBehaviour
                 source.PlayOneShot(FanDestroy, 1);
             }
             gameObject.GetComponent<TakePlace>().Die();
+            life = 1;
             PlayerPrefs.SetInt("TotalFanKicked", PlayerPrefs.GetInt("TotalFanKicked") + 1);
         }
     }
