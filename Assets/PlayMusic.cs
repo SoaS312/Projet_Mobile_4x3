@@ -14,7 +14,7 @@ public class PlayMusic : MonoBehaviour
     
     void Update()
     {
-        if (!PlayerPrefs.HasKey("Sound"))
+        if (!PlayerPrefs.HasKey("Music"))
         {
             if (!MusicSource.isPlaying)
                 MusicSource.Play();
