@@ -45,6 +45,7 @@ public class FanManager : MonoBehaviour
     public AudioClip FanAttack;
 
     private AudioSource source;
+    public Rigidbody caillou;
 
     void Awake()
     {
@@ -150,6 +151,8 @@ public class FanManager : MonoBehaviour
                 Debug.Log("Attacking");
                 AttackActualTimer = AttackMaxTimer;
                 FuelStock.staticFuelStock.fuel -= AttackValue;
+                Instantiate(caillou, transform.position, Quaternion.identity);
+
                 BePunk(1f);
             }
         }
