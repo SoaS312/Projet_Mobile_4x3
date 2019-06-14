@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 387f2db594ff1024794fe6fb4ddfb07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FanPooling: []
+  FanIndex: 0
+  chosenFan: {fileID: 0}
+  Places: []
+  RangementPlaces: {fileID: 0}
+  chosenPlace: 0
+  chosenPlaceGO: {fileID: 0}
   maxFollowPoints: 100
   actualFollowPoints: 0
   Follower:
@@ -52,8 +59,8 @@ MonoBehaviour:
   - {fileID: 3539079068488174566, guid: 12882ee861a30ec4aa82e7cb5aca37cf, type: 3}
   - {fileID: 7741919471793682118, guid: 20532d376afde0f4fbfdc806e2d55af0, type: 3}
   actualFollowers: []
-  maxFollowersBeforeAngry: 10
-  maxFollowersOnScreen: 15
+  maxFollowersBeforeAngry: 7
+  maxFollowersOnScreen: 12
   OffsetY: 0
 --- !u!212 &219153597750220678
 SpriteRenderer:

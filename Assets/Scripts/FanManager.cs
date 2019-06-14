@@ -111,7 +111,8 @@ public class FanManager : MonoBehaviour
         {
             if (burgerEated >= burgerLimit)
             {
-                gameObject.GetComponent<TakePlace>().needToLeave = true; PlayerPrefs.SetInt("TotalFanSatisfied", PlayerPrefs.GetInt("TotalFanSatisfied") + 1);
+                gameObject.GetComponent<TakePlace>().needToLeave = true;
+                PlayerPrefs.SetInt("TotalFanSatisfied", PlayerPrefs.GetInt("TotalFanSatisfied") + 1);
             }
         }
 
@@ -176,6 +177,7 @@ public class FanManager : MonoBehaviour
     {
         if (life <= 0)
         {
+            FollowersManager.staticFollowersManager.actualFollowers.Remove(this.gameObject);
             if (!PlayerPrefs.HasKey("Sound"))
             {
                 source.PlayOneShot(FanDestroy, 1);

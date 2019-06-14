@@ -63,6 +63,7 @@ public class TakePlace : MonoBehaviour
         transform.position = Vector3.Lerp(ChosenPlace.position, SpawnPos.position, currentLEAVELerpTime / lerpTime);
         if (currentLEAVELerpTime >= lerpTime)
         {
+            FollowersManager.staticFollowersManager.actualFollowers.Remove(this.gameObject);
             FollowersManager.staticFollowersManager.Places.Add(ChosenPlace.gameObject);
             gameObject.SetActive(false);
             FollowersManager.staticFollowersManager.FanPooling.Add(this.gameObject);

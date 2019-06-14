@@ -9056,7 +9056,7 @@ Transform:
   m_GameObject: {fileID: 891429963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -121.7, y: 4.3, z: -0.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 15.5, z: 15.65}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -20831,11 +20831,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1977028859}
-    - target: {fileID: 7400600116627280432, guid: 9dfa8070a8cabe84b99848e903068a78,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 421532683490301048, guid: 9dfa8070a8cabe84b99848e903068a78,
         type: 3}
       propertyPath: m_IsActive
@@ -20871,6 +20866,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1498241661, guid: 9dfa8070a8cabe84b99848e903068a78, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1977028859}
+    - target: {fileID: 7400600116627280432, guid: 9dfa8070a8cabe84b99848e903068a78,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7400600117731934534, guid: 9dfa8070a8cabe84b99848e903068a78,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -20881,10 +20885,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -605.00006
       objectReference: {fileID: 0}
-    - target: {fileID: 1498241661, guid: 9dfa8070a8cabe84b99848e903068a78, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1977028859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dfa8070a8cabe84b99848e903068a78, type: 3}
 --- !u!4 &421532683772514591 stripped
@@ -20960,10 +20960,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1513999049, guid: 105037ba8abaf334da642ea7880aad81, type: 3}
-      propertyPath: NeedStartMaterial
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 967852866498235724, guid: 105037ba8abaf334da642ea7880aad81,
         type: 3}
       propertyPath: m_IsActive
@@ -20972,6 +20968,10 @@ PrefabInstance:
     - target: {fileID: 967852865577672550, guid: 105037ba8abaf334da642ea7880aad81,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513999049, guid: 105037ba8abaf334da642ea7880aad81, type: 3}
+      propertyPath: NeedStartMaterial
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
