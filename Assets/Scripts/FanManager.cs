@@ -75,7 +75,7 @@ public class FanManager : MonoBehaviour
 
         if (willLeave)
         {
-            burgerLimit = Random.Range(1,1);
+            burgerLimit = Random.Range(1,5);
         }
 
         isAngry = false;
