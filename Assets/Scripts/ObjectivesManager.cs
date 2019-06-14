@@ -38,7 +38,6 @@ public class ObjectivesManager : MonoBehaviour
     public float currentTime;
 
     [Header("UI")]
-    public TextMeshProUGUI TitleNameText;
     public TextMeshProUGUI LevelNameText;
     public TextMeshProUGUI FirstStarText;
     public TextMeshProUGUI SecondStarText;

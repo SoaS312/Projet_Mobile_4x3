@@ -7,26 +7,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 665ed4b7c05bfcf4faaf087433e0b65c, type: 3}
-  m_Name: Level 01
+  m_Name: Tutorial
   m_EditorClassIdentifier: 
   maxMissionTime: 90
-  SceneName: US_Level_Joris_NewYork
+  SceneName: US_Tutoto
   LastWin: 0
-  minTime_Obstacle: 4
-  maxTime_Obstacle: 6
-  decayTime_Fuel: 1
+  minTime_Obstacle: 8
+  maxTime_Obstacle: 11
+  decayTime_Fuel: 0
   StarOne: 0
   StarTwo: 0
   StarThree: 0
   unlockedStars: 0
-  ObjectiveIsSelledBurger: 0
+  ObjectiveIsSelledBurger: 1
   SelledBurgerList: 03000000050000000f000000
   SelledBurger: 0
-  ObjectiveIsMoneyEarned: 1
-  MoneyEarnedList: ee020000d6060000ac0d0000
+  ObjectiveIsMoneyEarned: 0
+  MoneyEarnedList: 
   earnedMoney: 0
   isUnlocked: 1
   previousLevel: {fileID: 11400000}
