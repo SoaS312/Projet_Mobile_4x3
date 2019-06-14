@@ -12,23 +12,13 @@ public class TrucksPiecesManager : MonoBehaviour
 
     void Update()
     {
-        if (this.GetComponent<FoodTruckState>().isDriverActive)
-        {
-            /*
-            CookPart.SetActive(false);
-            SellerPart.SetActive(false);
-            VigilePart.SetActive(false);
-            VigilePerso.SetActive(false);
-            DriverPart.SetActive(true);
-            */
-        }
         if (this.GetComponent<FoodTruckState>().isCookActive)
         {
             CookPart.SetActive(true);
             SellerPart.SetActive(false);
             VigilePart.SetActive(false);
-            DriverPart.SetActive(true);
             VigilePerso.SetActive(false);
+            DriverPart.SetActive(true);
 
         }
         if (this.GetComponent<FoodTruckState>().isVigileActive || this.GetComponent<FoodTruckState>().isHelicoActive || this.GetComponent<FoodTruckState>().isScooterActive || this.GetComponent<FoodTruckState>().isSellerActive)

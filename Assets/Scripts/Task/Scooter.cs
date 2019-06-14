@@ -98,6 +98,7 @@ public class Scooter : MonoBehaviour
 
         if (timer <= 0 && ScoreManager.money > Scooter.staticScooter.MoneyCost)
         {
+            ScoreManager.money -= Scooter.staticScooter.MoneyCost;
             int index = Random.Range(0, PrepFoodList.Count);
             FoodSelected = PrepFoodList[index];
             FoodSelected.transform.position = ScooterObj.transform.position;

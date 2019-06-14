@@ -13,6 +13,6 @@ public class OpenRealMap : MonoBehaviour
         Map.SetActive(true);
         MapToClose.SetActive(false);
         MainGauche.SetActive(false);
-        MainGauche.SetActive(false);
+        MainDroite.SetActive(false);
     }
 }
