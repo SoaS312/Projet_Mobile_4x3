@@ -9,6 +9,7 @@ public class TrucksPiecesManager : MonoBehaviour
     public GameObject SellerPart;
     public GameObject VigilePart;
     public GameObject VigilePerso;
+    
 
     void Update()
     {
@@ -28,6 +29,14 @@ public class TrucksPiecesManager : MonoBehaviour
             VigilePart.SetActive(true);
             DriverPart.SetActive(true);
             VigilePerso.SetActive(true);
+        }
+        if (this.GetComponent<FoodTruckState>().isHelicoActive)
+        {
+            CookPart.SetActive(true);
+            SellerPart.SetActive(true);
+            VigilePart.SetActive(true);
+            DriverPart.SetActive(true);
+            VigilePerso.SetActive(false);
         }
 
     }

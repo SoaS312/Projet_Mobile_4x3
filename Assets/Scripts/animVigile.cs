@@ -13,30 +13,35 @@ public class animVigile : MonoBehaviour
     public float speed;
     public GameObject Mesh;
     public SkinnedMeshRenderer Salope;
+    public bool canAttack;
+    //public bool CanSpawn;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         //Salope = Mesh.GetComponent<MeshRenderer>();
+        //CanSpawn = false;
+        fanposition = new Vector3(100, 100, 100);
+        canAttack = true;
     }
 
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if ((Input.GetMouseButtonDown(0)) && canAttack && !isAttacking)
         {
             
             Kicking();
-            ParticleBaston();
 
         }
 
         if (!isAttacking)
         {
             transform.position = Vector3.Lerp(transform.position, startposition.transform.position, speed*Time.deltaTime*10);
+            canAttack = true;
         }
 
-        if (isAttacking)
+        if ((isAttacking) && (canAttack))// && (transform.position == startposition.transform.position))
         {
             transform.position = Vector3.Lerp(transform.position, fanposition, speed*Time.deltaTime*10);
             Debug.Log("fdp");
@@ -62,8 +67,9 @@ public class animVigile : MonoBehaviour
                     StartCoroutine(GoFightCheh());
                     //isAttacking = true;
                     fanposition = hit.transform.position + new Vector3(1f, 0, 0);
-                    
-                    }
+
+                    ParticleBaston();
+                }
 
 
                 }
@@ -81,6 +87,7 @@ public class animVigile : MonoBehaviour
 
     IEnumerator GoTruckCheh()
     {
+        
         yield return new WaitForSeconds(0.5f);
         //Mesh.SetActive(false);
         Salope.enabled = false;
@@ -89,6 +96,9 @@ public class animVigile : MonoBehaviour
         Salope.enabled = true;
         isAttacking = false;
         anim.SetBool("Attack", false);
+        canAttack = false;
+
+
     }
     IEnumerator GoFightCheh()
     {
