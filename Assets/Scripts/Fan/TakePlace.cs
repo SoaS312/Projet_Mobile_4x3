@@ -64,6 +64,7 @@ public class TakePlace : MonoBehaviour
             FollowersManager.staticFollowersManager.actualFollowers.Remove(this.gameObject);
             FollowersManager.staticFollowersManager.Places.Add(ChosenPlace.gameObject);
             gameObject.SetActive(false);
+
             FollowersManager.staticFollowersManager.FanPooling.Add(this.gameObject);
         }
     }

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665ed4b7c05bfcf4faaf087433e0b65c, type: 3}
   m_Name: Miami
   m_EditorClassIdentifier: 
-  maxMissionTime: 120
+  maxMissionTime: 9999999
   SceneName: US_Level_Joris_Miami
   LastWin: 0
   minTime_Obstacle: 3
   maxTime_Obstacle: 7
-  decayTime_Fuel: 1
+  decayTime_Fuel: 0
   StarOne: 0
   StarTwo: 0
   StarThree: 0
@@ -28,5 +28,5 @@ MonoBehaviour:
   ObjectiveIsMoneyEarned: 0
   MoneyEarnedList: 
   earnedMoney: 0
-  isUnlocked: 0
+  isUnlocked: 1
   previousLevel: {fileID: 11400000, guid: a069436b596a8a14d85e546f909858a3, type: 2}
